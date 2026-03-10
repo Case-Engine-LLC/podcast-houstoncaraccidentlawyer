@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circle Border -->
+  <circle cx="32" cy="32" r="30" stroke="black" stroke-width="2" fill="white"/>
+
+  <!-- Stars -->
+  <g transform="translate(10, 24)">
+    <path d="M4 6l1.5 4.5H10l-3.5 2.5 1.5 4.5L4 15l-3.5 2.5 1.5-4.5L-2 10.5h4.5z" fill="black"/>
+    <path d="M13 6l1.5 4.5H19l-3.5 2.5 1.5 4.5-4-2.5-3.5 2.5 1.5-4.5L6 10.5h4.5z" fill="black"/>
+    <path d="M22 6l1.5 4.5H28l-3.5 2.5 1.5 4.5-4-2.5-3.5 2.5 1.5-4.5L15 10.5h4.5z" fill="black"/>
+    <path d="M31 6l1.5 4.5H37l-3.5 2.5 1.5 4.5-4-2.5-3.5 2.5 1.5-4.5L24 10.5h4.5z" fill="black"/>
+    <path d="M40 6l1.5 4.5H46l-3.5 2.5 1.5 4.5-4-2.5-3.5 2.5 1.5-4.5L33 10.5h4.5z" fill="black"/>
+  </g>
+
+  <!-- Text -->
+  <text x="32" y="45" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="black">TRUSTED</text>
+  <text x="32" y="53" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="black">SELLER</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="linkedin.svg" clip-path="url(#clip0_0_96)">
+<path id="Vector" d="M8.73438 9L9.17875 6.10437H6.40031V4.22531C6.40031 3.43313 6.78844 2.66094 8.03281 2.66094H9.29594V0.195625C9.29594 0.195625 8.14969 0 7.05375 0C4.76563 0 3.27 1.38688 3.27 3.8975V6.10437H0.726562V9H3.27V16H6.40031V9H8.73438Z" fill="var(--fill-0, #151515)"/>
+</g>
+<defs>
+<clipPath id="clip0_0_96">
+<rect width="10" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
