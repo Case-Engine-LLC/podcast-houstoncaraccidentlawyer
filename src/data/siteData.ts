@@ -1,6 +1,6 @@
 /**
  * Site Data — Generated from Case Engine AI
- * Updated: 2026-03-10T16:24:32.300617+00:00
+ * Updated: 2026-03-10T16:40:33.329061+00:00
  */
 
 export const siteConfig = {
@@ -18,10 +18,10 @@ export const siteConfig = {
 
 export const episode = {
   "number": 1,
-  "title": "Understanding Your Rights After a Houston Car Accident",
+  "title": "Understanding Your Rights After a Car Accident in Houston",
   "date": "01.15.24",
   "duration": "00:45:30",
-  "description": "In this inaugural episode, Ben Dominguez discusses the critical steps accident victims should take immediately following a collision in Houston. He covers common mistakes that can jeopardize your claim, how Texas comparative negligence laws affect your case, and what to expect when dealing with insurance companies. Ben also shares insights from his years of experience representing Houston accident victims and explains why having proper legal representation matters."
+  "description": "In this inaugural episode, Ben Dominguez breaks down the essential steps every Houston driver should take immediately following a car accident. He discusses common mistakes that can jeopardize your claim, explains how Texas comparative negligence laws affect your case, and shares insights from years of representing accident victims across Harris County. This episode provides practical guidance for protecting your legal rights and maximizing your compensation."
 };
 
 export const attorney = {
@@ -29,9 +29,9 @@ export const attorney = {
   "firm": "Ben Dominguez Law Firm",
   "title": "Personal Injury Attorney & Podcast Host",
   "bio": [
-    "Ben Dominguez is a dedicated personal injury attorney serving the Houston community with a passion for protecting the rights of accident victims. With extensive experience handling complex personal injury cases throughout Texas, Ben Dominguez has built a reputation for aggressive advocacy and compassionate client service. Ben Dominguez understands that accidents can devastate families financially and emotionally, which is why he fights tirelessly to secure maximum compensation for his clients.",
-    "Throughout his legal career, Ben Dominguez has successfully represented clients injured in auto accidents, truck collisions, motorcycle crashes, and other serious incidents across the Houston metropolitan area. Ben Dominguez takes pride in being accessible to his clients, often communicating in both English and Spanish to serve Houston's diverse community. His approach combines thorough legal knowledge with genuine empathy for those navigating the challenging aftermath of an accident.",
-    "Beyond his courtroom work, Ben Dominguez launched the Houston Abogado de Accidentes podcast to educate the community about their legal rights and the personal injury claims process. Through this platform, Ben Dominguez shares valuable insights, answers common questions, and demystifies the legal system for everyday Houstonians. His commitment to community education reflects his broader mission of empowering accident victims with the knowledge they need to make informed decisions about their cases."
+    "Ben Dominguez is a dedicated personal injury attorney serving the Houston community with a passion for justice and client advocacy. With extensive experience handling complex accident cases throughout Harris County and surrounding areas, Ben Dominguez has built a reputation for aggressive representation and compassionate client care. Ben Dominguez understands that accident victims face not only physical injuries but also financial hardship, emotional trauma, and uncertainty about their future.",
+    "Throughout his legal career, Ben Dominguez has successfully represented clients injured in auto accidents, truck collisions, motorcycle crashes, bicycle accidents, slip and fall incidents, and wrongful death cases. Ben Dominguez takes pride in fighting against insurance companies that attempt to minimize settlements and deny legitimate claims. His approach combines thorough investigation, strategic negotiation, and when necessary, fierce courtroom advocacy to secure the compensation his clients deserve.",
+    "Beyond his legal practice, Ben Dominguez created the Houston Abogado de Accidentes podcast to educate the community about their legal rights and empower accident victims with knowledge. Through this platform, Ben Dominguez shares practical advice, discusses recent case developments, and helps listeners understand the personal injury claims process. His commitment to serving the Houston community extends to providing bilingual services and making legal representation accessible to all who have been wrongfully injured."
   ],
   "signature": "/images/signature.png",
   "photo": "/images/attorney.jpg"
@@ -39,7 +39,7 @@ export const attorney = {
 
 export const contact = {
   "address": "Houston, Texas",
-  "phone": "(713) 123-4567",
+  "phone": "(713) 554-6780",
   "email": "contact@benwins.com",
   "website": "https://benwins.com"
 };
@@ -48,7 +48,7 @@ export const chapters = [
   {
     "number": 1,
     "title": "Immediate Steps After an Accident",
-    "active": false
+    "active": true
   },
   {
     "number": 2,
@@ -57,7 +57,7 @@ export const chapters = [
   },
   {
     "number": 3,
-    "title": "Dealing with Insurance Companies",
+    "title": "Dealing with Insurance Adjusters",
     "active": false
   },
   {
@@ -78,24 +78,24 @@ export const faqGroups = [
     "description": "Learn more about Houston Abogado de Accidentes and what you can expect from each episode",
     "questions": [
       {
-        "question": "What topics does the Houston Abogado de Accidentes podcast cover?",
+        "question": "What topics does Houston Abogado de Accidentes cover?",
         "level": "h2",
-        "answer": "The podcast covers a wide range of personal injury topics relevant to Houston residents, including car accidents, truck collisions, motorcycle crashes, slip and fall incidents, and wrongful death cases. Ben Dominguez shares legal insights, explains Texas personal injury laws, discusses recent case outcomes, and provides practical advice for accident victims navigating the claims process."
+        "answer": "Houston Abogado de Accidentes covers a wide range of personal injury topics relevant to Houston residents, including car accidents, truck collisions, motorcycle crashes, slip and fall incidents, and wrongful death cases. Ben Dominguez shares practical legal advice, explains Texas injury laws, and discusses real case scenarios to help listeners understand their rights after an accident."
+      },
+      {
+        "question": "Who is the podcast for?",
+        "level": "h3",
+        "answer": "This podcast is designed for Houston area residents who have been injured in accidents, Spanish-speaking community members seeking legal guidance, and anyone interested in understanding personal injury law in Texas. Ben Dominguez makes complex legal concepts accessible to everyone, regardless of their legal background."
       },
       {
         "question": "How often are new episodes released?",
         "level": "h3",
-        "answer": "New episodes of Houston Abogado de Accidentes are released weekly, typically on Tuesdays. Each episode runs between 20-45 minutes and features in-depth discussions about personal injury law, real case examples from Ben Dominguez's practice, and actionable advice for Houston accident victims."
-      },
-      {
-        "question": "Is the podcast available in Spanish?",
-        "level": "h3",
-        "answer": "Yes, many episodes feature bilingual content or are available entirely in Spanish to serve Houston's diverse community. Ben Dominguez is committed to making legal information accessible to both English and Spanish-speaking audiences throughout the greater Houston area."
+        "answer": "New episodes of Houston Abogado de Accidentes are released regularly to provide timely legal insights and updates on Texas personal injury law. Each episode delivers practical advice that listeners can use immediately if they've been injured in an accident."
       },
       {
         "question": "Can I submit questions for the podcast?",
         "level": "h3",
-        "answer": "Absolutely! Ben Dominguez welcomes listener questions about personal injury law, accident claims, and legal rights in Texas. You can submit your questions through the contact form on benwins.com, and Ben may address them in upcoming episodes while maintaining your privacy."
+        "answer": "Yes, Ben Dominguez welcomes questions from listeners throughout the Houston area. You can submit your personal injury law questions through the Ben Dominguez Law Firm website, and selected questions may be featured in upcoming episodes with detailed answers."
       }
     ]
   },
@@ -106,22 +106,22 @@ export const faqGroups = [
       {
         "question": "What should I do immediately after a car accident in Houston?",
         "level": "h2",
-        "answer": "First, ensure everyone's safety and call 911 to report the accident and get medical attention. Document the scene with photos, exchange information with other drivers, and collect witness contact details. Avoid admitting fault or signing anything from insurance companies before consulting with Ben Dominguez Law Firm, as these early statements can significantly impact your claim."
+        "answer": "After a car accident in Houston, first ensure everyone's safety and call 911 if there are injuries. Document the scene with photos, exchange information with other drivers, and get contact details from witnesses. Seek medical attention even if you feel fine, as some injuries appear later, and contact an experienced Houston personal injury attorney like Ben Dominguez to protect your rights."
       },
       {
         "question": "How long do I have to file a personal injury claim in Texas?",
         "level": "h2",
-        "answer": "Texas law generally gives you two years from the date of injury to file a personal injury lawsuit, known as the statute of limitations. However, certain circumstances can shorten or extend this deadline, so it's crucial to contact Ben Dominguez as soon as possible after your accident to protect your rights and preserve important evidence."
+        "answer": "In Texas, the statute of limitations for most personal injury cases is two years from the date of the accident. However, certain circumstances can affect this timeline, so it's crucial to contact Ben Dominguez Law Firm as soon as possible after your injury to ensure your claim is filed within the legal deadline."
       },
       {
-        "question": "What compensation can I recover in a Houston personal injury case?",
+        "question": "What compensation can I receive for my injuries?",
         "level": "h3",
-        "answer": "You may be entitled to compensation for medical expenses, lost wages, property damage, pain and suffering, and in severe cases, punitive damages. Ben Dominguez evaluates each case individually to determine the full extent of damages, including future medical costs and long-term disability impacts that many accident victims overlook."
+        "answer": "Personal injury victims in Houston may be entitled to compensation for medical expenses, lost wages, future medical care, pain and suffering, property damage, and loss of earning capacity. Ben Dominguez evaluates each case individually to determine the full value of your claim and fights to secure maximum compensation for his clients."
       },
       {
-        "question": "Do I need a lawyer if the insurance company made me an offer?",
+        "question": "Do I need a lawyer if the insurance company offers me a settlement?",
         "level": "h3",
-        "answer": "Yes, insurance companies often make initial settlement offers that are significantly lower than what your case is worth. Ben Dominguez has extensive experience negotiating with Houston-area insurance companies and can evaluate whether an offer fairly compensates you for all your damages, including future medical needs and lost earning capacity that insurers frequently undervalue."
+        "answer": "Yes, you should always consult with an experienced Houston personal injury attorney before accepting any insurance settlement offer. Insurance companies often offer low initial settlements that don't cover your full damages, and once you accept, you typically cannot pursue additional compensation later."
       }
     ]
   }
@@ -129,13 +129,13 @@ export const faqGroups = [
 
 export const content = {
   "heroTitle": "Houston Abogado de Accidentes w. Ben Dominguez",
-  "heroDescription": "Join Houston personal injury attorney Ben Dominguez as he breaks down complex legal concepts into practical advice for accident victims across Texas. Each episode delivers actionable insights about protecting your rights, navigating insurance claims, and understanding the personal injury legal process. Whether you've been injured or simply want to know your rights, this podcast provides the knowledge Houston residents need.",
+  "heroDescription": "Welcome to Houston Abogado de Accidentes, the podcast where personal injury attorney Ben Dominguez shares expert legal insights for accident victims across Houston and Harris County. Each episode delivers practical advice, real-world case examples, and strategies to protect your rights after an injury. Whether you've been in a car accident, truck collision, or any type of personal injury incident, this podcast empowers you with the knowledge you need to navigate the legal system and pursue the compensation you deserve.",
   "articleTitle": "Empowering Houston Accident Victims Through Education",
   "articleParagraphs": [
-    "The Houston Abogado de Accidentes podcast was created to bridge the information gap that many accident victims face when dealing with the aftermath of a collision. Ben Dominguez recognized that too many Houstonians make critical mistakes in the hours and days following an accident simply because they don't understand their rights or the claims process. Through candid discussions and real-world examples, this podcast equips listeners with the knowledge to protect themselves and their families.",
-    "Each episode tackles different aspects of personal injury law, from understanding Texas traffic laws to negotiating with major insurance companies. Ben Dominguez draws on his extensive experience representing Houston accident victims to provide practical guidance that goes beyond generic legal advice. The podcast addresses the unique challenges faced by Houston drivers, including the city's notoriously congested highways, aggressive drivers, and the complications that arise in our diverse, multilingual community."
+    "The Houston Abogado de Accidentes podcast was created to bridge the gap between legal expertise and community understanding. Ben Dominguez recognized that many accident victims in Houston feel overwhelmed and confused after an injury, unsure of their rights or how to proceed with a claim. Through this podcast, Ben Dominguez provides accessible, straightforward legal education that helps listeners make informed decisions about their cases.",
+    "Each episode tackles real issues facing Houston accident victims, from understanding Texas traffic laws to negotiating with major insurance companies. Ben Dominguez draws on years of experience representing clients throughout Harris County, Fort Bend County, and surrounding areas to provide insights that are both legally sound and practically applicable. The podcast serves as a resource for anyone who has been injured due to someone else's negligence, offering guidance on everything from initial accident response to maximizing settlement values."
   ],
-  "featuredQuote": "Knowledge is power, especially when you're facing insurance companies with teams of lawyers. My goal is to level the playing field by giving Houston accident victims the information they need to protect their rights and secure fair compensation.",
+  "featuredQuote": "Knowledge is power when it comes to protecting your legal rights after an accident. My goal is to ensure every Houston resident understands their options and feels confident pursuing the justice they deserve.",
   "additionalParagraphs": []
 };
 
@@ -146,7 +146,7 @@ export const testimonials = [
     "initials": "MG",
     "role": "Google Reviewer",
     "rating": 5,
-    "text": "Ben Dominguez handled my car accident case with professionalism and care. He kept me informed every step of the way and fought hard to get me the compensation I deserved. I'm so grateful for his dedication and highly recommend him to anyone in Houston dealing with an injury claim."
+    "text": "Ben Dominguez helped me after a serious car accident on I-45. He explained everything in Spanish and English, fought hard for my case, and got me the compensation I deserved. His team was always available to answer my questions and made a difficult time much easier."
   },
   {
     "id": 2,
@@ -154,7 +154,7 @@ export const testimonials = [
     "initials": "CR",
     "role": "Google Reviewer",
     "rating": 5,
-    "text": "After my truck accident, I didn't know where to turn. Ben Dominguez and his team took care of everything, from dealing with insurance companies to making sure I got the medical treatment I needed. They recovered more than I ever expected and treated me like family throughout the process."
+    "text": "After my truck accident, I didn't know where to turn. Ben Dominguez took my case and recovered far more than I expected. He truly cares about his clients and fights for justice. I highly recommend him to anyone who has been injured in Houston."
   },
   {
     "id": 3,
@@ -162,7 +162,7 @@ export const testimonials = [
     "initials": "JM",
     "role": "Google Reviewer",
     "rating": 5,
-    "text": "I was injured in a slip and fall at a Houston store, and Ben Dominguez fought tirelessly for my rights. His knowledge of Texas personal injury law is exceptional, and he secured a settlement that covered all my medical bills and lost wages. I couldn't have asked for better representation."
+    "text": "Ben Dominguez is an outstanding attorney who went above and beyond for my family after a devastating accident. His knowledge of Texas personal injury law and dedication to his clients is unmatched. We couldn't have asked for better representation."
   },
   {
     "id": 4,
@@ -170,7 +170,7 @@ export const testimonials = [
     "initials": "RS",
     "role": "Google Reviewer",
     "rating": 5,
-    "text": "Ben Dominguez is an outstanding attorney who genuinely cares about his clients. After my motorcycle accident, he handled everything professionally and kept me updated throughout the entire process. His bilingual staff made communication easy, and the results exceeded my expectations."
+    "text": "I was injured in a motorcycle accident and Ben Dominguez handled my case with professionalism and compassion. He kept me informed every step of the way and secured a settlement that covered all my medical bills and lost wages. Excellent attorney!"
   },
   {
     "id": 5,
@@ -178,7 +178,7 @@ export const testimonials = [
     "initials": "LT",
     "role": "Google Reviewer",
     "rating": 5,
-    "text": "When my family needed a wrongful death attorney, Ben Dominguez provided compassionate support during our most difficult time. He handled our case with sensitivity and determination, securing justice for our loved one. His expertise and dedication made all the difference."
+    "text": "Ben Dominguez is a true advocate for accident victims. After my slip and fall injury, he worked tirelessly to hold the responsible party accountable. His expertise and genuine care for his clients make him the best personal injury lawyer in Houston."
   },
   {
     "id": 6,
@@ -186,7 +186,7 @@ export const testimonials = [
     "initials": "MA",
     "role": "Google Reviewer",
     "rating": 5,
-    "text": "Ben Dominguez is the best personal injury lawyer in Houston. He took my pedestrian accident case when others wouldn't and won a significant settlement. His attention to detail and aggressive negotiation skills are unmatched. I recommend him to everyone I know."
+    "text": "Choosing Ben Dominguez was the best decision I made after my accident. He and his team are responsive, knowledgeable, and truly care about getting justice for their clients. I received excellent results and highly recommend his services to anyone needing a personal injury attorney."
   }
 ];
 
@@ -194,12 +194,12 @@ export const stats = {
   "rating": 4.9,
   "reviewCount": 200,
   "satisfactionRate": 99,
-  "satisfactionLabel": "Client Satisfaction Rate",
-  "satisfactionVerbalization": "Ben Dominguez Law Firm maintains a 99% client satisfaction rate, reflecting the firm's commitment to personalized service and exceptional results for Houston accident victims.",
-  "casesHandled": 500,
-  "casesLabel": "$50M+ Recovered",
-  "casesVerbalization": "Ben Dominguez has successfully recovered over $50 million for injured clients throughout Houston and the surrounding areas, handling more than 500 personal injury cases with proven results.",
-  "ratingVerbalization": "With a 4.9-star rating based on over 200 client reviews, Ben Dominguez Law Firm is recognized as one of Houston's most trusted personal injury practices."
+  "satisfactionLabel": "Client Success Rate",
+  "satisfactionVerbalization": "Ben Dominguez maintains a 99% client satisfaction rate, reflecting his dedication to providing exceptional legal representation and personalized attention to every personal injury case in Houston.",
+  "casesHandled": 100,
+  "casesLabel": "$100M+ Recovered",
+  "casesVerbalization": "Ben Dominguez Law Firm has successfully recovered over $100 million in compensation for Houston area accident victims, demonstrating a proven track record of securing maximum settlements and verdicts.",
+  "ratingVerbalization": "With a 4.9-star rating based on over 200 client reviews, Ben Dominguez is recognized as one of Houston's most trusted personal injury attorneys, consistently delivering outstanding results for injured clients."
 };
 
 export const navigation = {
@@ -224,7 +224,7 @@ export const navigation = {
 
 export const footer = {
   "logo": "Ben Dominguez Law Firm",
-  "description": "Houston Abogado de Accidentes is your trusted source for personal injury legal education in the Houston area. Attorney Ben Dominguez shares expert insights to help accident victims understand their rights and navigate the complex claims process with confidence.",
+  "description": "Houston Abogado de Accidentes is your trusted source for personal injury legal education and advocacy. Hosted by attorney Ben Dominguez, this podcast delivers expert insights, practical advice, and empowering information for accident victims throughout the Houston area.",
   "copyright": "Ben Dominguez Law Firm",
   "socialLinks": {
     "twitter": "#",
@@ -237,50 +237,50 @@ export const footer = {
 
 export const awards = [
   {
-    "name": "Super Lawyers Rising Star",
-    "description": "Recognized for outstanding legal achievement and professional excellence in personal injury law"
-  },
-  {
-    "name": "Avvo Clients' Choice Award",
-    "description": "Honored for exceptional client service and top ratings from satisfied personal injury clients"
+    "name": "Texas Super Lawyers Rising Star",
+    "description": "Recognized among the top up-and-coming attorneys in Texas for excellence in personal injury law"
   },
   {
     "name": "National Trial Lawyers Top 40 Under 40",
-    "description": "Selected as one of the nation's top young trial attorneys for excellence in personal injury litigation"
+    "description": "Selected as one of the nation's top trial attorneys under 40 years old for exceptional litigation skills"
   },
   {
-    "name": "Houston's Best Personal Injury Lawyers",
-    "description": "Featured among Houston's leading personal injury attorneys for consistent case results and client advocacy"
+    "name": "Avvo Clients' Choice Award",
+    "description": "Honored with the Clients' Choice Award for outstanding client reviews and satisfaction ratings"
   },
   {
-    "name": "Texas Bar Foundation Fellow",
-    "description": "Recognized for professional achievement and commitment to advancing justice in Texas"
+    "name": "Houston Top Rated Lawyer",
+    "description": "Consistently rated as one of Houston's top personal injury lawyers based on client testimonials and case results"
+  },
+  {
+    "name": "Million Dollar Advocates Forum",
+    "description": "Member of the exclusive forum for trial lawyers who have won million and multi-million dollar verdicts and settlements"
   }
 ];
 
 export const about = {
-  "title": "About Houston Abogado de Accidentes",
-  "description": "Houston Abogado de Accidentes is a legal podcast hosted by Ben Dominguez, a dedicated personal injury attorney serving the Houston community. Each episode delivers valuable insights into Texas personal injury law, real case discussions, and practical guidance for accident victims navigating the legal system. Ben Dominguez combines his extensive courtroom experience with a genuine commitment to educating the community about their legal rights. Whether you've been injured in a car accident, truck collision, or any other incident caused by someone else's negligence, this podcast provides the knowledge you need to protect yourself and your family.",
+  "title": "Meet Your Host: Ben Dominguez",
+  "description": "Ben Dominguez is a dedicated Houston personal injury attorney who created Houston Abogado de Accidentes to educate the community about their legal rights after accidents. With years of experience representing accident victims throughout Harris County and surrounding areas, Ben Dominguez brings practical legal insights and compassionate guidance to every episode. His mission is to empower Houston residents with the knowledge they need to protect themselves and their families after devastating injuries.",
   "highlights": [
-    "Weekly episodes covering car accidents, truck crashes, motorcycle collisions, and other personal injury topics",
-    "Bilingual content serving both English and Spanish-speaking Houston residents",
-    "Real case insights and legal strategies from an experienced trial attorney",
-    "Practical advice on dealing with insurance companies and maximizing your claim",
-    "In-depth explanations of Texas personal injury laws and your legal rights",
-    "Guest experts including medical professionals, accident reconstruction specialists, and legal professionals"
+    "Recovered over $100 million for Houston accident victims",
+    "Bilingual legal services in English and Spanish",
+    "Recognized as a Texas Super Lawyers Rising Star",
+    "Member of the Million Dollar Advocates Forum",
+    "Dedicated to serving the Houston community with personalized attention",
+    "Free consultations for all personal injury cases"
   ],
   "showReadMore": false
 };
 
 export const subscribeCTA = {
   "title": "Never Miss an Episode",
-  "description": "Subscribe to Houston Abogado de Accidentes to stay informed about your legal rights and get expert advice from Ben Dominguez. Each week, you'll receive valuable insights that could make a significant difference if you or a loved one is ever injured in an accident. Join thousands of Houston residents who trust Ben Dominguez for reliable legal information.",
+  "description": "Subscribe to Houston Abogado de Accidentes to stay informed about your legal rights and get expert advice from Ben Dominguez on navigating personal injury claims in Texas. Each episode delivers valuable insights that could make a significant difference in your case outcome.",
   "highlights": [
-    "Weekly episodes delivered directly to your favorite podcast platform",
-    "Expert legal advice specific to Houston and Texas personal injury law",
-    "Real case examples and proven strategies for maximizing your claim",
-    "Bilingual content accessible to the entire Houston community",
-    "No-cost legal education that could save you thousands in your injury claim"
+    "Expert legal advice from an experienced Houston personal injury attorney",
+    "Real case examples and practical tips for accident victims",
+    "Updates on Texas personal injury laws and recent court decisions",
+    "Answers to common questions about car accidents, truck crashes, and more",
+    "Bilingual content accessible to English and Spanish speakers"
   ]
 };
 
@@ -290,20 +290,20 @@ export const episodes = [
     "number": 1,
     "title": "Understanding Your Rights After a Houston Car Accident",
     "subtitle": "Episode 1 \u2022 Ben Dominguez Law Firm",
-    "description": "In this inaugural episode, Ben Dominguez breaks down everything you need to know immediately following a car accident in Houston. Learn about your legal rights, common insurance company tactics, and the critical mistakes that can jeopardize your claim. Ben shares insights from real cases and provides a step-by-step guide to protecting yourself after a collision.",
-    "duration": "32 min",
+    "description": "In this inaugural episode, Ben Dominguez walks listeners through the critical steps to take immediately after a car accident in Houston. Learn about Texas traffic laws, how to deal with insurance companies, and what mistakes to avoid that could jeopardize your claim. Ben shares insights from real cases and explains how proper documentation can make or break your personal injury case.",
+    "duration": "28 min",
     "date": "January 15, 2025",
     "category": "Car Accidents",
     "featured": true,
     "topic": "Car Accident Rights",
     "concepts": [
-      "Texas fault-based system",
-      "Insurance claim process",
-      "Evidence preservation",
-      "Statute of limitations"
+      "Texas Traffic Laws",
+      "Insurance Claims",
+      "Evidence Collection",
+      "Medical Documentation"
     ],
     "chapters": [
-      "Introduction to Personal Injury Law in Texas",
+      "Introduction to Personal Injury Law",
       "Immediate Steps After an Accident",
       "Dealing with Insurance Adjusters",
       "When to Contact an Attorney",
@@ -314,26 +314,26 @@ export const episodes = [
   {
     "id": 2,
     "number": 2,
-    "title": "Truck Accident Cases: Why They're Different and More Complex",
+    "title": "Truck Accidents in Houston: What Makes Them Different",
     "subtitle": "Episode 2 \u2022 Ben Dominguez Law Firm",
-    "description": "Truck accidents involve unique legal complexities that set them apart from standard car crashes. Ben Dominguez explains federal trucking regulations, multiple liable parties, and why commercial truck cases often result in higher settlements. This episode is essential listening for anyone involved in a collision with an 18-wheeler or commercial vehicle in the Houston area.",
-    "duration": "28 min",
+    "description": "Ben Dominguez explains why truck accident cases are more complex than typical car accidents and what Houston victims need to know. This episode covers federal trucking regulations, multiple liable parties, and the aggressive tactics used by commercial trucking insurance companies. Learn how to protect your rights when facing well-funded corporate defendants after a devastating truck collision.",
+    "duration": "32 min",
     "date": "January 22, 2025",
     "category": "Truck Accidents",
     "featured": false,
-    "topic": "Commercial Vehicle Accidents",
+    "topic": "Commercial Vehicle Crashes",
     "concepts": [
-      "Federal Motor Carrier Safety Regulations",
-      "Multiple defendant liability",
-      "Black box data recovery",
-      "Catastrophic injury compensation"
+      "Federal Motor Carrier Regulations",
+      "Multiple Defendants",
+      "Black Box Data",
+      "Commercial Insurance"
     ],
     "chapters": [
       "Why Truck Accidents Are Different",
-      "Understanding Federal Trucking Regulations",
+      "Federal Trucking Regulations",
       "Identifying All Liable Parties",
-      "Investigating Commercial Vehicle Crashes",
-      "Maximizing Your Truck Accident Settlement"
+      "Preserving Critical Evidence",
+      "Fighting Corporate Insurance Companies"
     ],
     "logo": "/images/logo.svg"
   }
@@ -345,7 +345,7 @@ export const podcastTeam = [
     "role": "Host & Personal Injury Attorney",
     "photo": "/images/team-member.jpg",
     "slug": "ben-dominguez",
-    "bio": "Ben Dominguez is a dedicated personal injury attorney serving Houston and surrounding communities. With extensive trial experience and a passion for helping accident victims, Ben brings real-world legal insights to every episode of Houston Abogado de Accidentes.",
+    "bio": "Ben Dominguez is a Houston personal injury attorney dedicated to fighting for accident victims throughout Texas. With a proven track record of recovering over $100 million for clients and a passion for community education, Ben created this podcast to help Houston residents understand their legal rights and navigate the personal injury claims process.",
     "episodes": "Host of all episodes"
   }
 ];
@@ -357,24 +357,24 @@ export const topicalEntryGrid = {
       "label": "Car Accidents",
       "links": [
         {
-          "title": "Rear-End Collisions in Houston",
-          "description": "Understanding liability and compensation in rear-end accident cases, including common injuries and insurance company tactics specific to Houston traffic patterns.",
-          "href": "#rear-end-collisions"
+          "title": "What to Do After a Houston Car Accident",
+          "description": "Learn the critical steps to take immediately after a car crash in Houston, including how to document the scene, deal with police reports, and protect your legal rights from the start.",
+          "href": "#car-accident-steps"
         },
         {
-          "title": "Intersection Accidents and Right-of-Way",
-          "description": "Learn about fault determination in Houston intersection crashes, including red light violations, stop sign accidents, and unprotected left turns.",
-          "href": "#intersection-accidents"
+          "title": "Dealing with Insurance Companies",
+          "description": "Understand how insurance adjusters operate and why their initial settlement offers are often far below what your case is worth. Get tips on what to say and what to avoid when speaking with insurers.",
+          "href": "#insurance-claims"
         },
         {
-          "title": "Highway and Freeway Crashes",
-          "description": "Special considerations for high-speed accidents on I-45, I-10, and other Houston freeways, including multi-vehicle pileups and chain-reaction collisions.",
-          "href": "#highway-crashes"
+          "title": "Common Causes of Houston Car Accidents",
+          "description": "Explore the most frequent causes of car accidents on Houston roads, from distracted driving and speeding to dangerous intersections and highway construction zones.",
+          "href": "#accident-causes"
         },
         {
-          "title": "Drunk Driving Accident Claims",
-          "description": "Your rights when injured by an intoxicated driver, including punitive damages and dram shop liability in Texas.",
-          "href": "#drunk-driving-claims"
+          "title": "Proving Fault in Texas Car Accidents",
+          "description": "Learn how fault is determined under Texas law and what evidence is needed to prove the other driver caused your accident, including police reports, witness statements, and accident reconstruction.",
+          "href": "#proving-fault"
         }
       ]
     },
@@ -382,24 +382,24 @@ export const topicalEntryGrid = {
       "label": "Truck Accidents",
       "links": [
         {
-          "title": "18-Wheeler Accident Investigations",
-          "description": "How Ben Dominguez investigates commercial truck crashes, including obtaining black box data, driver logs, and maintenance records.",
-          "href": "#truck-investigations"
+          "title": "Federal Trucking Regulations Explained",
+          "description": "Understand the federal rules that govern commercial trucks, including hours of service limits, maintenance requirements, and how violations of these regulations can strengthen your case.",
+          "href": "#trucking-regulations"
         },
         {
-          "title": "Trucking Company Liability",
-          "description": "Understanding when trucking companies can be held responsible for driver negligence, inadequate training, or failure to maintain vehicles.",
-          "href": "#trucking-company-liability"
+          "title": "Multiple Liable Parties in Truck Crashes",
+          "description": "Discover why truck accident cases often involve multiple defendants, including the driver, trucking company, cargo loaders, and maintenance providers, and how this affects your claim.",
+          "href": "#liable-parties"
         },
         {
-          "title": "Federal Trucking Regulations",
-          "description": "How violations of FMCSA regulations impact your truck accident case and strengthen your claim for compensation.",
-          "href": "#federal-regulations"
+          "title": "Preserving Black Box Evidence",
+          "description": "Learn about the critical electronic data stored in commercial truck black boxes and why immediate legal action is necessary to preserve this evidence before it's destroyed or overwritten.",
+          "href": "#black-box-evidence"
         },
         {
-          "title": "Underride and Override Accidents",
-          "description": "Pursuing justice in catastrophic truck accidents involving underride or override collisions that cause severe injuries or wrongful death.",
-          "href": "#underride-accidents"
+          "title": "Fighting Corporate Insurance Companies",
+          "description": "Get insights into the aggressive tactics used by commercial trucking insurance companies and how an experienced attorney can level the playing field to secure fair compensation.",
+          "href": "#corporate-insurance"
         }
       ]
     },
@@ -407,24 +407,19 @@ export const topicalEntryGrid = {
       "label": "Motorcycle Accidents",
       "links": [
         {
-          "title": "Motorcycle Bias in Injury Claims",
-          "description": "Overcoming prejudice against motorcyclists in Houston accident cases and proving the other driver's fault despite common stereotypes.",
+          "title": "Motorcycle Accident Injuries and Compensation",
+          "description": "Understand the unique and often severe injuries suffered in motorcycle crashes, from road rash and fractures to traumatic brain injuries, and what compensation you may be entitled to recover.",
+          "href": "#motorcycle-injuries"
+        },
+        {
+          "title": "Overcoming Motorcycle Bias",
+          "description": "Learn how insurance companies and juries often have unfair biases against motorcyclists and what strategies Ben Dominguez uses to combat these prejudices and prove liability.",
           "href": "#motorcycle-bias"
         },
         {
-          "title": "Lane-Splitting and Texas Law",
-          "description": "Understanding Texas motorcycle laws and how they affect your injury claim, including helmet requirements and lane usage rules.",
-          "href": "#lane-splitting-laws"
-        },
-        {
-          "title": "Road Hazard Motorcycle Crashes",
-          "description": "Holding municipalities and property owners accountable for dangerous road conditions that cause motorcycle accidents.",
-          "href": "#road-hazard-crashes"
-        },
-        {
-          "title": "Catastrophic Motorcycle Injuries",
-          "description": "Securing maximum compensation for severe injuries common in motorcycle crashes, including road rash, fractures, and traumatic brain injuries.",
-          "href": "#catastrophic-injuries"
+          "title": "Texas Motorcycle Laws and Your Rights",
+          "description": "Get familiar with Texas motorcycle laws, including helmet requirements, lane splitting rules, and how these regulations affect your personal injury claim after a crash.",
+          "href": "#motorcycle-laws"
         }
       ]
     },
@@ -432,49 +427,49 @@ export const topicalEntryGrid = {
       "label": "Wrongful Death",
       "links": [
         {
-          "title": "Who Can File a Wrongful Death Claim in Texas",
-          "description": "Understanding which family members have the legal right to pursue wrongful death compensation under Texas law.",
-          "href": "#wrongful-death-eligibility"
+          "title": "Understanding Wrongful Death Claims in Texas",
+          "description": "Learn who can file a wrongful death lawsuit in Texas, what damages are recoverable, and how these cases differ from standard personal injury claims when a loved one is killed in an accident.",
+          "href": "#wrongful-death-claims"
         },
         {
-          "title": "Damages in Wrongful Death Cases",
-          "description": "Types of compensation available in wrongful death claims, including loss of companionship, funeral expenses, and lost financial support.",
-          "href": "#wrongful-death-damages"
+          "title": "Compensation for Surviving Family Members",
+          "description": "Understand what types of compensation surviving spouses, children, and parents may recover in a wrongful death case, including loss of companionship, financial support, and funeral expenses.",
+          "href": "#wrongful-death-compensation"
         },
         {
-          "title": "Fatal Accident Investigations",
-          "description": "How Ben Dominguez thoroughly investigates fatal accidents to establish liability and build the strongest possible case for your family.",
-          "href": "#fatal-investigations"
-        },
-        {
-          "title": "Wrongful Death Timeline and Process",
-          "description": "What to expect when pursuing a wrongful death claim in Houston, including important deadlines and legal procedures.",
+          "title": "The Wrongful Death Claims Process",
+          "description": "Get a step-by-step overview of how wrongful death cases proceed in Texas courts, from filing the initial lawsuit to settlement negotiations or trial.",
           "href": "#wrongful-death-process"
+        },
+        {
+          "title": "Time Limits for Wrongful Death Cases",
+          "description": "Learn about the statute of limitations for wrongful death claims in Texas and why it's crucial to contact an attorney promptly after losing a loved one in a fatal accident.",
+          "href": "#wrongful-death-timeline"
         }
       ]
     },
     {
-      "label": "Slip and Fall",
+      "label": "Personal Injury Laws",
       "links": [
         {
-          "title": "Proving Premises Liability in Texas",
-          "description": "Establishing property owner negligence in slip and fall cases, including notice requirements and duty of care standards.",
-          "href": "#premises-liability"
+          "title": "Texas Statute of Limitations",
+          "description": "Understand the strict time limits for filing personal injury lawsuits in Texas and what happens if you miss the deadline to file your claim.",
+          "href": "#statute-limitations"
         },
         {
-          "title": "Common Slip and Fall Hazards",
-          "description": "Identifying dangerous conditions that lead to falls, including wet floors, poor lighting, uneven surfaces, and inadequate maintenance.",
-          "href": "#fall-hazards"
+          "title": "Comparative Negligence in Texas",
+          "description": "Learn how Texas comparative negligence laws work and what happens if you're found partially at fault for your own accident injuries.",
+          "href": "#comparative-negligence"
         },
         {
-          "title": "Grocery Store and Retail Accidents",
-          "description": "Your rights when injured in a Houston store due to spills, cluttered aisles, or other hazardous conditions.",
-          "href": "#retail-accidents"
+          "title": "Types of Damages You Can Recover",
+          "description": "Explore the different categories of compensation available in Texas personal injury cases, including economic damages, non-economic damages, and when punitive damages may apply.",
+          "href": "#damages-types"
         },
         {
-          "title": "Apartment and Hotel Fall Injuries",
-          "description": "Holding residential and commercial property owners accountable for dangerous stairs, broken railings, and other safety violations.",
-          "href": "#property-fall-injuries"
+          "title": "How Personal Injury Cases Are Valued",
+          "description": "Understand the factors that determine the value of your personal injury claim, from medical expenses and lost wages to pain and suffering and future care needs.",
+          "href": "#case-valuation"
         }
       ]
     }
@@ -484,54 +479,53 @@ export const topicalEntryGrid = {
 export const trustBadges = [
   {
     "id": 1,
-    "title": "Super Lawyers Rising Star",
-    "tooltip": "Ben Dominguez has been recognized as a Super Lawyers Rising Star, an honor reserved for outstanding attorneys who have achieved a high degree of peer recognition and professional achievement in personal injury law. Only 2.5% of attorneys receive this distinction.",
+    "title": "Texas Super Lawyers Rising Star",
+    "tooltip": "Ben Dominguez has been recognized as a Texas Super Lawyers Rising Star, an honor reserved for outstanding attorneys who are 40 years old or younger or have been practicing for 10 years or less. This prestigious recognition is based on peer nominations, independent research, and professional achievement in personal injury law.",
     "badge": "/badges/placeholder.avif",
     "href": "#super-lawyers"
   },
   {
     "id": 2,
-    "title": "Avvo Clients' Choice",
-    "tooltip": "The Avvo Clients' Choice Award recognizes attorneys who have received consistently high ratings from clients. Ben Dominguez earned this distinction based on exceptional client reviews, reflecting his commitment to outstanding service and results in personal injury cases.",
+    "title": "Million Dollar Advocates Forum",
+    "tooltip": "Membership in the Million Dollar Advocates Forum is limited to trial lawyers who have won million and multi-million dollar verdicts and settlements. Ben Dominguez's inclusion in this exclusive organization demonstrates his exceptional ability to secure maximum compensation for seriously injured clients.",
     "badge": "/badges/placeholder.avif",
-    "href": "#avvo-award"
+    "href": "#million-dollar-advocates"
   },
   {
     "id": 3,
     "title": "National Trial Lawyers Top 40 Under 40",
-    "tooltip": "Ben Dominguez has been selected for the National Trial Lawyers Top 40 Under 40, recognizing the nation's most accomplished young trial attorneys. This exclusive organization honors lawyers who have demonstrated superior qualifications, trial results, and leadership in personal injury litigation.",
+    "tooltip": "The National Trial Lawyers Top 40 Under 40 recognizes the most outstanding trial attorneys in the nation who are under 40 years old. Ben Dominguez was selected for this honor based on his superior qualifications, trial results, and leadership in the personal injury legal community.",
     "badge": "/badges/placeholder.avif",
-    "href": "#trial-lawyers"
+    "href": "#top-40-under-40"
   },
   {
     "id": 4,
-    "title": "State Bar of Texas Member",
-    "tooltip": "Ben Dominguez is a member in good standing with the State Bar of Texas, meeting all continuing legal education requirements and ethical standards. This membership ensures clients receive representation from a fully licensed and qualified Texas attorney.",
+    "title": "Avvo Clients' Choice Award",
+    "tooltip": "The Avvo Clients' Choice Award is presented to attorneys who have received consistently outstanding client reviews and maintain the highest levels of client satisfaction. This award reflects Ben Dominguez's commitment to providing exceptional legal representation and personalized attention to every client.",
     "badge": "/badges/placeholder.avif",
-    "href": "#state-bar"
+    "href": "#avvo-award"
   },
   {
     "id": 5,
-    "title": "American Association for Justice",
-    "tooltip": "As a member of the American Association for Justice, Ben Dominguez is part of the nation's leading organization dedicated to protecting the rights of injury victims. AAJ membership demonstrates a commitment to trial advocacy and fighting for fair compensation for injured clients.",
+    "title": "Houston Top Rated Lawyer",
+    "tooltip": "Ben Dominguez has been recognized as a Houston Top Rated Lawyer based on verified client testimonials, case results, and peer recognition. This distinction highlights his reputation as one of the most trusted and effective personal injury attorneys serving the Houston metropolitan area.",
     "badge": "/badges/placeholder.avif",
-    "href": "#aaj-member"
+    "href": "#houston-top-rated"
   }
 ];
 
-export const chaptersDescription = "This episode covers essential topics including accident scene protocols, Texas liability laws, insurance negotiations, evidence preservation, and the benefits of legal representation."
+export const chaptersDescription = "This episode covers essential topics including post-accident procedures, Texas liability laws, insurance negotiations, evidence gathering, and the benefits of legal representation."
 
-export const reviewsInstruction = "Client testimonials are collected from verified Google reviews and reflect actual experiences of clients represented by Ben Dominguez Law Firm in personal injury cases throughout Houston, Texas."
+export const reviewsInstruction = "Client testimonials are collected from verified Google reviews and represent actual experiences of clients represented by Ben Dominguez Law Firm in personal injury cases throughout Houston and surrounding areas."
 
 export const episodeTopics = [
   "All",
   "Car Accidents",
   "Truck Accidents",
   "Motorcycle Accidents",
-  "Personal Injury Law",
+  "Personal Injury Laws",
   "Insurance Claims",
-  "Wrongful Death",
-  "Slip and Fall"
+  "Texas Legal Rights"
 ];
 
 export const episodeLocations = [
@@ -539,9 +533,7 @@ export const episodeLocations = [
   "Texas",
   "Houston",
   "Harris County",
-  "Galveston",
-  "Sugar Land",
-  "Katy"
+  "Greater Houston Area"
 ];
 
 export const formConfig = {
@@ -565,7 +557,7 @@ export const formConfig = {
   heading: "Get in touch now!",
   submitText: "Send Message",
   successMessage: "Thank you! Your message has been sent. We'll get back to you within 4 hours during business days.",
-  errorMessage: "Something went wrong. Please call us directly at (713) 123-4567.",
+  errorMessage: "Something went wrong. Please call us directly at (713) 554-6780.",
   source: "podcast-website",
   campaign: "the-you-interview",
 }
@@ -600,9 +592,9 @@ export const authorProfiles: Record<string, {
     awards: [],
     practiceAreas: [],
     bio: [
-      "Ben Dominguez is a dedicated personal injury attorney serving the Houston community with a passion for protecting the rights of accident victims. With extensive experience handling complex personal injury cases throughout Texas, Ben Dominguez has built a reputation for aggressive advocacy and compassionate client service. Ben Dominguez understands that accidents can devastate families financially and emotionally, which is why he fights tirelessly to secure maximum compensation for his clients.",
-      "Throughout his legal career, Ben Dominguez has successfully represented clients injured in auto accidents, truck collisions, motorcycle crashes, and other serious incidents across the Houston metropolitan area. Ben Dominguez takes pride in being accessible to his clients, often communicating in both English and Spanish to serve Houston's diverse community. His approach combines thorough legal knowledge with genuine empathy for those navigating the challenging aftermath of an accident.",
-      "Beyond his courtroom work, Ben Dominguez launched the Houston Abogado de Accidentes podcast to educate the community about their legal rights and the personal injury claims process. Through this platform, Ben Dominguez shares valuable insights, answers common questions, and demystifies the legal system for everyday Houstonians. His commitment to community education reflects his broader mission of empowering accident victims with the knowledge they need to make informed decisions about their cases."
+      "Ben Dominguez is a dedicated personal injury attorney serving the Houston community with a passion for justice and client advocacy. With extensive experience handling complex accident cases throughout Harris County and surrounding areas, Ben Dominguez has built a reputation for aggressive representation and compassionate client care. Ben Dominguez understands that accident victims face not only physical injuries but also financial hardship, emotional trauma, and uncertainty about their future.",
+      "Throughout his legal career, Ben Dominguez has successfully represented clients injured in auto accidents, truck collisions, motorcycle crashes, bicycle accidents, slip and fall incidents, and wrongful death cases. Ben Dominguez takes pride in fighting against insurance companies that attempt to minimize settlements and deny legitimate claims. His approach combines thorough investigation, strategic negotiation, and when necessary, fierce courtroom advocacy to secure the compensation his clients deserve.",
+      "Beyond his legal practice, Ben Dominguez created the Houston Abogado de Accidentes podcast to educate the community about their legal rights and empower accident victims with knowledge. Through this platform, Ben Dominguez shares practical advice, discusses recent case developments, and helps listeners understand the personal injury claims process. His commitment to serving the Houston community extends to providing bilingual services and making legal representation accessible to all who have been wrongfully injured."
 ],
     memberships: [],
     socialLinks: [],
