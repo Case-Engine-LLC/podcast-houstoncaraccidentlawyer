@@ -3,15 +3,32 @@
 import React from 'react'
 import Link from 'next/link'
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react'
-import { footer, chapters } from '@/data/siteData'
+import { footer, siteConfig, podcastTeam, authorProfiles, contact } from '@/data/siteData'
+import type { Episode } from '@/lib/data'
 
-const Footer = () => {
+const socialIcons: Record<string, React.ComponentType<{ size: number; className?: string }>> = {
+  twitter: Twitter,
+  linkedin: Linkedin,
+  facebook: Facebook,
+  instagram: Instagram,
+  youtube: Youtube,
+}
+
+interface FooterProps {
+  episodes?: Episode[]
+}
+
+const Footer = ({ episodes }: FooterProps) => {
   const currentYear = new Date().getFullYear()
 
-  const episodes = chapters.map((ch, idx) => ({
-    name: `Episode ${ch.number}: ${ch.title.split(':')[0]}`,
-    href: `#chapter-${ch.number}`,
-  }))
+  // Build bar number string from authorProfiles
+  const barNumbers = podcastTeam
+    .map(member => {
+      const profile = authorProfiles[member.slug]
+      return profile?.barNumber ? `${member.name}, CA Bar #${profile.barNumber}` : null
+    })
+    .filter(Boolean)
+    .join('. ')
 
   return (
     <footer className="bg-[#0a0a1a] text-white">
@@ -34,7 +51,7 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <img
-                src="/palceholder.jpg"
+                src="/logo.svg"
                 alt={footer.logo}
                 className="h-12 w-auto brightness-0 invert"
               />
@@ -43,48 +60,68 @@ const Footer = () => {
               {footer.description}
             </p>
             <div className="flex items-center gap-4">
-              <Link href={footer.socialLinks.twitter} className="hover:opacity-70 transition-opacity">
-                <Twitter size={20} className="text-white" />
-              </Link>
-              <Link href={footer.socialLinks.linkedin} className="hover:opacity-70 transition-opacity">
-                <Linkedin size={20} className="text-white" />
-              </Link>
-              <Link href={footer.socialLinks.facebook} className="hover:opacity-70 transition-opacity">
-                <Facebook size={20} className="text-white" />
-              </Link>
-              <Link href={footer.socialLinks.instagram} className="hover:opacity-70 transition-opacity">
-                <Instagram size={20} className="text-white" />
-              </Link>
-              <Link href={footer.socialLinks.youtube} className="hover:opacity-70 transition-opacity">
-                <Youtube size={20} className="text-white" />
-              </Link>
+              {Object.entries(footer.socialLinks).map(([platform, url]) => {
+                const Icon = socialIcons[platform]
+                if (!Icon || !url) return null
+                return (
+                  <Link key={platform} href={url} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                    <Icon size={20} className="text-white" />
+                  </Link>
+                )
+              })}
             </div>
           </div>
 
-          {/* Right Column - Episodes */}
+          {/* Right Column - Episodes + Links */}
           <div>
             <h3 className="text-xl font-bold text-white mb-6">Episodes</h3>
-            <div className="grid grid-cols-3 gap-x-8 gap-y-4">
-              {episodes.map((episode, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              {(episodes ?? []).map((ep) => (
                 <Link
-                  key={index}
-                  href={episode.href}
-                  className="text-base text-white/80 hover:text-white transition-colors"
+                  key={ep.id}
+                  href={`/episode/${ep.id}`}
+                  className="text-base text-white/80 hover:text-white transition-colors truncate"
                 >
-                  {episode.name}
+                  Ep. {ep.number}: {ep.title}
                 </Link>
               ))}
+            </div>
+
+            <h3 className="text-xl font-bold text-white mb-4 mt-10">Listen On</h3>
+            <div className="flex flex-wrap gap-4">
+              {Object.entries(siteConfig.platformLinks).map(([platform, url]) => {
+                if (!url || url === '#') return null
+                const label = platform === 'apple' ? 'YouTube' : platform.charAt(0).toUpperCase() + platform.slice(1)
+                return (
+                  <Link key={platform} href={url} target="_blank" rel="noopener noreferrer" className="text-base text-white/80 hover:text-white transition-colors underline underline-offset-4">
+                    {label}
+                  </Link>
+                )
+              })}
+              <Link href={`https://open.spotify.com/episode/5CF7pgUkEaP4X02bZ6ABQm`} target="_blank" rel="noopener noreferrer" className="text-base text-white/80 hover:text-white transition-colors underline underline-offset-4">
+                Spotify (Ep. 1)
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* Copyright + Compliance */}
       <div className="border-t border-white/10">
         <div className="max-w-container mx-auto px-6 md:px-12 py-6">
           <p className="text-sm text-white/60 text-center">
-            © {currentYear} {footer.copyright}. All rights reserved.
+            &copy; {currentYear} {footer.copyright}. All rights reserved.
           </p>
+          <p className="text-xs text-white/40 text-center mt-2">
+            Attorney Advertising. {barNumbers}. Past results do not guarantee future outcomes. Results may vary based on the facts of each case.
+          </p>
+          <div className="flex items-center justify-center gap-4 mt-2">
+            <Link href="/privacy" className="text-xs text-white/40 underline hover:text-white/60">Privacy Policy</Link>
+            <span className="text-xs text-white/20">|</span>
+            <Link href={contact.website} target="_blank" rel="noopener noreferrer" className="text-xs text-white/40 underline hover:text-white/60">{contact.website.replace('https://', '')}</Link>
+            <span className="text-xs text-white/20">|</span>
+            <span className="text-xs text-white/40">{contact.phone}</span>
+          </div>
         </div>
       </div>
     </footer>
