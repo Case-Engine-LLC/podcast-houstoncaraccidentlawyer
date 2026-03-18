@@ -5,14 +5,26 @@ import EpisodeHero from '../components/EpisodeHero'
 import EpisodeContent from '../components/EpisodeContent'
 import OtherEpisodes from '../components/OtherEpisodes'
 import FAQ from '../components/FAQ'
-import { siteConfig, attorney, contact, episode } from '@/data/siteData'
+import { siteConfig, attorney, contact, episode as staticEpisode } from '@/data/siteData'
 import type { Episode } from '@/lib/data'
 import type { TranscriptSegment } from '@/lib/rss'
 
 const SITE_URL = contact.website
 
-export function generateEpisodeSchema(episodeId: string) {
+/** Convert "MM:SS" or "HH:MM:SS" to ISO 8601 duration (e.g. "PT47M27S") */
+function toIsoDuration(dur: string): string {
+  const parts = dur.split(':').map(Number)
+  if (parts.length === 3) return `PT${parts[0]}H${parts[1]}M${parts[2]}S`
+  if (parts.length === 2) return `PT${parts[0]}M${parts[1]}S`
+  return `PT${dur}S`
+}
+
+export function generateEpisodeSchema(episodeId: string, ep?: Episode | null) {
   const episodeUrl = `${SITE_URL}/episode/${episodeId}`
+  const title = ep?.title || staticEpisode.title
+  const description = ep?.description || staticEpisode.description
+  const number = ep?.number || staticEpisode.number
+  const duration = toIsoDuration(ep?.duration || staticEpisode.duration)
 
   return {
     '@context': 'https://schema.org',
@@ -21,9 +33,9 @@ export function generateEpisodeSchema(episodeId: string) {
         '@type': 'WebPage',
         '@id': `${episodeUrl}#webpage`,
         'url': episodeUrl,
-        'name': `${episode.title} | ${siteConfig.podcastName}`,
-        'headline': episode.title,
-        'description': episode.description,
+        'name': `${title} | ${siteConfig.podcastName}`,
+        'headline': title,
+        'description': description,
         'inLanguage': 'en',
         'isPartOf': { '@id': `${SITE_URL}/#website` },
         'speakable': {
@@ -34,11 +46,12 @@ export function generateEpisodeSchema(episodeId: string) {
       {
         '@type': 'PodcastEpisode',
         '@id': `${episodeUrl}#episode`,
-        'name': episode.title,
-        'description': episode.description,
+        'name': title,
+        'description': description,
         'url': episodeUrl,
-        'episodeNumber': episode.number,
-        'duration': `PT${episode.duration.replace(':', 'H').replace(':', 'M')}S`,
+        'episodeNumber': number,
+        'duration': duration,
+        ...(ep?.audioUrl ? { 'associatedMedia': { '@type': 'MediaObject', 'contentUrl': ep.audioUrl, 'encodingFormat': ep.audioType || 'audio/mpeg' } } : {}),
         'partOfSeries': { '@id': `${SITE_URL}/#podcast` },
         'productionCompany': { '@id': `${SITE_URL}/#org` },
         'speakable': {
@@ -73,7 +86,7 @@ interface V1EpisodePageProps {
 }
 
 const V1EpisodePage = ({ episodeId, episode: rssEpisode, allEpisodes, transcript }: V1EpisodePageProps) => {
-  const schema = generateEpisodeSchema(episodeId)
+  const schema = generateEpisodeSchema(episodeId, rssEpisode)
 
   return (
     <div className="bg-white min-h-screen overflow-x-hidden">
