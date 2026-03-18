@@ -19,7 +19,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
       {/* Hero Background Image - indexable - Desktop */}
       <figure className="hidden md:block absolute inset-0 z-0 m-0">
         <img
-          src="/Hero.jpg"
+          src="/hero-placeholder.jpg"
           alt={content.heroTitle}
           className="w-full h-full object-cover object-[center_right]"
         />
