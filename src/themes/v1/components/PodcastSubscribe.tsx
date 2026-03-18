@@ -2,8 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { siteConfig } from '@/data/siteData'
-import { subscribeCTA } from '@/lib/site-compat'
+import { subscribeCTA, siteConfig } from '@/data/siteData'
 
 const PodcastSubscribe = () => {
   return (
@@ -18,7 +17,7 @@ const PodcastSubscribe = () => {
           <div className="md:col-span-5 flex justify-center md:justify-start">
              <div className="relative w-[280px] aspect-[9/19] bg-black rounded-[40px] border-[8px] border-[#1a1835] shadow-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
                 <img
-                  src="/palceholder.jpg"
+                  src="/images/ellipse372.png"
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover opacity-80"
                   onError={(e) => {
