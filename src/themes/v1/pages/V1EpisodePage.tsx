@@ -5,26 +5,87 @@ import EpisodeHero from '../components/EpisodeHero'
 import EpisodeContent from '../components/EpisodeContent'
 import OtherEpisodes from '../components/OtherEpisodes'
 import FAQ from '../components/FAQ'
-import { siteConfig, attorney, contact, episode as staticEpisode } from '@/data/siteData'
+import { siteConfig, episode as staticEpisode, podcastTeam } from '@/data/siteData'
 import type { Episode } from '@/lib/data'
 import type { TranscriptSegment } from '@/lib/rss'
+import {
+  PODCAST_SITE_URL,
+  generateOrganizationEntity,
+  generatePodcastSeriesEntity,
+  generateBreadcrumbList,
+  generateFAQPageEntity,
+  truncateToSentence,
+  formatDurationISO8601,
+} from '@/lib/schema-helpers'
 
-const SITE_URL = contact.website
+export function generateEpisodeSchema(episodeId: string, rssEp?: Episode | null) {
+  const ep = rssEp ?? staticEpisode
+  const episodeUrl = `${PODCAST_SITE_URL}/episode/${episodeId}`
+  const host = podcastTeam[0]
 
-/** Convert "MM:SS" or "HH:MM:SS" to ISO 8601 duration (e.g. "PT47M27S") */
-function toIsoDuration(dur: string): string {
-  const parts = dur.split(':').map(Number)
-  if (parts.length === 3) return `PT${parts[0]}H${parts[1]}M${parts[2]}S`
-  if (parts.length === 2) return `PT${parts[0]}M${parts[1]}S`
-  return `PT${dur}S`
-}
+  const title = ep.title
+  const description = typeof ep.description === 'string' ? ep.description : ''
+  const duration = ep.duration
+  const number = ('number' in ep ? ep.number : undefined) ?? ('id' in ep ? (ep as Episode).id : 1)
 
-export function generateEpisodeSchema(episodeId: string, ep?: Episode | null) {
-  const episodeUrl = `${SITE_URL}/episode/${episodeId}`
-  const title = ep?.title || staticEpisode.title
-  const description = ep?.description || staticEpisode.description
-  const number = ep?.number || staticEpisode.number
-  const duration = toIsoDuration(ep?.duration || staticEpisode.duration)
+  const datePublished = rssEp?.date
+    ? (() => {
+        // RSS dates come as "MM.DD.YY" — convert to ISO
+        const parts = rssEp.date.split('.')
+        if (parts.length === 3) {
+          const [mm, dd, yy] = parts
+          return `20${yy}-${mm}-${dd}`
+        }
+        return rssEp.date
+      })()
+    : undefined
+
+  const episodeEntity: Record<string, unknown> = {
+    '@type': 'PodcastEpisode',
+    '@id': `${episodeUrl}#episode`,
+    'name': title,
+    'description': truncateToSentence(description),
+    'url': episodeUrl,
+    'episodeNumber': number,
+    'duration': formatDurationISO8601(duration),
+    'inLanguage': 'en',
+    'partOfSeries': { '@id': `${PODCAST_SITE_URL}/#podcast` },
+    'productionCompany': { '@id': `${PODCAST_SITE_URL}/#org` },
+  }
+
+  if (datePublished) {
+    episodeEntity['datePublished'] = datePublished
+  }
+
+  if (host) {
+    episodeEntity['author'] = { '@type': 'Person', 'name': host.name }
+  }
+
+  if (rssEp && 'concepts' in rssEp && rssEp.concepts?.length > 0) {
+    episodeEntity['keywords'] = rssEp.concepts.join(', ')
+  }
+
+  if (rssEp && 'audioUrl' in rssEp && rssEp.audioUrl) {
+    episodeEntity['associatedMedia'] = {
+      '@type': 'MediaObject',
+      'contentUrl': rssEp.audioUrl,
+      'encodingFormat': rssEp.audioType || 'audio/mpeg',
+      'name': title,
+    }
+  }
+
+  if (rssEp?.logo) {
+    episodeEntity['image'] = {
+      '@type': 'ImageObject',
+      'url': rssEp.logo.startsWith('http')
+        ? rssEp.logo
+        : `${PODCAST_SITE_URL}${rssEp.logo}`,
+    }
+  }
+
+  if (rssEp && 'transcriptUrl' in rssEp && rssEp.transcriptUrl) {
+    episodeEntity['transcript'] = rssEp.transcriptUrl
+  }
 
   return {
     '@context': 'https://schema.org',
@@ -35,45 +96,27 @@ export function generateEpisodeSchema(episodeId: string, ep?: Episode | null) {
         'url': episodeUrl,
         'name': `${title} | ${siteConfig.podcastName}`,
         'headline': title,
-        'description': description,
+        'description': truncateToSentence(description),
         'inLanguage': 'en',
-        'isPartOf': { '@id': `${SITE_URL}/#website` },
+        'isPartOf': { '@id': `${PODCAST_SITE_URL}/#website` },
+        'breadcrumb': { '@id': `${episodeUrl}#breadcrumb` },
         'speakable': {
           '@type': 'SpeakableSpecification',
-          'name': ['headline', 'description'],
+          'cssSelector': ['h1', '.episode-description'],
         },
       },
-      {
-        '@type': 'PodcastEpisode',
-        '@id': `${episodeUrl}#episode`,
-        'name': title,
-        'description': description,
-        'url': episodeUrl,
-        'episodeNumber': number,
-        'duration': duration,
-        ...(ep?.audioUrl ? { 'associatedMedia': { '@type': 'MediaObject', 'contentUrl': ep.audioUrl, 'encodingFormat': ep.audioType || 'audio/mpeg' } } : {}),
-        'partOfSeries': { '@id': `${SITE_URL}/#podcast` },
-        'productionCompany': { '@id': `${SITE_URL}/#org` },
-        'speakable': {
-          '@type': 'SpeakableSpecification',
-          'name': ['name', 'description'],
-        },
-      },
-      {
-        '@type': 'PodcastSeries',
-        '@id': `${SITE_URL}/#podcast`,
-        'name': siteConfig.podcastName,
-        'url': SITE_URL,
-        'inLanguage': 'en',
-      },
-      {
-        '@type': ['LegalService', 'Organization'],
-        '@id': `${SITE_URL}/#org`,
-        'name': attorney.firm,
-        'url': contact.website,
-        'telephone': contact.phone,
-        'email': contact.email,
-      },
+      episodeEntity,
+      generatePodcastSeriesEntity(),
+      generateOrganizationEntity(),
+      generateBreadcrumbList(
+        [
+          { name: 'Home', item: `${PODCAST_SITE_URL}/` },
+          { name: 'Episodes', item: `${PODCAST_SITE_URL}/#episodes` },
+          { name: title },
+        ],
+        episodeUrl,
+      ),
+      generateFAQPageEntity(episodeUrl),
     ],
   }
 }
@@ -103,7 +146,7 @@ const V1EpisodePage = ({ episodeId, episode: rssEpisode, allEpisodes, transcript
         <FAQ />
       </main>
 
-      <Footer />
+      <Footer episodes={allEpisodes} />
     </div>
   )
 }
