@@ -22,19 +22,12 @@ const ContactSection = () => {
       ...formData,
       source: formConfig.source,
       campaign: formConfig.campaign,
-      notifyEmails: formConfig.notifyEmails,
       submittedAt: new Date().toISOString(),
       pageUrl: typeof window !== 'undefined' ? window.location.href : '',
     }
 
-    if (!formConfig.webhookUrl) {
-      console.warn('No webhook URL configured. Form data:', payload)
-      setStatus('success')
-      return
-    }
-
     try {
-      const res = await fetch(formConfig.webhookUrl, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -53,6 +46,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-24 bg-[#f1f2f4]">
+      <div id="form" />
       <div className="max-w-container mx-auto px-6 md:px-12">
         <div className="bg-white rounded-[12px] shadow-sm overflow-hidden flex flex-col md:flex-row">
           {/* Contact Info */}
