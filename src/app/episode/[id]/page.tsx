@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import V1EpisodePage from '@/themes/v1/pages/V1EpisodePage'
+import V2EpisodePage from '@/themes/v2/pages/V2EpisodePage'
 import { getAllEpisodes, getEpisodeById, getEpisodeTranscript } from '@/lib/data'
 import { siteConfig, contact } from '@/data/siteData'
 
@@ -51,7 +51,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const transcript = episode ? await getEpisodeTranscript(episode) : []
 
   return (
-    <V1EpisodePage
+    <V2EpisodePage
       episodeId={id}
       episode={episode}
       allEpisodes={allEpisodes}
