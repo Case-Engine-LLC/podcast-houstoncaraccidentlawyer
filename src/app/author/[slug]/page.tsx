@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import V1AuthorPage from '@/themes/v1/pages/V1AuthorPage'
+import V2AuthorPage from '@/themes/v2/pages/V2AuthorPage'
 import { authorProfiles, siteConfig } from '@/data/siteData'
 
 export async function generateStaticParams() {
@@ -19,5 +19,5 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  return <V1AuthorPage slug={slug} />
+  return <V2AuthorPage slug={slug} />
 }
