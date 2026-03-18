@@ -56,12 +56,10 @@ export function generateOrganizationEntity() {
   return {
     '@type': ['LegalService', 'Organization'],
     '@id': `${PODCAST_SITE_URL}/#org`,
-    'name': 'MVP Accident Attorneys',
-    'legalName': 'Sachs Law, APC',
+    'name': attorney.firm,
     'url': FIRM_SITE_URL,
-    'telephone': '+1-833-687-9467',
+    'telephone': contact.phone,
     'email': contact.email,
-    'foundingDate': '2017-08-01',
     'logo': {
       '@type': 'ImageObject',
       '@id': `${PODCAST_SITE_URL}/#logo`,
@@ -69,19 +67,7 @@ export function generateOrganizationEntity() {
       'contentUrl': `${PODCAST_SITE_URL}/logo.svg`,
     },
     'image': `${PODCAST_SITE_URL}/logo.svg`,
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': '4 Park Plaza, Suite 850',
-      'addressLocality': 'Irvine',
-      'addressRegion': 'CA',
-      'postalCode': '92614',
-      'addressCountry': 'US',
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 33.6846,
-      'longitude': -117.8265,
-    },
+    'address': { '@type': 'PostalAddress', 'addressCountry': 'US' },
     'aggregateRating': {
       '@type': 'AggregateRating',
       'ratingValue': String(stats.rating),
@@ -89,13 +75,12 @@ export function generateOrganizationEntity() {
       'bestRating': '5',
       'worstRating': '1',
     },
-    'description': `${attorney.firm} was founded by Brett Sachs to fight insurance companies worth $900 billion annually on behalf of California accident victims.`,
+    'description': `${attorney.firm} — ${attorney.name} provides personal injury legal representation.`,
     'founder': {
       '@type': 'Person',
       'name': attorney.name,
     },
     'areaServed': [
-      { '@type': 'State', 'name': 'California' },
       { '@type': 'Country', 'name': 'United States' },
     ],
     'knowsAbout': [
@@ -111,9 +96,9 @@ export function generateOrganizationEntity() {
     ],
     'contactPoint': {
       '@type': 'ContactPoint',
-      'telephone': '+1-833-687-9467',
+      'telephone': contact.phone,
       'contactType': 'customer service',
-      'availableLanguage': ['English', 'Spanish'],
+      'availableLanguage': ['English'],
     },
     'potentialAction': {
       '@type': 'CommunicateAction',
