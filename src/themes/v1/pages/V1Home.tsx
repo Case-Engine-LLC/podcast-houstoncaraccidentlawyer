@@ -13,60 +13,11 @@ import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import TopicalEntryGrid from '../components/TopicalEntryGrid'
 import Footer from '../components/Footer'
-import { siteConfig, attorney, contact, episode } from '@/data/siteData'
+import ContactSection from '../components/ContactSection'
+import { generateHomeSchema } from '@/lib/schema-helpers'
 import type { Episode } from '@/lib/data'
 
-const SITE_URL = contact.website
-
-const homeSchema = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_URL}/#website`,
-      'url': SITE_URL,
-      'name': siteConfig.podcastName,
-      'inLanguage': 'en',
-      'publisher': { '@id': `${SITE_URL}/#org` },
-    },
-    {
-      '@type': ['LegalService', 'Organization'],
-      '@id': `${SITE_URL}/#org`,
-      'name': attorney.firm,
-      'url': contact.website,
-      'telephone': contact.phone,
-      'email': contact.email,
-    },
-    {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}/#webpage`,
-      'url': SITE_URL,
-      'name': siteConfig.podcastName,
-      'headline': siteConfig.podcastName,
-      'description': episode.description,
-      'inLanguage': 'en',
-      'isPartOf': { '@id': `${SITE_URL}/#website` },
-      'speakable': {
-        '@type': 'SpeakableSpecification',
-        'name': ['headline', 'description'],
-      },
-    },
-    {
-      '@type': 'PodcastSeries',
-      '@id': `${SITE_URL}/#podcast`,
-      'name': siteConfig.podcastName,
-      'description': episode.description,
-      'url': SITE_URL,
-      'inLanguage': 'en',
-      'genre': ['Law', 'Personal Injury', 'Legal Education'],
-      'productionCompany': { '@id': `${SITE_URL}/#org` },
-      'speakable': {
-        '@type': 'SpeakableSpecification',
-        'name': ['name', 'description'],
-      },
-    },
-  ],
-}
+const homeSchema = generateHomeSchema()
 
 interface V1HomeProps {
   episodes?: Episode[]
@@ -82,7 +33,7 @@ const V1Home = ({ episodes }: V1HomeProps) => {
       <Header />
 
       <main>
-        <Hero />
+        <Hero latestEpisode={episodes?.[0]} />
         <TrustBadges />
         <StatsBanner />
         <About />
@@ -92,9 +43,10 @@ const V1Home = ({ episodes }: V1HomeProps) => {
         <PodcastSubscribeCTA />
         <FAQ />
         <TopicalEntryGrid />
+        <ContactSection />
       </main>
 
-      <Footer />
+      <Footer episodes={episodes} />
     </div>
   )
 }
