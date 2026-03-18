@@ -38,7 +38,7 @@ const Header = ({ variant = 'dark' }: HeaderProps) => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img
-            src="/palceholder.jpg"
+            src="/logo.svg"
             alt={navigation.logo}
             className="h-10 md:h-12 w-auto"
           />
