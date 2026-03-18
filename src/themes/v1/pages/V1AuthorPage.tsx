@@ -8,7 +8,7 @@ import Testimonials from '../components/Testimonials'
 import ContactSection from '../components/ContactSection'
 import FAQ from '../components/FAQ'
 import LatestEpisodes from '../components/LatestEpisodes'
-import { authorProfiles, siteConfig, contact, testimonials } from '@/data/siteData'
+import { authorProfiles, siteConfig, contact, testimonials, attorney } from '@/data/siteData'
 import { Scale, GraduationCap, Award, Briefcase, Users, ExternalLink, FileText } from 'lucide-react'
 import Link from 'next/link'
 import {
@@ -313,7 +313,7 @@ const V1AuthorPage = ({ slug }: V1AuthorPageProps) => {
                 </h2>
               </div>
               <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-                {author.name} focuses on the following areas of personal injury law at MVP Accident Attorneys.
+                {author.name} focuses on the following areas of personal injury law at {attorney.firm}.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
