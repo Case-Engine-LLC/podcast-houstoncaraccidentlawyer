@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
-import { testimonials as testimonialsData, reviewsInstruction, siteConfig } from '@/data/siteData'
+import { testimonials as testimonialsData, reviewsInstruction } from '@/data/siteData'
 
 interface Testimonial {
   id: number
@@ -62,7 +62,7 @@ const Testimonials = () => {
             />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 leading-none">
-            Reviews of {siteConfig.podcastName}
+            Reviews Of The The MVP Of Personal Injury Law W. Brett & Chelsee Sachs
           </h2>
           {reviewsInstruction && (
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
