@@ -54,7 +54,7 @@ const PodcastTeam = () => {
       <section className="relative pt-40 md:pt-52 overflow-hidden">
       {/* Background Image */}
       <img
-        src="/hero-placeholder.jpg"
+        src="/team-bg.avif"
         alt="Podcast Team"
         className="absolute inset-0 w-full h-full object-cover"
       />
