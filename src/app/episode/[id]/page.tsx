@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import V1EpisodePage from '@/themes/v1/pages/V1EpisodePage'
 import { getAllEpisodes, getEpisodeById, getEpisodeTranscript } from '@/lib/data'
+import { siteConfig, contact } from '@/data/siteData'
 
 export const revalidate = 3600
 
@@ -24,24 +25,21 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const description = episode.description.length > 200
     ? episode.description.slice(0, 200) + '...'
     : episode.description
-  const imageUrl = episode.logo || 'https://mvppersonalinjury.com/Hero.jpg'
 
   return {
-    title: `${episode.title} | MVP Personal Injury Law Podcast`,
+    title: `${episode.title} | ${siteConfig.podcastName}`,
     description,
     openGraph: {
       title: episode.title,
       description,
-      url: `https://mvppersonalinjury.com/episode/${id}`,
-      siteName: 'MVP Personal Injury Law Podcast',
+      url: `${contact.website}/episode/${id}`,
+      siteName: siteConfig.podcastName,
       type: 'article',
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: episode.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: episode.title,
       description,
-      images: [imageUrl],
     },
   }
 }
