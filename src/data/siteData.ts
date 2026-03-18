@@ -6,6 +6,8 @@
 export const siteConfig = {
   "podcastName": "Houston Abogado de Accidentes w. Ben Dominguez",
   "tagline": "NEW EPISODE",
+  "podcastUrl": "https://podcast-houstoncaraccidentlawyer.vercel.app",
+  "rssFeedUrl": process.env.PODCAST_RSS_URL || "",
   "platformLinks": {
     "apple": "#",
     "spotify": "#"
