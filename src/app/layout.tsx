@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import '@/themes/v1/variables.css'
+import '@/themes/v2/variables.css'
 import { siteConfig, attorney, contact } from '@/data/siteData'
 
 const inter = Inter({
