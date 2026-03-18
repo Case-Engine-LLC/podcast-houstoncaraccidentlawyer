@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ChevronDown, CheckCircle, FileText } from 'lucide-react'
-import { attorney, siteConfig } from '@/data/siteData'
-import { about } from '@/lib/site-compat'
+import { about, attorney, siteConfig } from '@/data/siteData'
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -84,7 +83,7 @@ const About = () => {
           {/* Right Image */}
           <div className="w-full h-[480px] md:h-[580px] rounded-2xl overflow-hidden">
             <img
-              src="/about-placehoder.jpg"
+              src="/about-bg.jpg"
               alt={about.title}
               className="w-full h-full object-cover"
             />
