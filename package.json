@@ -16,7 +16,7 @@
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@marker.io/browser": "^0.5.1"
+    "@marker.io/browser": "^0.20.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
