@@ -4,14 +4,18 @@
 
 :root {
   /* ========== COLORS ========== */
-  /* Primary Colors */
-  --color-primary: #070519;
-  --color-secondary: #FAA31A;
+  /* Sourced from Supabase clients.brand_guidelines for Ben Dominguez
+     (medium confidence — needs_review: true).
+     Primary red from logo SVG fill on benwins.com.
+     Secondary near-black from site nav/body.
+     Accent blue from Elementor button/link color on benwins.com. */
+  --color-primary: #ED042A;
+  --color-secondary: #1F2124;
 
   /* Accent & Neutral Colors */
-  --color-accent: #c9c9c9;
+  --color-accent: #21A7F3;
   --color-background: #ffffff;
-  --color-foreground: #000000;
+  --color-foreground: #1F2124;
 
   /* Muted Colors */
   --color-muted: #f1f2f4;
@@ -29,7 +33,7 @@
   --color-gray-light: #9e9e9e;
   --color-gray-lighter: #616161;
   --color-beige: #e1dddc;
-  --color-dark-bg: #070519;
+  --color-dark-bg: #1F2124;
 
   /* ========== TYPOGRAPHY ========== */
   --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
