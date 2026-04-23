@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { navigation } from '@/data/siteData'
+import { navigation, siteConfig } from '@/data/siteData'
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -12,7 +12,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Left: Logo */}
         <Link href="/v3">
-          <img src="/palceholder.jpg" alt="Logo" className="h-10 w-auto object-contain" />
+          <span className="h-10 w-auto object-contain flex items-center justify-center text-base font-bold text-white">{siteConfig.podcastName}</span>
         </Link>
 
         {/* Center: Desktop Nav */}

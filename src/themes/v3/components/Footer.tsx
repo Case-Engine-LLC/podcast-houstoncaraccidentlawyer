@@ -8,11 +8,11 @@ const Footer = () => {
   return (
     <footer className="bg-black border-t border-white/10 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/v3" className="inline-block mb-6">
-              <img src="/palceholder.jpg" alt="Logo" className="h-10 w-auto object-contain" />
+              <span className="h-10 w-auto object-contain flex items-center justify-center text-base font-bold text-white">{siteConfig.podcastName}</span>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               {footer.description}
@@ -57,20 +57,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Resources</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><a href="#car-accident-attorney" className="hover:text-amber-500 transition-colors">Car Accident Guide</a></li>
-              <li><a href="#" className="hover:text-amber-500 transition-colors">Legal Terms Glossary</a></li>
-              <li><a href="#" className="hover:text-amber-500 transition-colors">Client Reviews</a></li>
               <li><a href={`tel:${contact.phone}`} className="hover:text-amber-500 transition-colors">Contact Attorneys</a></li>
-            </ul>
-          </div>
-
-          {/* Who Should Listen */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Who Should Listen</h4>
-            <ul className="space-y-4 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-amber-500 transition-colors">Accident Victims</a></li>
-              <li><a href="#" className="hover:text-amber-500 transition-colors">Law Students</a></li>
-              <li><a href="#" className="hover:text-amber-500 transition-colors">Legal Professionals</a></li>
             </ul>
           </div>
         </div>

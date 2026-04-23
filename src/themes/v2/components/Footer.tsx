@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="md:col-span-1">
           <div className="mb-6">
-            <img src="/palceholder.jpg" alt="Logo" className="h-10 w-auto object-contain" />
+            <span className="h-10 w-auto object-contain flex items-center justify-center text-base font-bold text-white">{siteConfig.podcastName}</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">{footer.description}</p>
           <div className="text-sm font-bold text-white mb-2">Listen on:</div>
