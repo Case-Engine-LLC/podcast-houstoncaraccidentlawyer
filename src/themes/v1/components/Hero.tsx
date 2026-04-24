@@ -56,7 +56,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
           </h1>
 
           {/* Description */}
-          <p className="text-sm md:text-lg text-white/80 leading-relaxed mb-5 md:mb-8 max-w-xl mx-auto md:mx-0">
+          <p className="podcast-description text-sm md:text-lg text-white/80 leading-relaxed mb-5 md:mb-8 max-w-xl mx-auto md:mx-0">
             {content.heroDescription}
           </p>
 

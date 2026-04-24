@@ -100,7 +100,7 @@ const FeaturedEpisodePlayer = ({
             <ChevronRight size={28} />
           </Link>
         </div>
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{description}</p>
+        <p className="episode-description text-sm text-gray-600 mb-4 leading-relaxed">{description}</p>
         <div className="flex items-center gap-3">
           <button onClick={audioUrl ? togglePlay : undefined} className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
             {isPlaying ? <Pause size={20} fill="white" className="text-white" /> : <Play size={20} fill="white" className="text-white ml-0.5" />}

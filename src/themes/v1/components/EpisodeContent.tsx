@@ -68,7 +68,7 @@ const EpisodeContent = ({ episode, transcript }: EpisodeContentProps) => {
                   {content.articleTitle}
                 </h2>
 
-                <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
+                <div className="episode-description episode-overview text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
                   {content.articleParagraphs.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}
@@ -122,7 +122,7 @@ const EpisodeContent = ({ episode, transcript }: EpisodeContentProps) => {
 
             {/* Key Takeaways Tab */}
             {activeTab === 'Key Takeaways' && (
-              <>
+              <div className="key-takeaways">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   Key Takeaways
                 </h2>
@@ -152,7 +152,7 @@ const EpisodeContent = ({ episode, transcript }: EpisodeContentProps) => {
                   </p>
                   <p className="text-white/50 mt-4">— {attorney.name}, {attorney.firm}</p>
                 </div>
-              </>
+              </div>
             )}
           </div>
         </div>

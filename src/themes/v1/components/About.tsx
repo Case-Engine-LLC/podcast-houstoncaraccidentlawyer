@@ -19,7 +19,7 @@ const About = () => {
   }, [])
 
   return (
-    <section id="about" className="bg-white py-16 md:py-20">
+    <section id="about" className="about-section bg-white py-16 md:py-20">
       <div className="max-w-container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left Content */}
