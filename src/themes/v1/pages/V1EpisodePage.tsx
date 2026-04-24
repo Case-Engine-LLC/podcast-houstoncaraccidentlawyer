@@ -5,120 +5,130 @@ import EpisodeHero from '../components/EpisodeHero'
 import EpisodeContent from '../components/EpisodeContent'
 import OtherEpisodes from '../components/OtherEpisodes'
 import FAQ from '../components/FAQ'
-import { siteConfig, episode as staticEpisode, podcastTeam } from '@/data/siteData'
 import type { Episode } from '@/lib/data'
 import type { TranscriptSegment } from '@/lib/rss'
-import {
-  PODCAST_SITE_URL,
-  generateOrganizationEntity,
-  generatePodcastSeriesEntity,
-  generateBreadcrumbList,
-  generateFAQPageEntity,
-  truncateToSentence,
-  formatDurationISO8601,
-} from '@/lib/schema-helpers'
 
-export function generateEpisodeSchema(episodeId: string, rssEp?: Episode | null) {
-  const ep = rssEp ?? staticEpisode
-  const episodeUrl = `${PODCAST_SITE_URL}/episode/${episodeId}`
-  const host = podcastTeam[0]
-
-  const title = ep.title
-  const description = typeof ep.description === 'string' ? ep.description : ''
-  const duration = ep.duration
-  const number = ('number' in ep ? ep.number : undefined) ?? ('id' in ep ? (ep as Episode).id : 1)
-
-  const datePublished = rssEp?.date
-    ? (() => {
-        // RSS dates come as "MM.DD.YY" — convert to ISO
-        const parts = rssEp.date.split('.')
-        if (parts.length === 3) {
-          const [mm, dd, yy] = parts
-          return `20${yy}-${mm}-${dd}`
-        }
-        return rssEp.date
-      })()
-    : undefined
-
-  const episodeEntity: Record<string, unknown> = {
-    '@type': 'PodcastEpisode',
-    '@id': `${episodeUrl}#episode`,
-    'name': title,
-    'description': truncateToSentence(description),
-    'url': episodeUrl,
-    'episodeNumber': number,
-    'duration': formatDurationISO8601(duration),
-    'inLanguage': 'en',
-    'partOfSeries': { '@id': `${PODCAST_SITE_URL}/#podcast` },
-    'productionCompany': { '@id': `${PODCAST_SITE_URL}/#org` },
-  }
-
-  if (datePublished) {
-    episodeEntity['datePublished'] = datePublished
-  }
-
-  if (host) {
-    episodeEntity['author'] = { '@type': 'Person', 'name': host.name }
-  }
-
-  if (rssEp && 'concepts' in rssEp && rssEp.concepts?.length > 0) {
-    episodeEntity['keywords'] = rssEp.concepts.join(', ')
-  }
-
-  if (rssEp && 'audioUrl' in rssEp && rssEp.audioUrl) {
-    episodeEntity['associatedMedia'] = {
-      '@type': 'MediaObject',
-      'contentUrl': rssEp.audioUrl,
-      'encodingFormat': rssEp.audioType || 'audio/mpeg',
-      'name': title,
-    }
-  }
-
-  if (rssEp?.logo) {
-    episodeEntity['image'] = {
-      '@type': 'ImageObject',
-      'url': rssEp.logo.startsWith('http')
-        ? rssEp.logo
-        : `${PODCAST_SITE_URL}${rssEp.logo}`,
-    }
-  }
-
-  if (rssEp && 'transcriptUrl' in rssEp && rssEp.transcriptUrl) {
-    episodeEntity['transcript'] = rssEp.transcriptUrl
-  }
-
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        '@id': `${episodeUrl}#webpage`,
-        'url': episodeUrl,
-        'name': `${title} | ${siteConfig.podcastName}`,
-        'headline': title,
-        'description': truncateToSentence(description),
-        'inLanguage': 'en',
-        'isPartOf': { '@id': `${PODCAST_SITE_URL}/#website` },
-        'breadcrumb': { '@id': `${episodeUrl}#breadcrumb` },
-        'speakable': {
-          '@type': 'SpeakableSpecification',
-          'cssSelector': ['h1', '.episode-description'],
-        },
+const episodeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1#webpage",
+      "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1",
+      "name": "Your Rights After a Houston Car Accident — with Ben Dominguez | Episode 1 | Houston Abogado de Accidentes with Ben Dominguez",
+      "description": "Ben Dominguez walks through your rights after a Houston car accident — insurance, medical care, evidence preservation, and when a case needs a lawyer.",
+      "isPartOf": {
+        "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website"
       },
-      episodeEntity,
-      generatePodcastSeriesEntity(),
-      generateOrganizationEntity(),
-      generateBreadcrumbList(
-        [
-          { name: 'Home', item: `${PODCAST_SITE_URL}/` },
-          { name: 'Episodes', item: `${PODCAST_SITE_URL}/#episodes` },
-          { name: title },
-        ],
-        episodeUrl,
-      ),
-      generateFAQPageEntity(episodeUrl),
-    ],
-  }
+      "inLanguage": "en-US",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".episode-description",
+          ".episode-overview",
+          ".key-takeaways"
+        ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://podcast-houstoncaraccidentlawyer.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Episodes",
+            "item": "https://podcast-houstoncaraccidentlawyer.vercel.app/#episodes"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Your Rights After a Houston Car Accident — with Ben Dominguez",
+            "item": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "PodcastEpisode",
+      "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1#episode",
+      "name": "Your Rights After a Houston Car Accident — with Ben Dominguez",
+      "description": "TODO — replace with the real Episode 1 description once the recording is complete. Structural placeholder: Ben Dominguez, solo-practice Houston personal injury and products liability attorney (Texas Bar since 1993), walks through what a Houston driver should do in the hours, days, and weeks after a serious collision under Texas law. Bilingual conversation (English / Spanish). Topics to cover: the Texas two-year statute of limitations, modified comparative fault (Texas Civil Practice & Remedies Code Section 33), dealing with adjusters, evidence preservation on Houston freeways, and when a solo practitioner is the right fit versus a larger firm.",
+      "episodeNumber": 1,
+      "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1",
+      "image": "https://podcast-houstoncaraccidentlawyer.vercel.app/cover.jpg",
+      "partOfSeries": {
+        "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#podcast"
+      },
+      "author": {
+        "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#host"
+      },
+      "publisher": {
+        "@id": "https://benwins.com/#org"
+      },
+      "inLanguage": "en-US",
+      "genre": [
+        "Personal Injury Law",
+        "Legal Education",
+        "Texas Personal Injury Law"
+      ],
+      "keywords": [
+        "Ben Dominguez",
+        "Houston",
+        "Abogado de Accidentes",
+        "Texas Personal Injury",
+        "Products Liability"
+      ],
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What rights does a Houston driver have after a car accident?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Episode 1, Ben Dominguez walks through a Texas driver's core rights after a crash: the right to medical care (regardless of fault), to file a claim against the at-fault driver under Texas tort law, to recover under uninsured/underinsured motorist coverage, and to consult an attorney before giving any statement to an insurance carrier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the statute of limitations for a Texas car accident claim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ben Dominguez explains that Texas Civil Practice & Remedies Code Section 16.003 sets a two-year limitations period for most personal injury claims, measured from the date of the accident. Claims against government entities have shorter notice requirements. Missing the deadline typically forfeits the claim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does a Houston car accident case actually need a lawyer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ben walks through the common scenarios where a lawyer adds clear value — disputed liability, multiple vehicles, significant injuries, uninsured motorists, commercial defendants, and any case where the at-fault driver's insurance is inadequate and UIM stacking becomes a question. For low-value property-only claims, the firm will say so."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I reach Ben Dominguez after this episode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact the firm through benwins.com or by calling (713) 224-7333. The firm takes calls in English and Spanish, offers free consultations, and works on contingency — no attorney’s fees unless a recovery is obtained."
+          }
+        }
+      ]
+    }
+  ]
+}
+
+export function generateEpisodeSchema(_episodeId: string) {
+  return episodeSchema
 }
 
 interface V1EpisodePageProps {
@@ -128,14 +138,12 @@ interface V1EpisodePageProps {
   transcript?: TranscriptSegment[]
 }
 
-const V1EpisodePage = ({ episodeId, episode: rssEpisode, allEpisodes, transcript }: V1EpisodePageProps) => {
-  const schema = generateEpisodeSchema(episodeId, rssEpisode)
-
+const V1EpisodePage = ({ episodeId: _episodeId, episode: rssEpisode, allEpisodes, transcript }: V1EpisodePageProps) => {
   return (
     <div className="bg-white min-h-screen overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeSchema) }}
       />
       <Header variant="light" />
 
@@ -146,7 +154,7 @@ const V1EpisodePage = ({ episodeId, episode: rssEpisode, allEpisodes, transcript
         <FAQ />
       </main>
 
-      <Footer episodes={allEpisodes} />
+      <Footer />
     </div>
   )
 }
