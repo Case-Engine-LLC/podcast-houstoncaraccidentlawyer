@@ -32,8 +32,8 @@ const Testimonials = () => {
         {/* Header Row */}
         <div className="flex items-start justify-between mb-4">
           <div>
-            <span className="text-[#FF9E00] font-bold uppercase tracking-widest text-xs">Testimonials</span>
-            <h2 className="font-heading text-4xl md:text-5xl text-[#10284B] mt-2 leading-tight">
+            <span className="text-secondary font-bold uppercase tracking-widest text-xs">Testimonials</span>
+            <h2 className="font-heading text-4xl md:text-5xl text-primary mt-2 leading-tight">
               What Our Clients Say
             </h2>
           </div>
@@ -41,14 +41,14 @@ const Testimonials = () => {
             <button
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#10284B] hover:text-white hover:border-[#10284B] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={handleNext}
               disabled={currentIndex >= maxIndex}
-              className="w-12 h-12 rounded-full bg-[#10284B] text-white flex items-center justify-center hover:bg-[#091830] transition-all shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+              className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary transition-all shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronRight size={20} />
             </button>
@@ -73,15 +73,15 @@ const Testimonials = () => {
               >
                 <div className="bg-white rounded-2xl p-8 h-full flex flex-col relative">
                   {/* Quote mark */}
-                  <div className="absolute top-6 right-8 text-6xl font-heading text-[#FF9E00]/30 leading-none">&ldquo;</div>
+                  <div className="absolute top-6 right-8 text-6xl font-heading text-secondary/30 leading-none">&ldquo;</div>
 
                   {/* Author Row */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-full bg-[#10284B]/10 flex items-center justify-center text-[#10284B] font-bold text-sm border-2 border-white shadow-sm flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm border-2 border-white shadow-sm flex-shrink-0">
                       {t.initials}
                     </div>
                     <div>
-                      <div className="font-bold text-lg text-[#10284B]">{t.name}</div>
+                      <div className="font-bold text-lg text-primary">{t.name}</div>
                       <div className="text-xs uppercase tracking-widest text-gray-400 flex items-center gap-1.5">
                         <svg className="w-3.5 h-3.5" viewBox="0 0 48 48">
                           <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
@@ -97,12 +97,12 @@ const Testimonials = () => {
                   {/* Stars */}
                   <div className="flex gap-0.5 mb-5">
                     {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} size={20} fill="#FF9E00" stroke="#FF9E00" />
+                      <Star key={i} size={20} fill="var(--color-secondary)" stroke="var(--color-secondary)" />
                     ))}
                   </div>
 
                   {/* Text */}
-                  <p className="text-[#10284B] text-[15px] leading-relaxed flex-grow">
+                  <p className="text-primary text-[15px] leading-relaxed flex-grow">
                     &ldquo;{t.text}&rdquo;
                   </p>
                 </div>

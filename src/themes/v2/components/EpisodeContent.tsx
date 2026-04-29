@@ -22,7 +22,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
   const episodeConcepts = propEpisode?.concepts ?? episodesData[0]?.concepts ?? []
 
   return (
-    <section className="py-16 md:py-24 bg-[#10284B]">
+    <section className="py-16 md:py-24 bg-primary">
       <div className="max-w-7xl mx-auto px-6">
         {/* Audio Player or Video Player Placeholder */}
         {propEpisode?.audioUrl ? (
@@ -30,14 +30,14 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
             <AudioPlayer audioUrl={propEpisode.audioUrl} title={propEpisode.title} duration={propEpisode.duration} />
           </div>
         ) : (
-          <div className="relative w-full aspect-video bg-[#091830] rounded-2xl overflow-hidden mb-12 flex items-center justify-center group cursor-pointer">
+          <div className="relative w-full aspect-video bg-primary rounded-2xl overflow-hidden mb-12 flex items-center justify-center group cursor-pointer">
             {/* Decorative grid lines */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
             </div>
 
             {/* Play button */}
-            <div className="relative z-10 w-20 h-20 rounded-full bg-[#FF9E00] flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-[#FF9E00]/30">
+            <div className="relative z-10 w-20 h-20 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-secondary/30">
               <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
@@ -62,7 +62,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
             >
               {tab}
               {activeTab === tab && (
-                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF9E00] rounded-full" />
+                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-secondary rounded-full" />
               )}
             </button>
           ))}
@@ -89,7 +89,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
           {/* Sidebar */}
           <aside className="lg:col-span-1 space-y-8">
             {/* Episode Chapters */}
-            <div className="bg-[#091830] rounded-2xl p-6">
+            <div className="bg-primary rounded-2xl p-6">
               <h3 className="font-heading text-lg font-bold text-white mb-2">
                 Episode Chapters
               </h3>
@@ -97,7 +97,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
               <ul className="space-y-3">
                 {episodeChapters.map((chapter, index) => (
                   <li key={index} className="flex items-start gap-3 group cursor-pointer">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF9E00]/15 text-[#FF9E00] text-xs font-bold flex items-center justify-center mt-0.5">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-secondary/15 text-secondary text-xs font-bold flex items-center justify-center mt-0.5">
                       {index + 1}
                     </span>
                     <span className="text-sm text-white/70 group-hover:text-white transition-colors leading-snug">
@@ -109,7 +109,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
             </div>
 
             {/* Episode Concepts */}
-            <div className="bg-[#091830] rounded-2xl p-6">
+            <div className="bg-primary rounded-2xl p-6">
               <h3 className="font-heading text-lg font-bold text-white mb-4">
                 Concepts Covered
               </h3>
@@ -117,7 +117,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
                 {episodeConcepts.map((concept, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium text-[#FF9E00] border border-[#FF9E00]/30 hover:bg-[#FF9E00]/10 transition-colors cursor-default"
+                    className="px-3 py-1.5 rounded-full text-xs font-medium text-secondary border border-secondary/30 hover:bg-secondary/10 transition-colors cursor-default"
                   >
                     {concept}
                   </span>
@@ -172,11 +172,11 @@ function TranscriptTab({ isExpanded, onToggleExpand }: TranscriptTabProps) {
 
       <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
         <p>
-          <span className="text-[#FF9E00] font-semibold">[00:00:00]</span>{' '}
+          <span className="text-secondary font-semibold">[00:00:00]</span>{' '}
           Welcome to The You Interview. Today we&apos;re sitting down with {attorney.name} from {attorney.firm}.
         </p>
         <p>
-          <span className="text-[#FF9E00] font-semibold">[00:02:15]</span>{' '}
+          <span className="text-secondary font-semibold">[00:02:15]</span>{' '}
           {content.articleParagraphs[0]}
         </p>
       </div>
@@ -187,7 +187,7 @@ function TranscriptTab({ isExpanded, onToggleExpand }: TranscriptTabProps) {
 
       <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
         <p>
-          <span className="text-[#FF9E00] font-semibold">[00:10:45]</span>{' '}
+          <span className="text-secondary font-semibold">[00:10:45]</span>{' '}
           {content.articleParagraphs[1] || 'Discussion of practice areas and client approach.'}
         </p>
       </div>
@@ -203,7 +203,7 @@ function TranscriptTab({ isExpanded, onToggleExpand }: TranscriptTabProps) {
       >
         <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6">
           <p>
-            <span className="text-[#FF9E00] font-semibold">[00:20:00]</span>{' '}
+            <span className="text-secondary font-semibold">[00:20:00]</span>{' '}
             Full transcript available upon request. Contact us for the complete episode transcript.
           </p>
         </div>
@@ -211,7 +211,7 @@ function TranscriptTab({ isExpanded, onToggleExpand }: TranscriptTabProps) {
 
       <button
         onClick={onToggleExpand}
-        className="mt-6 text-base font-bold text-[#FF9E00] hover:text-[#FF9E00]/80 transition-colors flex items-center gap-2"
+        className="mt-6 text-base font-bold text-secondary hover:text-secondary/80 transition-colors flex items-center gap-2"
       >
         {isExpanded ? 'Read Less' : 'Read More'}
         <svg
@@ -254,7 +254,7 @@ function KeyTakeawaysTab() {
           'The value of client-centric representation',
         ].map((item, index) => (
           <li key={index} className="flex items-start gap-3 text-base md:text-lg text-white/70">
-            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#FF9E00]/15 text-[#FF9E00] text-xs font-bold flex items-center justify-center mt-0.5">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/15 text-secondary text-xs font-bold flex items-center justify-center mt-0.5">
               {index + 1}
             </span>
             {item}
@@ -274,8 +274,8 @@ interface FeaturedQuoteProps {
 
 function FeaturedQuote({ showAttribution }: FeaturedQuoteProps) {
   return (
-    <div className="bg-[#091830] rounded-2xl p-8 md:p-10 relative border-l-4 border-[#FF9E00]">
-      <div className="text-[#FF9E00]/30 text-[80px] md:text-[100px] font-heading leading-[0.7] -mb-4 select-none">
+    <div className="bg-primary rounded-2xl p-8 md:p-10 relative border-l-4 border-secondary">
+      <div className="text-secondary/30 text-[80px] md:text-[100px] font-heading leading-[0.7] -mb-4 select-none">
         &ldquo;
       </div>
       <p className="text-lg md:text-xl text-white leading-relaxed">

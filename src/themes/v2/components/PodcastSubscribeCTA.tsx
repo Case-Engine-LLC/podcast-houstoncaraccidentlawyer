@@ -15,11 +15,11 @@ const PodcastSubscribeCTA = () => {
   ]
 
   return (
-    <section id="subscribe" className="py-24 bg-[#091830] text-white relative overflow-hidden">
+    <section id="subscribe" className="py-24 bg-primary text-white relative overflow-hidden">
       {/* Glowing orbs */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#10284B] rounded-full blur-[128px] opacity-20" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#FF9E00] rounded-full blur-[128px] opacity-10" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary rounded-full blur-[128px] opacity-20" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary rounded-full blur-[128px] opacity-10" />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
@@ -34,7 +34,7 @@ const PodcastSubscribeCTA = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-16 h-16 rounded-full bg-white/10 hover:bg-[#FF9E00] hover:text-[#091830] text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+              className="w-16 h-16 rounded-full bg-white/10 hover:bg-secondary hover:text-primary text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">{link.icon}</svg>
             </a>
@@ -48,9 +48,9 @@ const PodcastSubscribeCTA = () => {
             placeholder="Enter your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 bg-white/5 border border-white/20 rounded-lg px-6 py-4 text-white placeholder-white/40 focus:outline-none focus:border-[#FF9E00] transition-colors"
+            className="flex-1 bg-white/5 border border-white/20 rounded-lg px-6 py-4 text-white placeholder-white/40 focus:outline-none focus:border-secondary transition-colors"
           />
-          <button className="bg-[#FF9E00] text-[#091830] font-bold px-8 py-4 rounded-lg hover:bg-white transition-colors">
+          <button className="bg-secondary text-white font-bold px-8 py-4 rounded-lg hover:bg-secondary-hover transition-colors">
             Subscribe
           </button>
         </form>

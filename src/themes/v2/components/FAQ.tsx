@@ -27,7 +27,7 @@ const FAQ = () => {
 
   return (
     <div>
-      <h2 className="font-heading text-3xl text-[#10284B] mb-8">Frequently Asked Questions</h2>
+      <h2 className="font-heading text-3xl text-primary mb-8">Frequently Asked Questions</h2>
 
       {/* Horizontal Tabs with Scroll Arrows */}
       <div className="relative mb-8">
@@ -48,8 +48,8 @@ const FAQ = () => {
                 onClick={() => handleTabChange(index)}
                 className={`pb-3 px-4 whitespace-nowrap text-sm font-bold transition-all ${
                   activeTab === index
-                    ? 'text-[#10284B] border-b-2 border-[#10284B]'
-                    : 'text-gray-400 hover:text-[#10284B]'
+                    ? 'text-primary border-b-2 border-primary'
+                    : 'text-gray-400 hover:text-primary'
                 }`}
               >
                 {group.label}
@@ -77,10 +77,10 @@ const FAQ = () => {
                 onClick={() => toggleItem(itemKey)}
                 className="w-full flex items-center justify-between py-6 text-left group"
               >
-                <span className="font-bold text-[#10284B] pr-8 text-base leading-snug group-hover:text-[#FF9E00] transition-colors">
+                <span className="font-bold text-primary pr-8 text-base leading-snug group-hover:text-secondary transition-colors">
                   {q.question}
                 </span>
-                <span className="flex-shrink-0 text-[#10284B] text-2xl font-light leading-none">
+                <span className="flex-shrink-0 text-primary text-2xl font-light leading-none">
                   {openItem === itemKey ? '−' : '+'}
                 </span>
               </button>

@@ -24,12 +24,12 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
   }
 
   return (
-    <div className="bg-[#f4f2ed] text-[#091830] min-h-screen overflow-x-hidden selection:bg-[#FF9E00] selection:text-white">
+    <div className="bg-[#f4f2ed] text-primary min-h-screen overflow-x-hidden selection:bg-secondary selection:text-white">
       <Header />
 
       <main>
         {/* Hero Section */}
-        <section className="relative pt-28 pb-16 bg-[#10284B] overflow-hidden">
+        <section className="relative pt-28 pb-16 bg-primary overflow-hidden">
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Breadcrumb */}
@@ -53,13 +53,13 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
 
               {/* Info */}
               <div className="text-center lg:text-left">
-                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#FF9E00] text-[#091830] mb-6">
+                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-secondary text-white mb-6">
                   {author.role}
                 </span>
                 <h1 className="font-heading text-5xl md:text-6xl text-white mb-4 leading-tight">
                   {author.name}
                 </h1>
-                <p className="text-xl md:text-2xl text-[#FF9E00] font-semibold mb-6">
+                <p className="text-xl md:text-2xl text-secondary font-semibold mb-6">
                   {author.title}
                 </p>
                 <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
@@ -70,7 +70,7 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                 <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
                   {author.admissions.map((admission, i) => (
                     <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-                      <Scale size={14} className="text-[#FF9E00]" />
+                      <Scale size={14} className="text-secondary" />
                       <span className="text-sm text-white">{admission.jurisdiction} ({admission.year})</span>
                     </div>
                   ))}
@@ -88,7 +88,7 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                 {/* CTA */}
                 <Link
                   href={siteConfig.formCTA?.href || '#contact'}
-                  className="inline-flex items-center gap-3 bg-[#FF9E00] text-[#091830] px-8 py-4 rounded-xl font-bold hover:bg-[#ffb133] transition-colors shadow-lg"
+                  className="inline-flex items-center gap-3 bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary-hover transition-colors shadow-lg"
                 >
                   <FileText className="w-5 h-5" />
                   <span>{siteConfig.formCTA?.text || 'Free Consultation'}</span>
@@ -109,11 +109,11 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Left: Full Bio */}
               <div>
-                <span className="text-[#FF9E00] font-bold uppercase tracking-widest text-xs">Biography</span>
-                <h2 className="font-heading text-3xl md:text-4xl text-[#10284B] mt-2 mb-8">
+                <span className="text-secondary font-bold uppercase tracking-widest text-xs">Biography</span>
+                <h2 className="font-heading text-3xl md:text-4xl text-primary mt-2 mb-8">
                   About {author.name}
                 </h2>
-                <div className="space-y-6 text-[#091830]/70 text-base leading-relaxed">
+                <div className="space-y-6 text-primary/70 text-base leading-relaxed">
                   {author.bio.map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
@@ -125,15 +125,15 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                 {/* Education */}
                 <div>
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-[#10284B]/10 flex items-center justify-center">
-                      <GraduationCap size={20} className="text-[#10284B]" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <GraduationCap size={20} className="text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#10284B]">Education</h3>
+                    <h3 className="text-xl font-bold text-primary">Education</h3>
                   </div>
                   <div className="space-y-3">
                     {author.education.map((edu, i) => (
                       <div key={i} className="bg-white rounded-xl p-5 shadow-sm">
-                        <p className="font-bold text-[#10284B]">{edu.degree}{edu.honors ? ` — ${edu.honors}` : ''}</p>
+                        <p className="font-bold text-primary">{edu.degree}{edu.honors ? ` — ${edu.honors}` : ''}</p>
                         <p className="text-gray-500 text-sm mt-1">{edu.school}</p>
                         <p className="text-gray-400 text-sm">Class of {edu.year}</p>
                       </div>
@@ -144,20 +144,20 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                 {/* Awards */}
                 <div>
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-[#FF9E00]/10 flex items-center justify-center">
-                      <Award size={20} className="text-[#FF9E00]" />
+                    <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                      <Award size={20} className="text-secondary" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#10284B]">Awards & Recognition</h3>
+                    <h3 className="text-xl font-bold text-primary">Awards & Recognition</h3>
                   </div>
                   <div className="space-y-3">
                     {author.awards.map((award, i) => (
                       <div key={i} className="bg-white rounded-xl p-5 shadow-sm">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <p className="font-bold text-[#10284B]">{award.name}</p>
+                            <p className="font-bold text-primary">{award.name}</p>
                             <p className="text-gray-500 text-sm mt-1">{award.description}</p>
                           </div>
-                          <span className="text-xs px-3 py-1 bg-[#FF9E00]/10 text-[#FF9E00] rounded-full whitespace-nowrap font-bold">
+                          <span className="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full whitespace-nowrap font-bold">
                             {award.years}
                           </span>
                         </div>
@@ -169,15 +169,15 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                 {/* Memberships */}
                 <div>
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-[#10284B]/10 flex items-center justify-center">
-                      <Users size={20} className="text-[#10284B]" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Users size={20} className="text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#10284B]">Professional Memberships</h3>
+                    <h3 className="text-xl font-bold text-primary">Professional Memberships</h3>
                   </div>
                   <ul className="space-y-3">
                     {author.memberships.map((org, i) => (
-                      <li key={i} className="flex items-start gap-3 text-[#091830]/70">
-                        <span className="w-2 h-2 rounded-full bg-[#FF9E00] mt-2 flex-shrink-0" />
+                      <li key={i} className="flex items-start gap-3 text-primary/70">
+                        <span className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
                         {org}
                       </li>
                     ))}
@@ -189,10 +189,10 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
         </section>
 
         {/* Practice Areas */}
-        <section className="py-20 bg-[#10284B]">
+        <section className="py-20 bg-primary">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <span className="text-[#FF9E00] font-bold uppercase tracking-widest text-xs">Specializations</span>
+              <span className="text-secondary font-bold uppercase tracking-widest text-xs">Specializations</span>
               <h2 className="font-heading text-3xl md:text-4xl text-white mt-2 mb-4">
                 Practice Areas
               </h2>
@@ -225,8 +225,8 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
         <section className="py-16 bg-[#f4f2ed]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-8">
-              <span className="text-[#FF9E00] font-bold uppercase tracking-widest text-xs">Connect</span>
-              <h2 className="font-heading text-3xl text-[#10284B] mt-2">Get in Touch</h2>
+              <span className="text-secondary font-bold uppercase tracking-widest text-xs">Connect</span>
+              <h2 className="font-heading text-3xl text-primary mt-2">Get in Touch</h2>
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
               {author.socialLinks.map((link, i) => (
@@ -235,7 +235,7 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#10284B] text-white px-6 py-3 rounded-full hover:bg-[#091830] transition-colors font-semibold"
+                  className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary transition-colors font-semibold"
                 >
                   <ExternalLink size={16} />
                   {link.platform}
@@ -243,7 +243,7 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
               ))}
               <a
                 href={`tel:${contact.phone}`}
-                className="flex items-center gap-2 bg-[#FF9E00] text-[#091830] px-6 py-3 rounded-full hover:bg-[#ffb133] transition-colors font-bold"
+                className="flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-full hover:bg-secondary-hover transition-colors font-bold"
               >
                 Call {contact.phone}
               </a>

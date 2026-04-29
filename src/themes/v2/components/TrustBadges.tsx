@@ -5,6 +5,14 @@ import Image from 'next/image'
 import { Info } from 'lucide-react'
 import { trustBadges } from '@/data/siteData'
 
+const badgeImageById: Record<number, string> = {
+  1: '/badges/super-lawyers-rising-star.webp',
+  2: '/badges/million-dollar-advocates.gif',
+  3: '/badges/national-trial-lawyers-top-40.png',
+  4: '/badges/avvo-clients-choice.png',
+  5: '/badges/houston-top-rated-lawyer.png',
+}
+
 const TrustBadges = () => {
   const [hoveredBadge, setHoveredBadge] = useState<number | null>(null)
 
@@ -22,14 +30,15 @@ const TrustBadges = () => {
             onMouseLeave={() => setHoveredBadge(null)}
             onClick={() => badge.href && window.location.assign(badge.href)}
           >
-            <div className="w-48 h-48 flex items-center justify-center">
-              {badge.badge ? (
+            <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+              {badgeImageById[badge.id] ? (
                 <Image
-                  src={badge.badge}
+                  src={badgeImageById[badge.id]}
                   alt={badge.title}
-                  width={192}
-                  height={192}
-                  className="object-contain"
+                  width={96}
+                  height={96}
+                  className="max-w-full max-h-full w-auto h-auto object-contain"
+                  unoptimized
                 />
               ) : (
                 <div className="w-16 h-16 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
@@ -39,12 +48,12 @@ const TrustBadges = () => {
             </div>
 
             <button className="relative">
-              <Info size={20} className="text-gray-400 hover:text-[#10284B] transition-colors" />
+              <Info size={20} className="text-gray-400 hover:text-primary transition-colors" />
 
               {hoveredBadge === badge.id && (
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-[#10284B] text-white text-xs rounded-lg p-3 shadow-lg z-10">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-primary text-white text-xs rounded-lg p-3 shadow-lg z-10">
                   {badge.tooltip}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-[#10284B] rotate-45" />
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-primary rotate-45" />
                 </div>
               )}
             </button>
@@ -60,14 +69,15 @@ const TrustBadges = () => {
             onMouseLeave={() => setHoveredBadge(null)}
             onClick={() => badge.href && window.location.assign(badge.href)}
           >
-            <div className="w-48 h-48 flex items-center justify-center">
-              {badge.badge ? (
+            <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+              {badgeImageById[badge.id] ? (
                 <Image
-                  src={badge.badge}
+                  src={badgeImageById[badge.id]}
                   alt={badge.title}
-                  width={192}
-                  height={192}
-                  className="object-contain"
+                  width={96}
+                  height={96}
+                  className="max-w-full max-h-full w-auto h-auto object-contain"
+                  unoptimized
                 />
               ) : (
                 <div className="w-16 h-16 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
@@ -77,12 +87,12 @@ const TrustBadges = () => {
             </div>
 
             <button className="relative">
-              <Info size={20} className="text-gray-400 hover:text-[#10284B] transition-colors" />
+              <Info size={20} className="text-gray-400 hover:text-primary transition-colors" />
 
               {hoveredBadge === badge.id + 100 && (
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-[#10284B] text-white text-xs rounded-lg p-3 shadow-lg z-10">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-primary text-white text-xs rounded-lg p-3 shadow-lg z-10">
                   {badge.tooltip}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-[#10284B] rotate-45" />
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-primary rotate-45" />
                 </div>
               )}
             </button>

@@ -16,7 +16,7 @@ interface V2EpisodePageProps {
 
 function V2EpisodePage({ episodeId, episode, allEpisodes, transcript }: V2EpisodePageProps) {
   return (
-    <div className="bg-[#f4f2ed] text-[#091830] min-h-screen overflow-x-hidden selection:bg-[#FF9E00] selection:text-white">
+    <div className="bg-[#f4f2ed] text-primary min-h-screen overflow-x-hidden selection:bg-secondary selection:text-white">
       <Header />
 
       <main>

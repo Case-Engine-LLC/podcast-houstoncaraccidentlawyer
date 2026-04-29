@@ -1,22 +1,23 @@
 /* ============================================
    CSS VARIABLES - V2 THEME
-   Navy/Orange/Cream editorial design
+   Ben Dominguez podcast — black/red brand
+   Source: Figma "Podcast" Brand Colors swatches
    ============================================ */
 
 :root {
   /* ========== COLORS ========== */
-  --color-primary: #10284B;
-  --color-secondary: #FF9E00;
+  --color-primary: #0f0f0f;
+  --color-secondary: #ed1c2d;
 
-  --color-accent: #FF9E00;
+  --color-accent: #ed1c2d;
   --color-background: #f4f2ed;
-  --color-foreground: #091830;
+  --color-foreground: #0f0f0f;
 
   --color-muted: #f4f2ed;
   --color-muted-foreground: #8e8e8e;
 
   --color-card: #ffffff;
-  --color-card-foreground: #091830;
+  --color-card-foreground: #0f0f0f;
 
   --color-border: #e5e7eb;
 
@@ -24,7 +25,7 @@
   --color-gray-light: #8e8e8e;
   --color-gray-lighter: #9ca3af;
   --color-beige: #f4f2ed;
-  --color-dark-bg: #091830;
+  --color-dark-bg: #0f0f0f;
 
   /* ========== TYPOGRAPHY ========== */
   --font-heading: var(--font-playfair), 'Playfair Display', serif;

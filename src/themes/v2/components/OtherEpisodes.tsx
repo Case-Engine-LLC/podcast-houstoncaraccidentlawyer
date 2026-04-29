@@ -67,10 +67,10 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#10284B] mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-primary mb-4">
             Other Episodes
           </h2>
-          <p className="text-base md:text-lg text-[#091830]/50 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-primary/50 max-w-3xl mx-auto leading-relaxed">
             {subscribeCTA.description}
           </p>
         </div>
@@ -81,8 +81,9 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
             className="flex gap-6 transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
           >
-            {episodes.map((ep) => {
+            {episodes.map((ep, idx) => {
               const href = ep.isComingSoon ? '#subscribe' : `/v2/episode/${ep.id}`
+              const cover = idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'
 
               return (
                 <Link
@@ -90,8 +91,8 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
                   href={href}
                   className="group flex flex-col flex-shrink-0 w-full md:w-[calc(33.333%-1rem)]"
                 >
-                  {/* Image placeholder */}
-                  <div className="aspect-video bg-[#10284B] rounded-2xl mb-4 overflow-hidden relative flex items-center justify-center">
+                  {/* Cover */}
+                  <div className="aspect-video bg-primary rounded-2xl mb-4 overflow-hidden relative flex items-center justify-center">
                     {ep.isComingSoon ? (
                       <div className="text-center">
                         <div className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center mx-auto mb-3">
@@ -102,17 +103,14 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
                         <span className="text-sm text-white/30 font-medium">Coming Soon</span>
                       </div>
                     ) : (
-                      <svg width="60" height="60" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/20">
-                        <circle cx="45" cy="35" r="12" stroke="currentColor" strokeWidth="2" />
-                        <path d="M15 105 L45 65 L75 90 L105 50" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
+                      <img src={cover} alt={ep.title} className="absolute inset-0 w-full h-full object-cover" />
                     )}
 
                     {/* Hover play overlay for non-coming-soon cards */}
                     {!ep.isComingSoon && (
-                      <div className="absolute inset-0 bg-[#FF9E00]/0 group-hover:bg-[#FF9E00]/20 transition-colors flex items-center justify-center">
+                      <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/20 transition-colors flex items-center justify-center">
                         <div className="w-12 h-12 rounded-full bg-white/0 group-hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100">
-                          <svg className="w-5 h-5 text-[#10284B] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-primary ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z" />
                           </svg>
                         </div>
@@ -121,17 +119,17 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
                   </div>
 
                   {/* Episode number badge */}
-                  <div className="inline-block self-start bg-[#10284B]/10 px-3 py-1.5 rounded-full text-xs font-bold text-[#10284B] uppercase tracking-widest mb-3">
+                  <div className="inline-block self-start bg-primary/10 px-3 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest mb-3">
                     {ep.episodeNumber}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-heading font-bold text-[#10284B] mb-2 group-hover:text-[#FF9E00] transition-colors leading-snug">
+                  <h3 className="text-lg font-heading font-bold text-primary mb-2 group-hover:text-secondary transition-colors leading-snug">
                     {ep.title}
                   </h3>
 
                   {/* Meta */}
-                  <p className="text-sm text-[#091830]/40">
+                  <p className="text-sm text-primary/40">
                     {ep.category} &bull; {ep.duration}
                   </p>
                 </Link>
@@ -145,7 +143,7 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
           <button
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="w-12 h-12 rounded-full bg-[#10284B] flex items-center justify-center hover:bg-[#091830] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-12 h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label="Previous episodes"
           >
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +153,7 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
           <button
             onClick={handleNext}
             disabled={currentIndex >= maxIndex}
-            className="w-12 h-12 rounded-full bg-[#10284B] flex items-center justify-center hover:bg-[#091830] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-12 h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label="Next episodes"
           >
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,9 +162,9 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
           </button>
 
           {/* Progress Bar */}
-          <div className="flex-grow h-1 bg-[#10284B]/10 rounded-full overflow-hidden">
+          <div className="flex-grow h-1 bg-primary/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#10284B] transition-all duration-500 ease-in-out rounded-full"
+              className="h-full bg-primary transition-all duration-500 ease-in-out rounded-full"
               style={{ width: `${Math.max(progressPercentage, 5)}%` }}
             />
           </div>

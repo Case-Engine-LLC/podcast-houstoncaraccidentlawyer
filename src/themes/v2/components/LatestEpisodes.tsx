@@ -26,7 +26,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
       <div className="max-w-7xl mx-auto">
         {/* Centered Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#10284B] mb-6 leading-tight">
+          <h2 className="font-heading text-4xl md:text-5xl text-primary mb-6 leading-tight">
             Seasons and Episodes of {siteConfig.podcastName}
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
@@ -39,12 +39,12 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
           <div className="flex flex-wrap items-center gap-6">
             {/* Topic Filter */}
             <div className="flex items-center gap-3">
-              <span className="text-sm font-bold text-[#10284B] whitespace-nowrap">Filter By Topic:</span>
+              <span className="text-sm font-bold text-primary whitespace-nowrap">Filter By Topic:</span>
               <div className="relative">
                 <select
                   value={topicFilter}
                   onChange={(e) => setTopicFilter(e.target.value)}
-                  className="appearance-none bg-white pl-4 pr-10 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#10284B] cursor-pointer"
+                  className="appearance-none bg-white pl-4 pr-10 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-primary cursor-pointer"
                 >
                   {episodeTopics.map(topic => (
                     <option key={topic} value={topic}>{topic}</option>
@@ -58,12 +58,12 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
 
             {/* Location Filter */}
             <div className="flex items-center gap-3">
-              <span className="text-sm font-bold text-[#10284B] whitespace-nowrap">Filter by location:</span>
+              <span className="text-sm font-bold text-primary whitespace-nowrap">Filter by location:</span>
               <div className="relative">
                 <select
                   value={locationFilter}
                   onChange={(e) => setLocationFilter(e.target.value)}
-                  className="appearance-none bg-white pl-4 pr-10 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#10284B] cursor-pointer"
+                  className="appearance-none bg-white pl-4 pr-10 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-primary cursor-pointer"
                 >
                   {episodeLocations.map(loc => (
                     <option key={loc} value={loc}>{loc}</option>
@@ -80,13 +80,13 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setViewMode('list')}
-              className={`p-2.5 rounded-lg transition-all ${viewMode === 'list' ? 'bg-[#10284B] text-white' : 'bg-white text-gray-400 hover:text-[#10284B]'}`}
+              className={`p-2.5 rounded-lg transition-all ${viewMode === 'list' ? 'bg-primary text-white' : 'bg-white text-gray-400 hover:text-primary'}`}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
             <button
               onClick={() => setViewMode('grid')}
-              className={`p-2.5 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-[#10284B] text-white' : 'bg-white text-gray-400 hover:text-[#10284B]'}`}
+              className={`p-2.5 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-primary text-white' : 'bg-white text-gray-400 hover:text-primary'}`}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
             </button>
@@ -98,16 +98,16 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
           <div>
             {/* Table Header */}
             <div className="hidden md:grid md:grid-cols-12 gap-4 px-4 pb-4 border-b border-gray-300">
-              <div className="col-span-1 text-sm font-bold text-[#10284B]">Cover</div>
-              <div className="col-span-4 text-sm font-bold text-[#10284B]">Name</div>
-              <div className="col-span-2 text-sm font-bold text-[#10284B]">Topic</div>
-              <div className="col-span-1 text-sm font-bold text-[#10284B]">Length</div>
-              <div className="col-span-4 text-sm font-bold text-[#10284B]">Mentioned Concepts</div>
+              <div className="col-span-1 text-sm font-bold text-primary">Cover</div>
+              <div className="col-span-4 text-sm font-bold text-primary">Name</div>
+              <div className="col-span-2 text-sm font-bold text-primary">Topic</div>
+              <div className="col-span-1 text-sm font-bold text-primary">Length</div>
+              <div className="col-span-4 text-sm font-bold text-primary">Mentioned Concepts</div>
             </div>
 
             {/* Table Rows */}
             <div className="divide-y divide-gray-200">
-              {filteredEpisodes.map((ep) => (
+              {filteredEpisodes.map((ep, idx) => (
                 <Link
                   key={ep.id}
                   href={`/v2/episode/${ep.id}`}
@@ -117,7 +117,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                   <div className="col-span-1">
                     <div className="w-16 h-16 md:w-full md:aspect-square flex-shrink-0 rounded-lg overflow-hidden bg-gray-200">
                       {ep.logo ? (
-                        <img src={ep.logo} alt={ep.title} className="w-full h-full object-cover" />
+                        <img src={idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full bg-[#d4d4d4] flex items-center justify-center">
                           <span className="text-xs text-gray-500">Ep {ep.number}</span>
@@ -128,7 +128,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
 
                   {/* Name */}
                   <div className="col-span-4">
-                    <h3 className="font-heading text-base font-bold text-[#10284B] group-hover:text-[#FF9E00] transition-colors leading-snug">
+                    <h3 className="font-heading text-base font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
                       {ep.title}
                     </h3>
                     <p className="text-sm text-gray-400 mt-0.5">{ep.subtitle}</p>
@@ -137,7 +137,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                   {/* Topic */}
                   <div className="col-span-2">
                     {ep.topic && (
-                      <span className="inline-block px-3 py-1 bg-[#10284B]/10 rounded-full text-xs font-semibold text-[#10284B]">
+                      <span className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-semibold text-primary">
                         {ep.topic}
                       </span>
                     )}
@@ -145,14 +145,14 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
 
                   {/* Length */}
                   <div className="col-span-1">
-                    <span className="text-sm font-medium text-[#10284B]">{ep.duration}</span>
+                    <span className="text-sm font-medium text-primary">{ep.duration}</span>
                   </div>
 
                   {/* Concepts */}
                   <div className="col-span-4">
                     <div className="flex flex-wrap gap-2">
                       {ep.concepts?.map((concept, i) => (
-                        <span key={i} className="px-3 py-1 bg-[#10284B]/10 rounded-full text-xs font-medium text-[#10284B]">
+                        <span key={i} className="px-3 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
                           {concept}
                         </span>
                       ))}
@@ -167,17 +167,17 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
         {/* Grid View — Full-width horizontal cards */}
         {viewMode === 'grid' && (
           <div className="space-y-6">
-            {filteredEpisodes.map((ep) => (
+            {filteredEpisodes.map((ep, idx) => (
               <div
                 key={ep.id}
-                className="group bg-[#10284B] rounded-2xl overflow-hidden flex flex-col md:flex-row"
+                className="group bg-primary rounded-2xl overflow-hidden flex flex-col md:flex-row"
               >
                 {/* Cover Image */}
                 <div className="relative w-full md:w-[340px] flex-shrink-0 aspect-square md:aspect-auto">
                   {ep.logo ? (
-                    <img src={ep.logo} alt={ep.title} className="w-full h-full object-cover" />
+                    <img src={idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
                   ) : (
-                    <div className="w-full h-full bg-[#091830] flex items-center justify-center">
+                    <div className="w-full h-full bg-primary flex items-center justify-center">
                       <span className="text-3xl font-heading text-white/30">Ep {ep.number}</span>
                     </div>
                   )}
@@ -186,7 +186,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                 {/* Content */}
                 <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
                   {ep.topic && (
-                    <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-semibold text-[#FF9E00] border border-[#FF9E00]/40 mb-4">
+                    <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-semibold text-secondary border border-secondary/40 mb-4">
                       {ep.topic}
                     </span>
                   )}
