@@ -1,6 +1,6 @@
 {
   "siteConfig": {
-    "podcastName": "Houston Abogado de Accidentes with Ben Dominguez",
+    "podcastName": "Houston Abogado de Accidentes w. Ben Dominguez",
     "tagline": "NEW EPISODE",
     "podcastUrl": "https://podcast-houstoncaraccidentlawyer.vercel.app",
     "rssFeedUrl": "https://rss2.flightcast.com/incuox20pdj3cqh9o11xxtyl.xml",
@@ -22,7 +22,7 @@
   },
   "attorney": {
     "name": "Ben Dominguez",
-    "firm": "Ben Dominguez Car Accident Lawyer",
+    "firm": "Ben Dominguez Law Firm",
     "title": "Personal Injury & Products Liability Attorney, Podcast Host",
     "bio": [
       "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). A fourth-generation Texan, he established his Houston practice in 1994 after earning his J.D. from Vermont Law School in 1990 and a Master of Studies in Environmental Law (MSEL) from Vermont Law School in 1995. Ben Dominguez is bilingual and handles cases in English and Spanish for clients throughout the Greater Houston area and Harris County.",
@@ -33,19 +33,19 @@
     "photo": "/images/attorney.jpg"
   },
   "contact": {
-    "address": "4899 Montrose Blvd., Suite 1512, Houston, TX 77006",
-    "phone": "(713) 224-7333",
+    "address": "The Museum Tower, 4899 Montrose Blvd., Suite 1306, Houston, TX 77006",
+    "phone": "(713) 804-6822",
     "email": "bdominguez@bendominguez.com",
     "website": "https://benwins.com"
   },
   "offices": [
     {
-      "name": "Houston Office",
-      "address": "4899 Montrose Blvd., Suite 1512",
+      "name": "Houston Office (The Museum Tower)",
+      "address": "4899 Montrose Blvd., Suite 1306",
       "city": "Houston",
       "state": "TX",
       "zip": "77006",
-      "phone": "(713) 224-7333"
+      "phone": "(713) 804-6822"
     }
   ],
   "chapters": [
@@ -93,7 +93,7 @@
         {
           "question": "Who hosts the podcast?",
           "level": "h3",
-          "answer": "Ben Dominguez II hosts Houston Abogado de Accidentes. He has been a Texas-licensed attorney since 1993 (Bar No. 00786415) and runs a solo practice at 4899 Montrose Blvd., Suite 1512, Houston, TX 77006."
+          "answer": "Ben Dominguez II hosts Houston Abogado de Accidentes. He has been a Texas-licensed attorney since 1993 (Bar No. 00786415) and runs a solo practice at 4899 Montrose Blvd., Suite 1306, Houston, TX 77006."
         },
         {
           "question": "Is the podcast available in Spanish?",
@@ -103,7 +103,7 @@
         {
           "question": "Can I submit questions for the podcast?",
           "level": "h3",
-          "answer": "Yes. Contact the firm through benwins.com or call (713) 224-7333. Listener questions from Houston and Harris County are welcome, particularly from Spanish-speaking community members."
+          "answer": "Yes. Contact the firm through benwins.com or call (713) 804-6822. Listener questions from Houston and Harris County are welcome, particularly from Spanish-speaking community members."
         }
       ]
     },
@@ -140,7 +140,7 @@
     }
   ],
   "content": {
-    "heroTitle": "Houston Abogado de Accidentes with Ben Dominguez",
+    "heroTitle": "Houston Abogado de Accidentes w. Ben Dominguez",
     "heroDescription": "Join solo-practice Houston attorney Ben Dominguez as he walks accident victims across Houston and Harris County through Texas personal injury law \u2014 the two-year statute of limitations, modified comparative fault, dealing with insurance adjusters, and the decisions a driver faces in the days after a serious collision. Bilingual conversations (English / Spanish) grounded in 30+ years of Texas practice.",
     "articleTitle": "Bilingual Houston Personal Injury Attorney Serving the Greater Houston Area Since 1994",
     "articleParagraphs": [
@@ -204,7 +204,7 @@
       "Admitted to the U.S. Court of Appeals, Fifth Circuit",
       "Admitted to the U.S. District Court, Southern District of Texas",
       "Member \u2014 Texas Trial Lawyers Association, AAJ, PEOPIL",
-      "Solo practice \u2014 4899 Montrose Blvd., Suite 1512, Houston, TX 77006",
+      "Solo practice \u2014 4899 Montrose Blvd., Suite 1306, Houston, TX 77006",
       "Free consultations; no fee unless you win"
     ],
     "showReadMore": false
@@ -335,7 +335,7 @@
           },
           {
             "title": "Free Bilingual Consultation",
-            "description": "Consultations in English or Spanish. No fee unless you win. Call (713) 224-7333 or reach the firm through benwins.com.",
+            "description": "Consultations in English or Spanish. No fee unless you win. Call (713) 804-6822 or reach the firm through benwins.com.",
             "href": "https://benwins.com/"
           }
         ]
@@ -449,7 +449,7 @@
     "heading": "Get in touch now!",
     "submitText": "Send Message",
     "successMessage": "Thank you! Your message has been sent. Ben Dominguez Law will get back to you shortly. Consultations are available in English or Spanish.",
-    "errorMessage": "Something went wrong. Please call us directly at (713) 224-7333.",
+    "errorMessage": "Something went wrong. Please call us directly at (713) 804-6822.",
     "source": "podcast-website",
     "campaign": "the-you-interview"
   },
@@ -524,7 +524,7 @@
   },
   "compliance": {
     "jurisdiction": "Texas",
-    "firm": "Ben Dominguez Car Accident Lawyer",
+    "firm": "Ben Dominguez Law Firm",
     "responsibleAttorneys": [
       {
         "name": "Ben Dominguez II",
@@ -562,7 +562,7 @@
       },
       {
         "kind": "responsible_attorney",
-        "text": "The attorney responsible for the content of this podcast and website under Texas Disciplinary Rule 7.04 is Ben Dominguez II (Bar No. 00786415), Ben Dominguez Car Accident Lawyer, 4899 Montrose Blvd., Suite 1512, Houston, TX 77006."
+        "text": "The attorney responsible for the content of this podcast and website under Texas Disciplinary Rule 7.04 is Ben Dominguez II (Bar No. 00786415), Ben Dominguez Law Firm, 4899 Montrose Blvd., Suite 1306, Houston, TX 77006."
       }
     ]
   }

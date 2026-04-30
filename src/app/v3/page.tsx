@@ -9,8 +9,8 @@ const homeSchema = {
     {
       "@type": "Organization",
       "@id": "https://benwins.com/#org",
-      "name": "Ben Dominguez Car Accident Lawyer",
-      "legalName": "Ben Dominguez Car Accident Lawyer",
+      "name": "Ben Dominguez Law Firm",
+      "legalName": "Ben Dominguez Law Firm",
       "url": "https://benwins.com/",
       "logo": {
         "@type": "ImageObject",
@@ -25,10 +25,10 @@ const homeSchema = {
         "height": 630
       },
       "description": "Ben Dominguez is a fourth-generation Texan and solo-practice Houston personal injury and products liability attorney. He has been licensed by the State Bar of Texas since 1993 (Bar No. 00786415) and represents Spanish- and English-speaking clients across Greater Houston.",
-      "telephone": "+17132247333",
+      "telephone": "+17138046822",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "4899 Montrose Blvd., Suite 1512",
+        "streetAddress": "4899 Montrose Blvd., Suite 1306",
         "addressLocality": "Houston",
         "addressRegion": "TX",
         "postalCode": "77006",
@@ -54,7 +54,7 @@ const homeSchema = {
       "@type": "WebSite",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
-      "name": "Houston Abogado de Accidentes with Ben Dominguez",
+      "name": "Houston Abogado de Accidentes w. Ben Dominguez",
       "description": "A bilingual podcast by Ben Dominguez II — Houston personal injury, products liability, and construction accident law for English- and Spanish-speaking Texans.",
       "publisher": {
         "@id": "https://benwins.com/#org"
@@ -73,7 +73,7 @@ const homeSchema = {
       "@type": "WebPage",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#webpage",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
-      "name": "Houston Abogado de Accidentes with Ben Dominguez | Ben Dominguez Car Accident Lawyer",
+      "name": "Houston Abogado de Accidentes w. Ben Dominguez | Ben Dominguez Law Firm",
       "description": "Ben Dominguez covers Texas personal injury, products liability, and construction accident law for Houston and Harris County — available in English and Spanish.",
       "isPartOf": {
         "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website"
@@ -106,8 +106,8 @@ const homeSchema = {
     {
       "@type": "PodcastSeries",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#podcast",
-      "name": "Houston Abogado de Accidentes with Ben Dominguez",
-      "description": "Houston Abogado de Accidentes with Ben Dominguez covers Texas personal injury, products liability, and construction-accident law for Houston and Harris County residents — including bilingual representation for Spanish-speaking clients.",
+      "name": "Houston Abogado de Accidentes w. Ben Dominguez",
+      "description": "Houston Abogado de Accidentes w. Ben Dominguez covers Texas personal injury, products liability, and construction-accident law for Houston and Harris County residents — including bilingual representation for Spanish-speaking clients.",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
       "image": "https://podcast-houstoncaraccidentlawyer.vercel.app/Hero.jpg",
       "author": {
@@ -165,7 +165,7 @@ const homeSchema = {
           "name": "Is the podcast available in Spanish?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Ben Dominguez is bilingual and serves Spanish-speaking clients across the Greater Houston area. Episodes and firm materials are available in both English and Spanish, and the firm takes calls in either language at (713) 224-7333."
+            "text": "Yes. Ben Dominguez is bilingual and serves Spanish-speaking clients across the Greater Houston area. Episodes and firm materials are available in both English and Spanish, and the firm takes calls in either language at (713) 804-6822."
           }
         },
         {
@@ -173,7 +173,7 @@ const homeSchema = {
           "name": "How do I contact Ben Dominguez about a case?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Contact the firm through benwins.com or call (713) 224-7333. Listener questions shape future episodes. Consultations are free, and cases are handled on contingency — no attorney’s fees unless a recovery is obtained."
+            "text": "Contact the firm through benwins.com or call (713) 804-6822. Listener questions shape future episodes. Consultations are free, and cases are handled on contingency — no attorney’s fees unless a recovery is obtained."
           }
         }
       ]
