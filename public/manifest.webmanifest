@@ -1,0 +1,21 @@
+{
+  "name": "Houston Abogado de Accidentes w. Ben Dominguez",
+  "short_name": "Ben Dominguez Podcast",
+  "description": "Bilingual (English / Spanish) Houston personal injury podcast hosted by Ben Dominguez, solo-practice Texas attorney serving the Greater Houston area since 1994.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
