@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X, ArrowRight } from 'lucide-react'
-import { navigation } from '@/data/siteData'
+import { navigation, siteConfig } from '@/data/siteData'
 
 interface HeaderProps {
   variant?: 'dark' | 'light'
@@ -35,14 +35,30 @@ const Header = ({ variant = 'dark' }: HeaderProps) => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}>
       <div className="max-w-container mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <img
-            src="/logo.svg"
-            alt={navigation.logo}
-            className="h-10 md:h-12 w-auto"
-          />
-        </Link>
+        {/* Logo — links to law firm homepage when firmUrl is set */}
+        {(siteConfig as any).firmUrl ? (
+          <a
+            href={(siteConfig as any).firmUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center"
+            aria-label={`${navigation.logo} — visit law firm site`}
+          >
+            <img
+              src="/logo.svg"
+              alt={navigation.logo}
+              className="h-10 md:h-12 w-auto"
+            />
+          </a>
+        ) : (
+          <Link href="/" className="flex items-center">
+            <img
+              src="/logo.svg"
+              alt={navigation.logo}
+              className="h-10 md:h-12 w-auto"
+            />
+          </Link>
+        )}
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">

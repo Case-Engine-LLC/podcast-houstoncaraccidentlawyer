@@ -15,7 +15,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
   const ep = latestEpisode ?? episode
   return (
     <>
-    <section className="hero-section pt-[4rem] md:pt-[6rem] h-[120vh] md:h-[90vh]">
+    <section className="hero-section relative pt-[4rem] md:pt-[6rem] pb-12 md:pb-0 md:h-[90vh]">
       {/* Hero Background Image - indexable - Desktop */}
       <figure className="hidden md:block absolute inset-0 z-0 m-0">
         <img
@@ -61,9 +61,11 @@ const Hero = ({ latestEpisode }: HeroProps) => {
           </p>
 
           {/* Available On Buttons */}
-          <div className="flex flex-row gap-2 md:gap-4 items-center justify-center md:justify-start">
-            <Link
+          <div id="listen" className="flex flex-row gap-2 md:gap-4 items-center justify-center md:justify-start scroll-mt-24">
+            <a
               href={siteConfig.platformLinks.apple}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 md:gap-3 px-2 md:px-6 py-2 md:py-4 rounded-xl md:rounded-2xl transition-all hover:scale-105 flex-1 sm:flex-initial sm:min-w-[15rem]"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -77,10 +79,12 @@ const Hero = ({ latestEpisode }: HeroProps) => {
                 <div className="text-[0.6rem] md:text-xs text-white/60">Available on</div>
                 <div className="text-sm md:text-lg font-bold text-white">YouTube</div>
               </div>
-            </Link>
+            </a>
 
-            <Link
+            <a
               href={siteConfig.platformLinks.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 md:gap-3 px-2 md:px-6 py-2 md:py-4 rounded-xl md:rounded-2xl transition-all hover:scale-105 flex-1 sm:flex-initial sm:min-w-[15rem]"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
@@ -103,7 +107,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
                 <div className="text-[0.6rem] md:text-xs text-white/60">Available on</div>
                 <div className="text-sm md:text-lg font-bold text-white">Spotify</div>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -111,7 +115,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
     </section>
 
     {/* Featured Episode Player - Outside hero with negative margin */}
-    <div className="relative z-10 -mt-16">
+    <div className="relative z-10 -mt-8 md:-mt-16">
       <div className="max-w-container mx-auto px-4 md:px-12">
         <FeaturedEpisodePlayer
           episodeNumber={String(ep.number ?? 1)}

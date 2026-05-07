@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { Play, Info, ArrowRight, LayoutList, LayoutGrid } from 'lucide-react'
-import { episodes as staticEpisodesData, episodeTopics, episodeLocations } from '@/data/siteData'
+import { episodes as staticEpisodesData } from '@/data/siteData'
 import { subscribeCTA } from '@/lib/site-compat'
 import type { Episode } from '@/lib/data'
 
@@ -11,25 +11,47 @@ interface LatestEpisodesProps {
   episodes?: Episode[]
 }
 
+// Truncate to last complete sentence so cards never end mid-thought.
+function toSentenceBoundary(text: string, maxChars = 360): string {
+  if (!text) return ''
+  if (text.length <= maxChars) return text
+  const slice = text.slice(0, maxChars)
+  const lastBreak = Math.max(slice.lastIndexOf('. '), slice.lastIndexOf('! '), slice.lastIndexOf('? '))
+  if (lastBreak > maxChars * 0.5) return slice.slice(0, lastBreak + 1)
+  return slice.replace(/[\s,;:—-]+\S*$/, '') + '…'
+}
+
 const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
   const episodesData = propEpisodes ?? staticEpisodesData
   const [activeTopic, setActiveTopic] = useState('All')
-  const [activeLocation, setActiveLocation] = useState('All')
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list')
   const [showAll, setShowAll] = useState(false)
 
-  const defaultEpisodes = episodesData.map(ep => ({
+  // Order newest first, then renumber for display so listing reads 1,2,3 — never skips.
+  const orderedEpisodes = useMemo(
+    () => [...episodesData].sort((a, b) => Number(b.id) - Number(a.id)),
+    [episodesData]
+  )
+
+  const defaultEpisodes = orderedEpisodes.map((ep, idx) => ({
     id: String(ep.id),
-    number: String(ep.number).padStart(2, '0'),
+    number: String(orderedEpisodes.length - idx).padStart(2, '0'),
     title: ep.title,
     subtitle: ep.subtitle,
-    description: ep.description,
+    description: toSentenceBoundary(ep.description),
     duration: ep.duration,
     topic: ep.topic || '',
     concepts: ep.concepts || [],
     chapters: ep.chapters || [],
     logo: ep.logo,
   }))
+
+  // Topic options computed from actual episode data so filter values match.
+  const topicOptions = useMemo(() => {
+    const set = new Set<string>()
+    defaultEpisodes.forEach(ep => { if (ep.topic) set.add(ep.topic) })
+    return ['All', ...Array.from(set)]
+  }, [defaultEpisodes])
 
   const filteredEpisodes = defaultEpisodes.filter(ep => {
     if (activeTopic !== 'All' && ep.topic !== activeTopic) return false
@@ -54,43 +76,26 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
         {/* Controls: Filters + View Toggle */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-8 md:gap-6">
           <div className="flex items-center gap-3">
-            {/* Topic Filter */}
-            <div className="flex items-center gap-2 md:gap-3">
-              <span className="hidden md:inline text-white font-medium whitespace-nowrap">Filter By Topic:</span>
-              <div className="relative">
-                <select
-                  value={activeTopic}
-                  onChange={(e) => setActiveTopic(e.target.value)}
-                  className="appearance-none w-auto bg-white/10 text-white pl-3 pr-8 py-2 md:pl-4 md:pr-10 md:py-2.5 rounded-lg border border-white/20 text-sm focus:outline-none focus:border-white cursor-pointer"
-                >
-                  {episodeTopics.map(topic => (
-                    <option key={topic} value={topic} className="text-black bg-white">{topic}</option>
-                  ))}
-                </select>
-                <div className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
+            {/* Topic Filter — only render when there are real options to choose from */}
+            {topicOptions.length > 2 && (
+              <div className="flex items-center gap-2 md:gap-3">
+                <span className="hidden md:inline text-white font-medium whitespace-nowrap">Filter By Topic:</span>
+                <div className="relative">
+                  <select
+                    value={activeTopic}
+                    onChange={(e) => setActiveTopic(e.target.value)}
+                    className="appearance-none w-auto bg-white/10 text-white pl-3 pr-8 py-2 md:pl-4 md:pr-10 md:py-2.5 rounded-lg border border-white/20 text-sm focus:outline-none focus:border-white cursor-pointer"
+                  >
+                    {topicOptions.map(topic => (
+                      <option key={topic} value={topic} className="text-black bg-white">{topic}</option>
+                    ))}
+                  </select>
+                  <div className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Location Filter */}
-            <div className="flex items-center gap-2 md:gap-3">
-              <span className="hidden md:inline text-white font-medium whitespace-nowrap">Filter By Location:</span>
-              <div className="relative">
-                <select
-                  value={activeLocation}
-                  onChange={(e) => setActiveLocation(e.target.value)}
-                  className="appearance-none w-auto bg-white/10 text-white pl-3 pr-8 py-2 md:pl-4 md:pr-10 md:py-2.5 rounded-lg border border-white/20 text-sm focus:outline-none focus:border-white cursor-pointer"
-                >
-                  {episodeLocations.map(loc => (
-                    <option key={loc} value={loc} className="text-black bg-white">{loc}</option>
-                  ))}
-                </select>
-                <div className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* View Toggle */}

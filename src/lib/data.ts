@@ -23,6 +23,7 @@ export interface Episode {
   audioType?: string
   transcriptUrl?: string | null
   transcriptType?: string | null
+  youtubeUrl?: string
 }
 
 function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
@@ -66,6 +67,7 @@ function normalizeStaticEpisode(ep: Record<string, unknown>): Episode {
     audioType: (ep.audioType as string) ?? undefined,
     transcriptUrl: (ep.transcriptUrl as string) ?? null,
     transcriptType: (ep.transcriptType as string) ?? null,
+    youtubeUrl: (ep.youtubeUrl as string) ?? undefined,
   }
 }
 

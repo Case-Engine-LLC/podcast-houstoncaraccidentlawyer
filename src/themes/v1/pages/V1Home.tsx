@@ -12,6 +12,7 @@ import PodcastSubscribeCTA from '../components/PodcastSubscribeCTA'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import TopicalEntryGrid from '../components/TopicalEntryGrid'
+import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
 import type { Episode } from '@/lib/data'
 
@@ -217,6 +218,7 @@ const V1Home = ({ episodes }: V1HomeProps) => {
         <PodcastSubscribeCTA />
         <FAQ />
         <TopicalEntryGrid />
+        <ContactSection />
       </main>
 
       <Footer />
