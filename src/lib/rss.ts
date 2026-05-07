@@ -130,7 +130,7 @@ export async function fetchPodcastFeed(rssUrl: string): Promise<PodcastFeed> {
       id: episodeNum,
       guid: String(item.guid ?? item.link ?? `ep-${episodeNum}`),
       title: String(item.title ?? ''),
-      subtitle: String(item['itunes:subtitle'] ?? item['itunes:summary'] ?? '').slice(0, 120),
+      subtitle: String(item['itunes:subtitle'] ?? '').slice(0, 120),
       description: String(item.description ?? item['content:encoded'] ?? '').replace(/<[^>]*>/g, ''),
       date: formatDate(pubDate),
       rawDate: pubDate ? new Date(pubDate).toISOString() : '',
