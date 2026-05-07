@@ -54,10 +54,10 @@ const PodcastSubscribeCTA = () => {
                   </ul>
                 )}
                 <Link
-                  href="#subscribe"
+                  href="#listen"
                   className="inline-block px-8 py-4 bg-white text-black rounded-xl font-semibold text-base hover:bg-white/90 transition-all"
                 >
-                  Subscribe Here
+                  Listen Now
                 </Link>
               </div>
             </div>

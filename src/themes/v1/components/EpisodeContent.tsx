@@ -13,17 +13,44 @@ interface EpisodeContentProps {
   transcript?: TranscriptSegment[]
 }
 
+function getYouTubeEmbedUrl(url?: string): string | null {
+  if (!url) return null
+  // Accept full youtube.com/watch, youtu.be, or already-embed URLs
+  const direct = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/)
+  if (direct) return `https://www.youtube.com/embed/${direct[1]}`
+  const watch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/)
+  if (watch) return `https://www.youtube.com/embed/${watch[1]}`
+  const short = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/)
+  if (short) return `https://www.youtube.com/embed/${short[1]}`
+  return null
+}
+
 const EpisodeContent = ({ episode, transcript }: EpisodeContentProps) => {
   const episodeTranscript = transcript && transcript.length > 0 ? transcript : staticTranscript
   const [activeTab, setActiveTab] = useState('Overview')
   const [isExpanded, setIsExpanded] = useState(false)
 
   const tabs = ['Overview', 'Transcript', 'Key Takeaways']
+  const youtubeEmbed = getYouTubeEmbedUrl((episode as any)?.youtubeUrl)
 
   return (
     <section id="episode-content" className="py-16 md:py-20 bg-white">
       <div className="w-[90%] mx-auto bg-primary rounded-[30px] py-12 md:py-16">
         <div className="max-w-container mx-auto px-6 md:px-12">
+          {/* YouTube Video — shown above audio when youtubeUrl is set */}
+          {youtubeEmbed && (
+            <div className="mb-12 relative w-full aspect-video rounded-3xl overflow-hidden bg-black">
+              <iframe
+                src={youtubeEmbed}
+                title={episode?.title || 'Episode video'}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+              />
+            </div>
+          )}
+
           {/* Audio Player */}
           {episode?.audioUrl ? (
             <div className="mb-12">
@@ -33,13 +60,13 @@ const EpisodeContent = ({ episode, transcript }: EpisodeContentProps) => {
                 title={episode.title}
               />
             </div>
-          ) : (
+          ) : !youtubeEmbed ? (
             <div className="relative w-full aspect-video bg-[#3a3a3a] rounded-3xl overflow-hidden mb-12 flex items-center justify-center group cursor-pointer">
               <div className="relative z-10 w-20 h-20 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Play size={32} className="text-white fill-white ml-1" />
               </div>
             </div>
-          )}
+          ) : null}
 
           {/* Tabs */}
           <div className="flex items-center gap-8 md:gap-12 border-b border-white/10 mb-8">
