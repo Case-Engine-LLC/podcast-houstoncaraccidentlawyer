@@ -19,7 +19,7 @@
     "title": "Your Rights After a Houston Car Accident, with Ben Dominguez",
     "date": "TBD",
     "duration": "TBD",
-    "description": "TODO, replace with the real Episode 1 description once the recording is complete. Structural placeholder: Ben Dominguez, solo-practice Houston personal injury and products liability attorney (Texas Bar since 1993), walks through what a Houston driver should do in the hours, days, and weeks after a serious collision under Texas law. Bilingual conversation (English / Spanish). Topics to cover: the Texas two-year statute of limitations, modified comparative fault (Texas Civil Practice & Remedies Code Section 33), dealing with adjusters, evidence preservation on Houston freeways, and when a solo practitioner is the right fit versus a larger firm.",
+    "description": "",
     "youtubeUrl": ""
   },
   "attorney": {
@@ -53,32 +53,32 @@
   "chapters": [
     {
       "number": 1,
-      "title": "TODO, Cold Open / Episode Hook",
+      "title": "",
       "active": true
     },
     {
       "number": 2,
-      "title": "TODO, Intro and Ben's Background",
+      "title": "'s Background",
       "active": false
     },
     {
       "number": 3,
-      "title": "TODO, Topic Setup: Your Rights After a Houston Crash",
+      "title": "",
       "active": false
     },
     {
       "number": 4,
-      "title": "TODO, Core Q&A: Texas Law, Adjusters, Evidence",
+      "title": "",
       "active": false
     },
     {
       "number": 5,
-      "title": "TODO, Lightning Round: Myth-Busting",
+      "title": "",
       "active": false
     },
     {
       "number": 6,
-      "title": "TODO, CTA, Spanish-Language Resources, and Outro",
+      "title": "",
       "active": false
     }
   ],
@@ -158,11 +158,11 @@
     "reviewCount": 0,
     "satisfactionRate": 0,
     "satisfactionLabel": "Client Satisfaction Rate",
-    "satisfactionVerbalization": "TODO, replace with verified satisfaction data once available. Past results do not guarantee a similar outcome in any future case.",
+    "satisfactionVerbalization": "",
     "casesHandled": 0,
-    "casesLabel": "TODO, verified recovery figure",
-    "casesVerbalization": "TODO, replace with verified recovery data once available. Past results do not guarantee a similar outcome in any future case.",
-    "ratingVerbalization": "TODO, replace with verified rating data once available. Recognitions reflect peer and client evaluation at the time given and do not guarantee a similar outcome in your case."
+    "casesLabel": "",
+    "casesVerbalization": "",
+    "ratingVerbalization": ""
   },
   "navigation": {
     "logo": "Ben Dominguez Law",
@@ -227,8 +227,8 @@
       "id": 1,
       "number": 1,
       "title": "Your Rights After a Houston Car Accident, with Ben Dominguez",
-      "subtitle": "Episode 1 \u2022 Ben Dominguez Law",
-      "description": "TODO, replace with the real Episode 1 description once recording is complete. Placeholder: solo-practice Houston attorney Ben Dominguez walks through the Texas two-year statute of limitations, modified comparative fault under Civil Practice & Remedies Code Section 33.001, how to handle the first call from an adjuster, and why evidence preservation on Houston freeways matters more than the initial medical record.",
+      "subtitle": "Episode 1 • Ben Dominguez Law",
+      "description": "",
       "duration": "TBD",
       "date": "TBD",
       "category": "Personal Injury Law",
@@ -242,12 +242,12 @@
         "Bilingual Representation"
       ],
       "chapters": [
-        "TODO, Cold Open / Episode Hook",
-        "TODO, Intro and Ben's Background",
-        "TODO, Topic Setup: Your Rights After a Houston Crash",
-        "TODO, Core Q&A: Texas Law, Adjusters, Evidence",
-        "TODO, Lightning Round: Myth-Busting",
-        "TODO, CTA, Spanish-Language Resources, and Outro"
+        "",
+        "'s Background",
+        "",
+        "",
+        "",
+        ""
       ],
       "audioUrl": "",
       "guid": "",
