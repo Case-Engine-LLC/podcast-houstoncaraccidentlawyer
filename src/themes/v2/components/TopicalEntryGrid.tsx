@@ -30,26 +30,41 @@ const TopicalEntryGrid = () => {
       </div>
 
       <div className="grid gap-6">
-        {activeTab.links.slice(0, 3).map((link, i) => (
-          <Link
-            key={i}
-            href={link.href}
-            className="group flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-lg transition-all border border-transparent hover:border-secondary/20"
-          >
-            <div className="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
-              <img
-                src={images[i % images.length]}
-                alt={link.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1 block">{activeTab.label}</span>
-              <h3 className="font-heading text-lg font-bold text-primary leading-tight">{link.title}</h3>
-              <p className="text-sm text-gray-400 mt-1 group-hover:text-primary transition-colors">Read More &rarr;</p>
-            </div>
-          </Link>
-        ))}
+        {activeTab.links.slice(0, 3).map((link, i) => {
+          const linkImage = (link as { image?: string }).image
+          return (
+            <Link
+              key={i}
+              href={link.href}
+              className="group flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-lg transition-all border border-transparent hover:border-secondary/20"
+            >
+              {linkImage ? (
+                <div className="w-24 h-24 flex-shrink-0 bg-[#FBE9E9] rounded-lg overflow-hidden flex items-center justify-center p-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={linkImage}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              ) : (
+                <div className="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
+                  <img
+                    src={images[i % images.length]}
+                    alt={link.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              )}
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1 block">{activeTab.label}</span>
+                <h3 className="font-heading text-lg font-bold text-primary leading-tight">{link.title}</h3>
+                <p className="text-sm text-gray-400 mt-1 group-hover:text-primary transition-colors">Read More &rarr;</p>
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
