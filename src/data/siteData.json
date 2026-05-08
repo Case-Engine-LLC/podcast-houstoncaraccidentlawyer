@@ -11,14 +11,16 @@
     "formCTA": {
       "text": "Free Consultation",
       "href": "#contact"
-    }
+    },
+    "firmUrl": "https://benwins.com"
   },
   "episode": {
     "number": 1,
-    "title": "Your Rights After a Houston Car Accident — with Ben Dominguez",
+    "title": "Your Rights After a Houston Car Accident, with Ben Dominguez",
     "date": "TBD",
     "duration": "TBD",
-    "description": "TODO — replace with the real Episode 1 description once the recording is complete. Structural placeholder: Ben Dominguez, solo-practice Houston personal injury and products liability attorney (Texas Bar since 1993), walks through what a Houston driver should do in the hours, days, and weeks after a serious collision under Texas law. Bilingual conversation (English / Spanish). Topics to cover: the Texas two-year statute of limitations, modified comparative fault (Texas Civil Practice & Remedies Code Section 33), dealing with adjusters, evidence preservation on Houston freeways, and when a solo practitioner is the right fit versus a larger firm."
+    "description": "",
+    "youtubeUrl": ""
   },
   "attorney": {
     "name": "Ben Dominguez",
@@ -26,7 +28,7 @@
     "title": "Personal Injury & Products Liability Attorney, Podcast Host",
     "bio": [
       "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). A fourth-generation Texan, he established his Houston practice in 1994 after earning his J.D. from Vermont Law School in 1990 and a Master of Studies in Environmental Law (MSEL) from Vermont Law School in 1995. Ben Dominguez is bilingual and handles cases in English and Spanish for clients throughout the Greater Houston area and Harris County.",
-      "Ben Dominguez's practice initially covered personal injury, securities litigation, criminal defense, and business litigation. In 2015 he narrowed the practice to personal injury and products liability — car accidents, truck accidents, motorcycle accidents, bicycle and pedestrian cases, rideshare (Uber) collisions, construction injuries, premises liability, and wrongful death. He is admitted to the U.S. Court of Appeals for the Fifth Circuit and the U.S. District Court for the Southern District of Texas.",
+      "Ben Dominguez's practice initially covered personal injury, securities litigation, criminal defense, and business litigation. In 2015 he narrowed the practice to personal injury and products liability, car accidents, truck accidents, motorcycle accidents, bicycle and pedestrian cases, rideshare (Uber) collisions, construction injuries, premises liability, and wrongful death. He is admitted to the U.S. Court of Appeals for the Fifth Circuit and the U.S. District Court for the Southern District of Texas.",
       "Beyond case work, Ben Dominguez hosts Houston Abogado de Accidentes, a bilingual podcast focused on Texas personal injury law, insurance coverage, and what accident victims across Houston actually need to know before talking to an adjuster. He is a member of the Texas Trial Lawyers Association (TTLA), the American Association for Justice (AAJ), and the Pan-European Organisation of Personal Injury Lawyers (PEOPIL)."
     ],
     "signature": "/images/signature.png",
@@ -51,32 +53,32 @@
   "chapters": [
     {
       "number": 1,
-      "title": "TODO — Cold Open / Episode Hook",
+      "title": "",
       "active": true
     },
     {
       "number": 2,
-      "title": "TODO — Intro and Ben's Background",
+      "title": "'s Background",
       "active": false
     },
     {
       "number": 3,
-      "title": "TODO — Topic Setup: Your Rights After a Houston Crash",
+      "title": "",
       "active": false
     },
     {
       "number": 4,
-      "title": "TODO — Core Q&A: Texas Law, Adjusters, Evidence",
+      "title": "",
       "active": false
     },
     {
       "number": 5,
-      "title": "TODO — Lightning Round: Myth-Busting",
+      "title": "",
       "active": false
     },
     {
       "number": 6,
-      "title": "TODO — CTA, Spanish-Language Resources, and Outro",
+      "title": "",
       "active": false
     }
   ],
@@ -86,22 +88,22 @@
       "description": "Learn more about Houston Abogado de Accidentes and what you can expect from each episode.",
       "questions": [
         {
-          "question": "What Topics Does Houston Abogado de Accidentes Cover?",
+          "question": "What topics does Houston Abogado de Accidentes cover?",
           "level": "h2",
-          "answer": "The podcast covers personal injury topics relevant to Houston and Harris County drivers — car, truck, motorcycle, bicycle, pedestrian, rideshare, and construction accidents — plus products liability, premises liability, and wrongful death. Ben Dominguez focuses on what Texas law actually allows and requires, including the two-year statute of limitations, Texas modified comparative fault, and how insurance adjusters evaluate claims in Texas."
+          "answer": "The podcast covers personal injury topics relevant to Houston and Harris County drivers, car, truck, motorcycle, bicycle, pedestrian, rideshare, and construction accidents, plus products liability, premises liability, and wrongful death. Ben Dominguez focuses on what Texas law actually allows and requires, including the two-year statute of limitations, Texas modified comparative fault, and how insurance adjusters evaluate claims in Texas."
         },
         {
-          "question": "Who Hosts the Podcast?",
+          "question": "Who hosts the podcast?",
           "level": "h3",
           "answer": "Ben Dominguez II hosts Houston Abogado de Accidentes. He has been a Texas-licensed attorney since 1993 (Bar No. 00786415) and runs a solo practice at 4899 Montrose Blvd., Suite 1306, Houston, TX 77006."
         },
         {
-          "question": "Is the Podcast Available in Spanish?",
+          "question": "Is the podcast available in Spanish?",
           "level": "h3",
           "answer": "Yes. Ben Dominguez is bilingual and serves Spanish-speaking clients across the Greater Houston area. Episodes include Spanish-language discussion where useful, and consultations with the firm are available in English or Spanish."
         },
         {
-          "question": "Can I Submit Questions for the Podcast?",
+          "question": "Can I submit questions for the podcast?",
           "level": "h3",
           "answer": "Yes. Contact the firm through benwins.com or call (713) 804-6822. Listener questions from Houston and Harris County are welcome, particularly from Spanish-speaking community members."
         }
@@ -112,27 +114,27 @@
       "description": "Common Texas personal injury law questions answered by solo-practice Houston attorney Ben Dominguez.",
       "questions": [
         {
-          "question": "What Should I Do Immediately After a Car Accident in Houston?",
+          "question": "What should I do immediately after a car accident in Houston?",
           "level": "h2",
-          "answer": "Seek medical attention, even if injuries seem minor, because Texas courts weigh the gap between the accident and the first medical record. Document the scene with photos, exchange information with other drivers, and request a Texas Peace Officer's Crash Report (CR-3) from the responding agency. Do not give a recorded statement to any insurance adjuster — yours or the other driver's — before speaking with a Texas personal injury attorney. Evidence like surveillance video on Houston commercial corridors is often overwritten within 7 to 30 days."
+          "answer": "Seek medical attention, even if injuries seem minor, because Texas courts weigh the gap between the accident and the first medical record. Document the scene with photos, exchange information with other drivers, and request a Texas Peace Officer's Crash Report (CR-3) from the responding agency. Do not give a recorded statement to any insurance adjuster, yours or the other driver's, before speaking with a Texas personal injury attorney. Evidence like surveillance video on Houston commercial corridors is often overwritten within 7 to 30 days."
         },
         {
-          "question": "How Long Do I Have to File a Personal Injury Claim in Texas?",
+          "question": "How long do I have to file a personal injury claim in Texas?",
           "level": "h2",
           "answer": "Texas Civil Practice & Remedies Code Section 16.003 sets a two-year statute of limitations for most personal injury claims, running from the date of the accident or injury. Claims against government entities (including the City of Houston and Harris County) carry shorter notice requirements under the Texas Tort Claims Act. Missing the deadline typically forfeits the claim entirely."
         },
         {
-          "question": "How Does Texas Comparative Fault Affect My Case?",
+          "question": "How does Texas comparative fault affect my case?",
           "level": "h3",
           "answer": "Texas follows modified comparative fault under Civil Practice & Remedies Code Section 33.001. If you are 50% or less at fault, you may still recover damages, reduced by your percentage of fault. If you are 51% or more at fault, you recover nothing. Insurance adjusters routinely try to push the injured driver's fault percentage above that threshold."
         },
         {
-          "question": "What Kinds of Cases Does Ben Dominguez Handle?",
+          "question": "What kinds of cases does Ben Dominguez handle?",
           "level": "h3",
           "answer": "Ben Dominguez's practice covers car accidents, truck accidents, motorcycle accidents, bicycle and pedestrian accidents, Uber and rideshare collisions, construction accidents, premises liability, products liability, and wrongful death cases throughout the Greater Houston area."
         },
         {
-          "question": "Do I Need a Lawyer if the Insurance Company Offers Me a Settlement?",
+          "question": "Do I need a lawyer if the insurance company offers me a settlement?",
           "level": "h3",
           "answer": "Consult with a Texas-licensed personal injury attorney before accepting any offer. Early offers in Texas auto cases often fail to account for future medical care, lost earning capacity, or the full scope of impairment. Ben Dominguez Law offers free consultations in English and Spanish."
         }
@@ -141,13 +143,13 @@
   ],
   "content": {
     "heroTitle": "Houston Abogado de Accidentes w. Ben Dominguez",
-    "heroDescription": "Join Ben Dominguez, solo-practice Houston attorney, as he walks accident victims across Houston and Harris County through Texas personal injury law — the two-year statute of limitations, modified comparative fault, dealing with insurance adjusters, and the decisions a driver faces in the days after a serious collision. Bilingual conversations (English / Spanish) grounded in 30+ years of Texas practice.",
+    "heroDescription": "Join solo-practice Houston attorney Ben Dominguez as he walks accident victims across Houston and Harris County through Texas personal injury law, the two-year statute of limitations, modified comparative fault, dealing with insurance adjusters, and the decisions a driver faces in the days after a serious collision. Bilingual conversations (English / Spanish) grounded in 30+ years of Texas practice.",
     "articleTitle": "Bilingual Houston Personal Injury Attorney Serving the Greater Houston Area Since 1994",
     "articleParagraphs": [
       "Houston Abogado de Accidentes brings the judgment Ben Dominguez has built over 30 years of Texas personal injury and products liability practice directly to accident victims in Houston and Harris County. Ben Dominguez has been a Texas-licensed attorney since 1993 (Bar No. 00786415), runs a solo practice at 4899 Montrose Blvd., and handles cases in English and Spanish for clients throughout the Greater Houston area.",
       "Each episode addresses what Houston drivers, riders, and pedestrians actually raise on intake calls: the two-year statute of limitations under Texas Civil Practice & Remedies Code Section 16.003, Texas modified comparative fault under Section 33.001, how to respond when an adjuster calls the day after the crash, and why evidence preservation on Houston freeways and surface streets often matters more than the initial medical record. Ben Dominguez's podcast covers the practical answers he gives clients in the office."
     ],
-    "featuredQuote": "The two most important things a Houston accident victim can do in the first 48 hours are simple — see a doctor, and stop talking to the other driver's insurance company until you have counsel.",
+    "featuredQuote": "The two most important things a Houston accident victim can do in the first 48 hours are simple, see a doctor, and stop talking to the other driver's insurance company until you have counsel.",
     "additionalParagraphs": []
   },
   "testimonials": [],
@@ -156,11 +158,11 @@
     "reviewCount": 0,
     "satisfactionRate": 0,
     "satisfactionLabel": "Client Satisfaction Rate",
-    "satisfactionVerbalization": "TODO — replace with verified satisfaction data once available. Past results do not guarantee a similar outcome in any future case.",
+    "satisfactionVerbalization": "",
     "casesHandled": 0,
-    "casesLabel": "TODO — verified recovery figure",
-    "casesVerbalization": "TODO — replace with verified recovery data once available. Past results do not guarantee a similar outcome in any future case.",
-    "ratingVerbalization": "TODO — replace with verified rating data once available. Recognitions reflect peer and client evaluation at the time given and do not guarantee a similar outcome in your case."
+    "casesLabel": "",
+    "casesVerbalization": "",
+    "ratingVerbalization": ""
   },
   "navigation": {
     "logo": "Ben Dominguez Law",
@@ -179,7 +181,7 @@
       }
     ],
     "ctaText": "Subscribe",
-    "ctaHref": "#subscribe"
+    "ctaHref": "#listen"
   },
   "footer": {
     "logo": "Ben Dominguez Law",
@@ -203,19 +205,19 @@
       "Bilingual representation (English / Spanish)",
       "Admitted to the U.S. Court of Appeals, Fifth Circuit",
       "Admitted to the U.S. District Court, Southern District of Texas",
-      "Member — Texas Trial Lawyers Association, AAJ, PEOPIL",
-      "Solo practice — 4899 Montrose Blvd., Suite 1306, Houston, TX 77006",
+      "Member, Texas Trial Lawyers Association, AAJ, PEOPIL",
+      "Solo practice, 4899 Montrose Blvd., Suite 1306, Houston, TX 77006",
       "Free consultations; no fee unless you win"
     ],
     "showReadMore": false
   },
   "subscribeCTA": {
     "title": "Never Miss an Episode",
-    "description": "Subscribe to Houston Abogado de Accidentes for bilingual conversations about Texas personal injury law — the two-year statute of limitations, Texas modified comparative fault, dealing with adjusters, and what Ben Dominguez's 30+ years of Houston practice have taught him about the decisions accident victims face.",
+    "description": "Subscribe to Houston Abogado de Accidentes for bilingual conversations about Texas personal injury law, the two-year statute of limitations, Texas modified comparative fault, dealing with adjusters, and what Ben Dominguez's 30+ years of Houston practice have taught him about the decisions accident victims face.",
     "highlights": [
       "Texas-specific personal injury guidance, in English and Spanish",
       "Texas statute of limitations and comparative-fault rules explained",
-      "When to talk to an adjuster — and when not to",
+      "When to talk to an adjuster, and when not to",
       "What evidence a Houston driver needs to preserve, and how fast",
       "Solo-practice perspective on when a larger firm is or is not the right fit"
     ]
@@ -224,9 +226,9 @@
     {
       "id": 1,
       "number": 1,
-      "title": "Your Rights After a Houston Car Accident — with Ben Dominguez",
-      "subtitle": "Episode 1 • Ben Dominguez Law",
-      "description": "TODO — replace with the real Episode 1 description once recording is complete. Placeholder: solo-practice Houston attorney Ben Dominguez walks through the Texas two-year statute of limitations, modified comparative fault under Civil Practice & Remedies Code Section 33.001, how to handle the first call from an adjuster, and why evidence preservation on Houston freeways matters more than the initial medical record.",
+      "title": "Your Rights After a Houston Car Accident, with Ben Dominguez",
+      "subtitle": "Episode 1 â€¢ Ben Dominguez Law",
+      "description": "",
       "duration": "TBD",
       "date": "TBD",
       "category": "Personal Injury Law",
@@ -240,16 +242,17 @@
         "Bilingual Representation"
       ],
       "chapters": [
-        "TODO — Cold Open / Episode Hook",
-        "TODO — Intro and Ben's Background",
-        "TODO — Topic Setup: Your Rights After a Houston Crash",
-        "TODO — Core Q&A: Texas Law, Adjusters, Evidence",
-        "TODO — Lightning Round: Myth-Busting",
-        "TODO — CTA, Spanish-Language Resources, and Outro"
+        "",
+        "'s Background",
+        "",
+        "",
+        "",
+        ""
       ],
       "audioUrl": "",
       "guid": "",
-      "logo": "/images/logo.svg"
+      "logo": "/images/logo.svg",
+      "youtubeUrl": ""
     }
   ],
   "podcastTeam": [
@@ -258,7 +261,7 @@
       "role": "Host & Attorney",
       "photo": "/images/team-member.jpg",
       "slug": "ben-dominguez",
-      "bio": "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). Bilingual (English / Spanish), fourth-generation Texan, and member of TTLA, AAJ, and PEOPIL. Ben Dominguez hosts every episode of Houston Abogado de Accidentes.",
+      "bio": "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). Bilingual (English / Spanish), fourth-generation Texan, and member of TTLA, AAJ, and PEOPIL. Hosts every episode of Houston Abogado de Accidentes.",
       "episodes": "Host of all episodes"
     }
   ],
@@ -270,23 +273,23 @@
         "links": [
           {
             "title": "Car Accident Lawyer",
-            "description": "Ben Dominguez represents Houston drivers and passengers injured in serious collisions — from I-10 and 610 Loop crashes to surface-street impacts across Harris County.",
-            "href": "https://benwins.com/"
+            "description": "Ben Dominguez represents Houston drivers and passengers injured in serious collisions, from I-10 and 610 Loop crashes to surface-street impacts across Harris County.",
+            "href": "https://benwins.com/services/auto-accident/"
           },
           {
             "title": "Truck Accident Lawyer",
             "description": "Commercial truck and 18-wheeler cases in Texas involve federal motor carrier regulations, multiple liable parties, and catastrophic injuries.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/truck-accident/"
           },
           {
             "title": "Motorcycle Accident Lawyer",
             "description": "Motorcycle cases in Texas involve insurer bias and modified comparative fault. Ben Dominguez pushes back on assumptions about rider conduct.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/motorcycle-accident/"
           },
           {
             "title": "Uber / Rideshare Accident Lawyer",
             "description": "Uber and Lyft collisions in Texas layer the Texas Transportation Code over standard car-accident liability, with multiple insurance policies often in play.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/auto-accident/uber/"
           }
         ]
       },
@@ -296,79 +299,79 @@
           {
             "title": "Bicycle Accident Lawyer",
             "description": "Houston cyclist cases often involve disputed fault. Ben Dominguez investigates intersection evidence and rebuts comparative-fault arguments.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/bicycle-accident/"
           },
           {
             "title": "Pedestrian Accident Lawyer",
             "description": "Pedestrian strikes in Houston often involve distracted driving and disputed right-of-way. Evidence preservation matters within days.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/pedestrian-accident/"
           },
           {
             "title": "Wrongful Death",
             "description": "Texas Civil Practice & Remedies Code Section 71.004 governs wrongful death claims. Ben Dominguez represents surviving spouses, children, and parents.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/wrongful-death/"
           },
           {
             "title": "Construction Accident Lawyer",
             "description": "Construction injuries across the Houston area often involve third-party contractors, OSHA issues, and layered insurance coverage.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/construction-injury/"
           }
         ]
       },
       {
-        "label": "Liability",
+        "label": "Catastrophic Injury",
         "links": [
           {
-            "title": "Products Liability",
-            "description": "Ben Dominguez refocused his practice in 2015 to include products liability — defective auto parts, consumer products, and industrial equipment cases.",
-            "href": "https://benwins.com/"
+            "title": "Traumatic Brain Injury",
+            "description": "TBI cases require life-care planning for future treatment, assistive equipment, and lost earning capacity. Ben Dominguez documents long-term damages.",
+            "href": "https://benwins.com/services/traumatic-brain-injury/"
           },
           {
-            "title": "Premises Liability",
+            "title": "Spinal Cord Injury & Paralysis",
+            "description": "Catastrophic spinal injuries involve lifelong care costs. Ben Dominguez works with medical experts to build the full damages picture.",
+            "href": "https://benwins.com/services/catastrophic-injury/spinal-cord/"
+          },
+          {
+            "title": "Slip-and-Fall & Premises Liability",
             "description": "Slip-and-fall and premises cases across Houston properties under Texas premises liability doctrine (invitee / licensee / trespasser distinctions).",
-            "href": "https://benwins.com/"
-          },
-          {
-            "title": "Insurance Claim Denials",
-            "description": "When carriers deny valid claims or delay payment, Texas Insurance Code Chapter 541 provides bad-faith remedies.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/services/slip-and-fall/"
           },
           {
             "title": "Free Bilingual Consultation",
             "description": "Consultations in English or Spanish. No fee unless you win. Call (713) 804-6822 or reach the firm through benwins.com.",
-            "href": "https://benwins.com/"
+            "href": "https://benwins.com/contact/"
           }
         ]
       },
       {
-        "label": "Texas Law",
+        "label": "Resources",
         "links": [
           {
-            "title": "Texas Statute of Limitations",
-            "description": "Under Civil Practice & Remedies Code Section 16.003, most personal injury claims in Texas must be filed within two years of the injury.",
-            "href": "https://benwins.com/"
+            "title": "About Ben Dominguez",
+            "description": "Solo-practice Houston personal injury and products liability attorney. Texas Bar since 1993, bilingual representation across the Greater Houston area.",
+            "href": "https://benwins.com/attorneys/ben-dominguez/"
           },
           {
-            "title": "Modified Comparative Fault",
-            "description": "Under Section 33.001, a Texas plaintiff 51% or more at fault recovers nothing; at 50% or less, recovery is reduced by the plaintiff's fault percentage.",
-            "href": "https://benwins.com/"
+            "title": "Houston Catastrophic Injury Lawyer",
+            "description": "Catastrophic injury cases in Houston, where life-care planning and long-term damages models drive value.",
+            "href": "https://benwins.com/cities/houston-catastrophic-injury-lawyer/"
           },
           {
-            "title": "Texas Tort Claims Act",
-            "description": "Claims against the City of Houston, Harris County, and other government entities carry shorter notice deadlines under the Texas Tort Claims Act.",
-            "href": "https://benwins.com/"
+            "title": "Personal Injury Practice Areas",
+            "description": "Auto, truck, motorcycle, pedestrian, premises, and catastrophic injury matters across Houston and Harris County.",
+            "href": "https://benwins.com/services/personal-injury/"
           },
           {
-            "title": "Case Results",
-            "description": "Past results do not guarantee a similar outcome in your case. Each Texas personal injury case is evaluated on its own merits.",
-            "href": "https://benwins.com/"
+            "title": "Contact Ben Dominguez",
+            "description": "Free case review, contingency fee, no recovery means no fee. Bilingual intake.",
+            "href": "https://benwins.com/contact/"
           }
         ]
       }
     ]
   },
   "trustBadges": [],
-  "chaptersDescription": "In Episode 1, Ben Dominguez walks Houston accident victims through their rights under Texas law — the two-year statute of limitations, modified comparative fault, how to respond when an adjuster calls, and why evidence preservation on Houston freeways often matters more than the initial medical record. Bilingual conversation in English and Spanish.",
+  "chaptersDescription": "In Episode 1, Ben Dominguez walks Houston accident victims through their rights under Texas law, the two-year statute of limitations, modified comparative fault, how to respond when an adjuster calls, and why evidence preservation on Houston freeways often matters more than the initial medical record. Bilingual conversation in English and Spanish.",
   "reviewsInstruction": "Client testimonials, when displayed here, are from verified sources and represent the experiences of actual Ben Dominguez Law clients. Each client's circumstances are unique, and the outcome of any prior case does not guarantee or predict a similar outcome in your case.",
   "episodeTopics": [
     "All",
@@ -504,7 +507,7 @@
       ],
       "bio": [
         "Ben Dominguez II is a fourth-generation Texan and solo-practice Houston personal injury and products liability attorney. He earned his J.D. from Vermont Law School in 1990 and an MSEL (Master of Studies in Environmental Law) from Vermont Law School in 1995, and was admitted to the State Bar of Texas in 1993 (Bar No. 00786415).",
-        "Ben Dominguez established his Houston solo practice in 1994. His practice initially covered personal injury, securities litigation, criminal defense, and business litigation. In 2015 he narrowed the practice to personal injury and products liability — car, truck, motorcycle, bicycle, pedestrian, rideshare, and construction accidents, plus premises liability, products liability, and wrongful death.",
+        "Ben Dominguez established his Houston solo practice in 1994. His practice initially covered personal injury, securities litigation, criminal defense, and business litigation. In 2015 he narrowed the practice to personal injury and products liability, car, truck, motorcycle, bicycle, pedestrian, rideshare, and construction accidents, plus premises liability, products liability, and wrongful death.",
         "Ben Dominguez is bilingual (English / Spanish) and serves Spanish-speaking clients throughout the Greater Houston area. He is admitted to the U.S. Court of Appeals for the Fifth Circuit and the U.S. District Court for the Southern District of Texas, and is a member of the Texas Trial Lawyers Association (TTLA), the American Association for Justice (AAJ), and the Pan-European Organisation of Personal Injury Lawyers (PEOPIL)."
       ],
       "memberships": [
