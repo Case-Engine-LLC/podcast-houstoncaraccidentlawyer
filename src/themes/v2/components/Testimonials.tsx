@@ -15,6 +15,10 @@ const Testimonials = () => {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  if (testimonialsData.length === 0) {
+    return null
+  }
+
   const cardsPerView = isMobile ? 1 : 3
   const maxIndex = Math.max(0, testimonialsData.length - cardsPerView)
 

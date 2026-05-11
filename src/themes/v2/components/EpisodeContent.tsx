@@ -18,8 +18,8 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
   const [activeTab, setActiveTab] = useState<Tab>('Overview')
   const [isTranscriptExpanded, setIsTranscriptExpanded] = useState(false)
 
-  const episodeChapters = propEpisode?.chapters ?? episodesData[0]?.chapters ?? []
-  const episodeConcepts = propEpisode?.concepts ?? episodesData[0]?.concepts ?? []
+  const episodeChapters = (propEpisode?.chapters?.length ? propEpisode.chapters : episodesData[0]?.chapters ?? []).filter(Boolean)
+  const episodeConcepts = propEpisode?.concepts?.length ? propEpisode.concepts : episodesData[0]?.concepts ?? []
 
   return (
     <section className="py-16 md:py-24 bg-primary">
@@ -89,41 +89,45 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
           {/* Sidebar */}
           <aside className="lg:col-span-1 space-y-8">
             {/* Episode Chapters */}
-            <div className="bg-primary rounded-2xl p-6">
-              <h3 className="font-heading text-lg font-bold text-white mb-2">
-                Episode Chapters
-              </h3>
-              <p className="text-sm text-white/40 mb-6">{chaptersDescription}</p>
-              <ul className="space-y-3">
-                {episodeChapters.map((chapter, index) => (
-                  <li key={index} className="flex items-start gap-3 group cursor-pointer">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-secondary/15 text-secondary text-xs font-bold flex items-center justify-center mt-0.5">
-                      {index + 1}
-                    </span>
-                    <span className="text-sm text-white/70 group-hover:text-white transition-colors leading-snug">
-                      {chapter}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {episodeChapters.length > 0 && (
+              <div className="bg-primary rounded-2xl p-6">
+                <h3 className="font-heading text-lg font-bold text-white mb-2">
+                  Episode Chapters
+                </h3>
+                <p className="text-sm text-white/40 mb-6">{chaptersDescription}</p>
+                <ul className="space-y-3">
+                  {episodeChapters.map((chapter, index) => (
+                    <li key={index} className="flex items-start gap-3 group cursor-pointer">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-secondary/15 text-secondary text-xs font-bold flex items-center justify-center mt-0.5">
+                        {index + 1}
+                      </span>
+                      <span className="text-sm text-white/70 group-hover:text-white transition-colors leading-snug">
+                        {chapter}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Episode Concepts */}
-            <div className="bg-primary rounded-2xl p-6">
-              <h3 className="font-heading text-lg font-bold text-white mb-4">
-                Concepts Covered
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {episodeConcepts.map((concept, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium text-secondary border border-secondary/30 hover:bg-secondary/10 transition-colors cursor-default"
-                  >
-                    {concept}
-                  </span>
-                ))}
+            {episodeConcepts.length > 0 && (
+              <div className="bg-primary rounded-2xl p-6">
+                <h3 className="font-heading text-lg font-bold text-white mb-4">
+                  Concepts Covered
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {episodeConcepts.map((concept, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1.5 rounded-full text-xs font-medium text-secondary border border-secondary/30 hover:bg-secondary/10 transition-colors cursor-default"
+                    >
+                      {concept}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </aside>
         </div>
       </div>

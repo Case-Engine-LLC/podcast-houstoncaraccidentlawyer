@@ -27,20 +27,27 @@ export interface Episode {
 }
 
 function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
+  const staticEpisode = (staticEpisodes as Record<string, unknown>[]).find(item => {
+    const id = (item.id as number) ?? (item.number as number)
+    return id === ep.id
+  })
+  const staticConcepts = (staticEpisode?.concepts as string[] | undefined) ?? []
+  const staticChapters = ((staticEpisode?.chapters as string[] | undefined) ?? []).filter(Boolean)
+
   return {
     id: ep.id,
     number: ep.id,
-    title: ep.title,
-    subtitle: ep.subtitle,
-    description: ep.description,
+    title: (staticEpisode?.title as string) || ep.title,
+    subtitle: (staticEpisode?.subtitle as string) || ep.subtitle,
+    description: (staticEpisode?.description as string) || ep.description,
     duration: ep.duration,
     date: ep.date,
-    category: ep.category,
+    category: (staticEpisode?.category as string) || ep.category,
     featured: ep.featured,
-    topic: ep.topic,
-    concepts: ep.concepts,
-    chapters: ep.chapters,
-    logo: ep.logo,
+    topic: (staticEpisode?.topic as string) || ep.topic,
+    concepts: staticConcepts.length > 0 ? staticConcepts : ep.concepts,
+    chapters: staticChapters.length > 0 ? staticChapters : ep.chapters,
+    logo: (staticEpisode?.logo as string) || ep.logo,
     audioUrl: ep.audioUrl || undefined,
     audioType: ep.audioType || undefined,
     transcriptUrl: ep.transcriptUrl,
