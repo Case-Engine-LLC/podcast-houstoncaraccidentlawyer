@@ -10,7 +10,7 @@
     },
     "formCTA": {
       "text": "Free Consultation",
-      "href": "#contact"
+      "href": "https://benwins.com/contact/"
     },
     "firmUrl": "https://benwins.com"
   },
@@ -177,7 +177,8 @@
       },
       {
         "name": "Contact",
-        "href": "#contact"
+        "href": "https://benwins.com/contact/",
+        "external": true
       }
     ],
     "ctaText": "Subscribe",
