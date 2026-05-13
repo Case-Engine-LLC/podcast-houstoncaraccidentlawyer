@@ -111,11 +111,11 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                 <Link
                   key={ep.id}
                   href={`/v2/episode/${ep.id}`}
-                  className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-4 items-center px-4 py-6 hover:bg-white/60 transition-colors rounded-lg"
+                  className="group flex md:grid md:grid-cols-12 gap-4 md:gap-4 items-start md:items-center px-4 py-6 hover:bg-white/60 transition-colors rounded-lg"
                 >
                   {/* Cover */}
-                  <div className="col-span-1">
-                    <div className="w-16 h-16 md:w-full md:aspect-square flex-shrink-0 rounded-lg overflow-hidden bg-gray-200">
+                  <div className="md:col-span-1 flex-shrink-0">
+                    <div className="w-16 h-16 md:w-full md:h-auto md:aspect-square rounded-lg overflow-hidden bg-gray-200">
                       {ep.logo ? (
                         <img src={idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
                       ) : (
@@ -126,16 +126,27 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                     </div>
                   </div>
 
-                  {/* Name */}
-                  <div className="col-span-4">
-                    <h3 className="font-heading text-base font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                  {/* Name (mobile: takes remaining width) */}
+                  <div className="flex-1 min-w-0 md:col-span-4">
+                    <h3 className="font-heading text-base font-bold text-primary group-hover:text-secondary transition-colors leading-snug break-words">
                       {ep.title}
                     </h3>
                     <p className="text-sm text-gray-400 mt-0.5">{ep.subtitle}</p>
+                    {/* Mobile-only inline meta */}
+                    <div className="mt-2 flex flex-wrap items-center gap-2 md:hidden">
+                      {ep.topic && (
+                        <span className="inline-block px-2 py-0.5 bg-primary/10 rounded-full text-[11px] font-semibold text-primary">
+                          {ep.topic}
+                        </span>
+                      )}
+                      {ep.duration && (
+                        <span className="text-[11px] font-medium text-primary/70">{ep.duration}</span>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Topic */}
-                  <div className="col-span-2">
+                  {/* Topic (desktop only) */}
+                  <div className="hidden md:block md:col-span-2">
                     {ep.topic && (
                       <span className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-semibold text-primary">
                         {ep.topic}
@@ -143,13 +154,13 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                     )}
                   </div>
 
-                  {/* Length */}
-                  <div className="col-span-1">
+                  {/* Length (desktop only) */}
+                  <div className="hidden md:block md:col-span-1">
                     <span className="text-sm font-medium text-primary">{ep.duration}</span>
                   </div>
 
-                  {/* Concepts */}
-                  <div className="col-span-4">
+                  {/* Concepts (desktop only) */}
+                  <div className="hidden md:block md:col-span-4">
                     <div className="flex flex-wrap gap-2">
                       {ep.concepts?.map((concept, i) => (
                         <span key={i} className="px-3 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">

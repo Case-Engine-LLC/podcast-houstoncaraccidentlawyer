@@ -5,8 +5,8 @@
     "podcastUrl": "https://podcast-houstoncaraccidentlawyer.vercel.app",
     "rssFeedUrl": "https://rss2.flightcast.com/incuox20pdj3cqh9o11xxtyl.xml",
     "platformLinks": {
-      "apple": "#",
-      "spotify": "#"
+      "apple": "https://podcasts.apple.com/us/channel/ben-dominguez/id6769120859",
+      "spotify": "https://open.spotify.com/show/033eKxvMkn227nfAwQh0kq"
     },
     "formCTA": {
       "text": "Free Consultation",
@@ -189,10 +189,10 @@
     "description": "Houston Abogado de Accidentes is a bilingual (English / Spanish) podcast hosted by Ben Dominguez, a solo-practice Houston personal injury and products liability attorney serving the Greater Houston area since 1994. Ben Dominguez is admitted to the State Bar of Texas (1993) and handles personal injury, products liability, and wrongful death matters throughout Harris County.",
     "copyright": "Ben Dominguez Law",
     "socialLinks": {
-      "twitter": "https://x.com/bendominguezlaw",
-      "linkedin": "https://www.linkedin.com/in/ben-dominguez-82213343/",
       "facebook": "https://www.facebook.com/BenDominguezLawFirm/",
       "instagram": "https://www.instagram.com/bendominguezlawfirm/",
+      "linkedin": "https://www.linkedin.com/in/ben-dominguez-82213343/",
+      "twitter": "https://x.com/bendominguezlaw",
       "youtube": "https://www.youtube.com/channel/UCtBU83u6BFMmT5Wloq5DPyg"
     }
   },
@@ -268,6 +268,7 @@
   ],
   "topicalEntryGrid": {
     "title": "Explore Ben Dominguez's Practice Areas",
+    "description": "Browse the Texas accident topics Ben Dominguez covers on the podcast. Each card links to a deeper resource from Ben Dominguez Law on that situation.",
     "tabs": [
       {
         "label": "Motor Vehicle",

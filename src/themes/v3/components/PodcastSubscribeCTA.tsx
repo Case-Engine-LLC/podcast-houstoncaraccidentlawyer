@@ -6,7 +6,7 @@ import { subscribeCTA } from '@/lib/site-compat'
 
 const PodcastSubscribeCTA = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-[#111] to-[#050505] relative overflow-hidden">
+    <section id="subscribe" className="py-24 bg-gradient-to-b from-[#111] to-[#050505] relative overflow-hidden">
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <h2 className="font-heading text-4xl md:text-5xl text-white mb-6">

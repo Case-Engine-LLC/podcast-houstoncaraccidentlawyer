@@ -6,8 +6,8 @@ import { footer, episodes, siteConfig, attorney } from '@/data/siteData'
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white pt-24 pb-12 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-primary text-white pt-16 md:pt-24 pb-12 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-16">
         {/* Brand */}
         <div className="md:col-span-1">
           <div className="mb-6">
@@ -50,15 +50,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Legal */}
-        <div>
-          <h3 className="font-heading text-lg font-bold mb-6 text-secondary">Legal</h3>
-          <ul className="space-y-3 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
-          </ul>
-        </div>
       </div>
 
       {/* Bottom bar */}

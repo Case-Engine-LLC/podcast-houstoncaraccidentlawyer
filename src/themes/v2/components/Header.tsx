@@ -17,10 +17,10 @@ const Header = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 bg-black backdrop-blur-md border-b transition-all duration-300 ${scrolled ? 'border-white/10 shadow-md' : 'border-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
         {/* Logo */}
-        <Link href="/">
-          <img src="/images/logo.svg" alt="Logo" className="h-12 md:h-14 w-auto object-contain" />
+        <Link href="/" className="flex-shrink-0">
+          <img src="/images/logo.svg" alt="Logo" className="h-10 sm:h-12 md:h-14 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
@@ -32,11 +32,14 @@ const Header = () => {
         </div>
 
         {/* Subscribe + Mobile Toggle */}
-        <div className="flex items-center gap-4">
-          <button className="bg-secondary text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-secondary-hover transition-all transform hover:scale-105 shadow-lg shadow-secondary/20">
+        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+          <Link
+            href="/#subscribe"
+            className="bg-secondary text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium hover:bg-secondary-hover transition-all transform hover:scale-105 shadow-lg shadow-secondary/20 whitespace-nowrap"
+          >
             {navigation.ctaText}
-          </button>
-          <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)}>
+          </Link>
+          <button className="md:hidden text-white flex-shrink-0" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

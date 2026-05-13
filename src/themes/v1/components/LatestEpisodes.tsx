@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { Play, Info, ArrowRight, LayoutList, LayoutGrid } from 'lucide-react'
-import { episodes as staticEpisodesData } from '@/data/siteData'
+import { episodes as staticEpisodesData , siteConfig} from "@/data/siteData"
 import { subscribeCTA } from '@/lib/site-compat'
 import type { Episode } from '@/lib/data'
 
@@ -66,7 +66,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-none">
-            Seasons and Episodes of The You Interview
+            Seasons and Episodes of {siteConfig.podcastName}
           </h2>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
             {subscribeCTA.description}

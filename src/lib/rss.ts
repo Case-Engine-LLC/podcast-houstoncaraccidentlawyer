@@ -54,6 +54,21 @@ function getAttr(node: Record<string, unknown>, attr: string): string {
   return (node?.[`@_${attr}`] as string) ?? ''
 }
 
+// Decode HTML/numeric entities so React doesn't re-encode them (otherwise
+// `&#39;` in the RSS feed renders as the literal text "&#39;" on the page).
+function decodeEntities(s: string): string {
+  if (!s) return s
+  return s
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(parseInt(dec, 10)))
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+}
+
 function formatDate(dateStr: string): string {
   try {
     const d = new Date(dateStr)
@@ -102,8 +117,8 @@ export async function fetchPodcastFeed(rssUrl: string): Promise<PodcastFeed> {
   if (!channel) throw new Error('Invalid RSS: no channel element')
 
   const channelInfo: RSSChannel = {
-    title: channel.title ?? '',
-    description: channel.description ?? '',
+    title: decodeEntities(String(channel.title ?? '')),
+    description: decodeEntities(String(channel.description ?? '')),
     imageUrl: channel['itunes:image']?.['@_href']
       ?? channel.image?.url
       ?? null,
@@ -129,9 +144,9 @@ export async function fetchPodcastFeed(rssUrl: string): Promise<PodcastFeed> {
     return {
       id: episodeNum,
       guid: String(item.guid ?? item.link ?? `ep-${episodeNum}`),
-      title: String(item.title ?? ''),
-      subtitle: String(item['itunes:subtitle'] ?? '').slice(0, 120),
-      description: String(item.description ?? item['content:encoded'] ?? '').replace(/<[^>]*>/g, ''),
+      title: decodeEntities(String(item.title ?? '')),
+      subtitle: decodeEntities(String(item['itunes:subtitle'] ?? '').slice(0, 120)),
+      description: decodeEntities(String(item.description ?? item['content:encoded'] ?? '').replace(/<[^>]*>/g, '')),
       date: formatDate(pubDate),
       rawDate: pubDate ? new Date(pubDate).toISOString() : '',
       duration: parseDuration(item['itunes:duration']),

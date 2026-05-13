@@ -16,9 +16,11 @@ const TopicalEntryGrid = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 leading-none">
             {topicalEntryGrid.title}
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          {(topicalEntryGrid as { description?: string }).description && (
+            <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {(topicalEntryGrid as { description?: string }).description}
+            </p>
+          )}
         </div>
 
         {/* Tabs */}

@@ -13,12 +13,22 @@ import PodcastSubscribeCTA from '../components/PodcastSubscribeCTA'
 import FAQ from '../components/FAQ'
 import TopicalEntryGrid from '../components/TopicalEntryGrid'
 import Footer from '../components/Footer'
+import { trustBadges, stats } from '@/data/siteData'
 
 interface V2HomeProps {
   episodes?: Episode[]
 }
 
 const V2Home = ({ episodes }: V2HomeProps) => {
+  const hasTrustBadges = Array.isArray(trustBadges) && trustBadges.length > 0
+  const hasStats = Boolean(
+    stats &&
+      (stats.rating ||
+        stats.satisfactionRate ||
+        stats.casesHandled)
+  )
+  const showTrustSection = hasTrustBadges || hasStats
+
   return (
     <div className="bg-[#f4f2ed] text-primary min-h-screen overflow-x-hidden selection:bg-secondary selection:text-white">
       <Header />
@@ -27,11 +37,13 @@ const V2Home = ({ episodes }: V2HomeProps) => {
         {/* Hero */}
         <Hero />
 
-        {/* Trust Badges + Stats (white section) */}
-        <section className="py-10 mt-10 bg-white border-y border-gray-100">
-          <TrustBadges />
-          <StatsBanner />
-        </section>
+        {/* Trust Badges + Stats (white section) — only render when there's content */}
+        {showTrustSection && (
+          <section className="py-10 mt-10 bg-white border-y border-gray-100">
+            {hasTrustBadges && <TrustBadges />}
+            {hasStats && <StatsBanner />}
+          </section>
+        )}
 
         {/* About the Host */}
         <About />

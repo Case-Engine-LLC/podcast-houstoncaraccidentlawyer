@@ -112,7 +112,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
 
             {/* Episode Concepts */}
             {episodeConcepts.length > 0 && (
-              <div className="bg-primary rounded-2xl p-6">
+              <div className="bg-primary rounded-2xl p-6 min-w-0 overflow-hidden">
                 <h3 className="font-heading text-lg font-bold text-white mb-4">
                   Concepts Covered
                 </h3>
@@ -120,7 +120,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
                   {episodeConcepts.map((concept, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1.5 rounded-full text-xs font-medium text-secondary border border-secondary/30 hover:bg-secondary/10 transition-colors cursor-default"
+                      className="px-3 py-1.5 rounded-full text-xs font-medium text-secondary border border-secondary/30 hover:bg-secondary/10 transition-colors cursor-default break-words max-w-full"
                     >
                       {concept}
                     </span>

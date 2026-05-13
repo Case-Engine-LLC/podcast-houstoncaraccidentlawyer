@@ -10,7 +10,7 @@ import TrustBadges from '../components/TrustBadges'
 import StatsBanner from '../components/StatsBanner'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
-import { authorProfiles, siteConfig, contact } from '@/data/siteData'
+import { authorProfiles, siteConfig, contact, trustBadges, stats } from '@/data/siteData'
 
 interface V2AuthorPageProps {
   slug: string
@@ -22,6 +22,12 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
   if (!author) {
     notFound()
   }
+
+  const hasAwards = Array.isArray(author.awards) && author.awards.length > 0
+  const hasTrustBadges = Array.isArray(trustBadges) && trustBadges.length > 0
+  const hasStats = Boolean(
+    stats && (stats.rating || stats.satisfactionRate || stats.casesHandled)
+  )
 
   return (
     <div className="bg-[#f4f2ed] text-primary min-h-screen overflow-x-hidden selection:bg-secondary selection:text-white">
@@ -98,10 +104,12 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
           </div>
         </section>
 
-        {/* Trust Badges */}
-        <section className="py-10 bg-white border-y border-gray-100">
-          <TrustBadges />
-        </section>
+        {/* Trust Badges — only when populated */}
+        {hasTrustBadges && (
+          <section className="py-10 bg-white border-y border-gray-100">
+            <TrustBadges />
+          </section>
+        )}
 
         {/* Bio + Education/Awards */}
         <section className="py-20 bg-[#f4f2ed]">
@@ -141,30 +149,32 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
                   </div>
                 </div>
 
-                {/* Awards */}
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
-                      <Award size={20} className="text-secondary" />
-                    </div>
-                    <h3 className="text-xl font-bold text-primary">Awards & Recognition</h3>
-                  </div>
-                  <div className="space-y-3">
-                    {author.awards.map((award, i) => (
-                      <div key={i} className="bg-white rounded-xl p-5 shadow-sm">
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <p className="font-bold text-primary">{award.name}</p>
-                            <p className="text-gray-500 text-sm mt-1">{award.description}</p>
-                          </div>
-                          <span className="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full whitespace-nowrap font-bold">
-                            {award.years}
-                          </span>
-                        </div>
+                {/* Awards — only when populated */}
+                {hasAwards && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                        <Award size={20} className="text-secondary" />
                       </div>
-                    ))}
+                      <h3 className="text-xl font-bold text-primary">Awards & Recognition</h3>
+                    </div>
+                    <div className="space-y-3">
+                      {author.awards.map((award, i) => (
+                        <div key={i} className="bg-white rounded-xl p-5 shadow-sm">
+                          <div className="flex items-start justify-between gap-4">
+                            <div>
+                              <p className="font-bold text-primary">{award.name}</p>
+                              <p className="text-gray-500 text-sm mt-1">{award.description}</p>
+                            </div>
+                            <span className="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full whitespace-nowrap font-bold">
+                              {award.years}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Memberships */}
                 <div>
@@ -213,10 +223,12 @@ const V2AuthorPage = ({ slug }: V2AuthorPageProps) => {
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="py-16 bg-white border-y border-gray-100">
-          <StatsBanner />
-        </section>
+        {/* Stats — only when populated */}
+        {hasStats && (
+          <section className="py-16 bg-white border-y border-gray-100">
+            <StatsBanner />
+          </section>
+        )}
 
         {/* Testimonials */}
         <Testimonials />
