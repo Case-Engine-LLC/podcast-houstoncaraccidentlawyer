@@ -13,7 +13,7 @@ export const REVALIDATE = parseInt(process.env.REVALIDATE_SECONDS || '3600', 10)
 
 export interface Episode {
   id: number
-  slug: string
+  slug?: string
   number: number
   title: string
   subtitle: string

@@ -155,7 +155,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                     )}
 
                     {/* Play Button */}
-                    <Link href={`/episode/${episode.slug}`} className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity mb-3">
+                    <Link href={`/episode/${(episode as { slug?: string }).slug ?? episode.id}`} className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity mb-3">
                       <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
                         <Play size={20} fill="black" stroke="black" className="ml-0.5" />
                       </div>
@@ -214,7 +214,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                   <tr key={episode.id} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                     <td className="py-5 pr-4 text-base font-bold text-white/30">{episode.number}</td>
                     <td className="py-5 pr-4">
-                      <Link href={`/episode/${episode.slug}`} className="hover:opacity-80">
+                      <Link href={`/episode/${(episode as { slug?: string }).slug ?? episode.id}`} className="hover:opacity-80">
                         <div className="text-base font-bold text-white">{episode.title}</div>
                         <div className="text-sm text-white/50 mt-1">{episode.subtitle}</div>
                       </Link>

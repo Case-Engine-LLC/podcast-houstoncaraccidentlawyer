@@ -19,6 +19,7 @@ const OtherEpisodes = ({ episodes: propEpisodes }: OtherEpisodesProps) => {
   // Show "Coming Soon" for future episodes
   const episodes = [
     ...episodesData.map(ep => ({
+      slug: (ep as { slug?: string }).slug,
       id: String(ep.id),
       title: ep.title,
       episodeNumber: `Episode ${ep.number}`,
@@ -80,7 +81,7 @@ const OtherEpisodes = ({ episodes: propEpisodes }: OtherEpisodesProps) => {
             {episodes.map((episode) => (
               <Link
                 key={episode.id}
-                href={episode.id.startsWith('coming') ? '#subscribe' : `/episode/${episode.slug}`}
+                href={episode.id.startsWith('coming') ? '#subscribe' : `/episode/${(episode as { slug?: string }).slug ?? episode.id}`}
                 className="group flex flex-col flex-shrink-0 w-full md:w-[calc(33.333%-1rem)]"
               >
                 <div className="aspect-video bg-gray-200 rounded-2xl mb-4 overflow-hidden relative flex items-center justify-center">

@@ -122,7 +122,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
           title={ep.title}
           description={(ep.description ?? '').replace(/\*\*/g, '')}
           duration={ep.duration}
-          episodeLink={`/episode/${ep.slug ?? ep.number ?? 1}`}
+          episodeLink={`/episode/${(ep as { slug?: string; number?: number }).slug ?? ep.number ?? 1}`}
           imageUrl={(latestEpisode as any)?.logo || undefined}
           audioUrl={(latestEpisode as any)?.audioUrl || undefined}
         />
