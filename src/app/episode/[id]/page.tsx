@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     openGraph: {
       title: episode.title,
       description,
-      url: `${contact.website}/episode/${slug ?? id}`,
+      url: `${contact.website}/episode/${id}`,
       siteName: siteConfig.podcastName,
       type: 'article',
     },
