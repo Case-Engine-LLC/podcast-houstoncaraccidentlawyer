@@ -1,8 +1,10 @@
 import { fetchPodcastFeed, fetchTranscript as fetchRssTranscript, type RSSEpisode, type TranscriptSegment } from './rss'
-import { episodes as staticEpisodes } from '@/data/siteData'
+import { episodes as staticEpisodes, siteConfig } from '@/data/siteData'
 import { episodeTranscript as staticTranscript } from '@/data/transcript'
 
-const RSS_URL = process.env.PODCAST_RSS_URL
+// Prefer env var (Vercel project setting), fall back to siteData.rssFeedUrl
+// so the build still has a wired feed if the env var is not set.
+const RSS_URL = process.env.PODCAST_RSS_URL || (siteConfig as { rssFeedUrl?: string })?.rssFeedUrl || undefined
 
 export function slugifyEpisode(title: string, fallback: string = 'episode'): string {
   if (!title) return fallback
