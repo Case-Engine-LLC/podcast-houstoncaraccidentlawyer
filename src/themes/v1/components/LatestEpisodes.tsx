@@ -35,6 +35,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
 
   const defaultEpisodes = orderedEpisodes.map((ep, idx) => ({
     id: String(ep.id),
+    slug: (ep as { slug?: string }).slug,
     number: String(orderedEpisodes.length - idx).padStart(2, '0'),
     title: ep.title,
     subtitle: ep.subtitle,
