@@ -32,7 +32,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Listen on Spotify"
-              className="inline-block transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 rounded-md"
+              className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 rounded-md"
             >
               <img
                 src="/badges/listen-on-spotify.svg"

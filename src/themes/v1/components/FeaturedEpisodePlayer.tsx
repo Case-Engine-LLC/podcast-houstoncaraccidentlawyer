@@ -100,7 +100,7 @@ const FeaturedEpisodePlayer = ({
             <ChevronRight size={28} />
           </Link>
         </div>
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{description}</p>
+        <p className="text-sm text-gray-600 mb-4 leading-relaxed overflow-hidden max-h-[5em]">{description}</p>
         <div className="flex items-center gap-3">
           {audioUrl ? (
             <button onClick={togglePlay} aria-label={isPlaying ? `Pause ${title}` : `Play ${title}`} className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
@@ -146,7 +146,7 @@ const FeaturedEpisodePlayer = ({
                 Episode Page <ChevronRight size={16} />
               </Link>
             </div>
-            <p className="text-sm md:text-base text-gray-600 mb-3 leading-relaxed">{description}</p>
+            <p className="text-sm md:text-base text-gray-600 mb-3 leading-relaxed overflow-hidden max-h-[5em]">{description}</p>
             <div className="text-sm text-gray-500 mb-4">Episode {episodeNumber} • {duration}</div>
           </div>
           <div className="flex items-center gap-4">
