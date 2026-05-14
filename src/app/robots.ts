@@ -8,9 +8,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow: [
-          '/v1/',
-          '/v2/',
-          '/v3/',
+
+
           '/api/',
           '/?s=',
           '/cdn-cgi/',

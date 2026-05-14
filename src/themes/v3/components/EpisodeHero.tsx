@@ -31,11 +31,11 @@ const EpisodeHero = ({ episodeId, episode: propEpisode }: EpisodeHeroProps) => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-slate-500 mb-12">
-          <Link href="/v3" className="hover:text-white transition-colors">Home</Link>
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-          <Link href="/v3#episodes" className="hover:text-white transition-colors">Episodes</Link>
+          <Link href="#episodes" className="hover:text-white transition-colors">Episodes</Link>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

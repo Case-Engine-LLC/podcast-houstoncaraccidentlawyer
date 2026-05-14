@@ -19,11 +19,11 @@ function EpisodeHero({ episode: propEpisode }: EpisodeHeroProps) {
       <div className="max-w-7xl mx-auto px-6">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-primary/50 mb-10">
-          <Link href="/v2" className="hover:text-primary transition-colors">
+          <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>
           <span>/</span>
-          <Link href="/v2#episodes" className="hover:text-primary transition-colors">
+          <Link href="#episodes" className="hover:text-primary transition-colors">
             Episodes
           </Link>
           <span>/</span>

@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/v3" className="inline-block mb-6">
+            <Link href="/" className="inline-block mb-6">
               <span className="h-10 w-auto object-contain flex items-center justify-center text-base font-bold text-white">{footer.logo}</span>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
@@ -56,10 +56,10 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Podcast</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><Link href="/v3#episodes" className="hover:text-amber-500 transition-colors">Latest Episodes</Link></li>
-              <li><Link href="/v3#episodes" className="hover:text-amber-500 transition-colors">Season 1 Archive</Link></li>
-              <li><Link href="/v3#about" className="hover:text-amber-500 transition-colors">Guest Speakers</Link></li>
-              <li><Link href="/v3#subscribe" className="hover:text-amber-500 transition-colors">Subscribe</Link></li>
+              <li><Link href="#episodes" className="hover:text-amber-500 transition-colors">Latest Episodes</Link></li>
+              <li><Link href="#episodes" className="hover:text-amber-500 transition-colors">Season 1 Archive</Link></li>
+              <li><Link href="#about" className="hover:text-amber-500 transition-colors">Guest Speakers</Link></li>
+              <li><Link href="#subscribe" className="hover:text-amber-500 transition-colors">Subscribe</Link></li>
             </ul>
           </div>
 

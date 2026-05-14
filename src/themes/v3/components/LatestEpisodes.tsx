@@ -153,7 +153,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                         <div className="text-xs text-amber-500 mb-1">Episode {ep.number}</div>
                         <h4 className="text-white font-serif text-lg group-hover:text-amber-400 transition-colors">
                           {ep.id > 0 ? (
-                            <Link href={`/v3/episode/${ep.id}`}>{ep.title}</Link>
+                            <Link href={`/episode/${ep.id}`}>{ep.title}</Link>
                           ) : (
                             ep.title
                           )}
@@ -173,7 +173,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                   <td className="py-6 px-4 text-right">
                     {ep.id > 0 ? (
                       <Link
-                        href={`/v3/episode/${ep.id}`}
+                        href={`/episode/${ep.id}`}
                         className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors ml-auto"
                       >
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -224,7 +224,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                   </div>
                   <h4 className="text-xl font-serif text-white mb-2 group-hover:text-amber-400 transition-colors">
                     {ep.id > 0 ? (
-                      <Link href={`/v3/episode/${ep.id}`}>{ep.title}</Link>
+                      <Link href={`/episode/${ep.id}`}>{ep.title}</Link>
                     ) : (
                       ep.title
                     )}

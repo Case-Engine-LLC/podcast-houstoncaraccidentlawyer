@@ -101,7 +101,7 @@ const About = () => {
           </div>
 
           <Link
-            href={`/v2/author/${host.slug}`}
+            href={`/author/${host.slug}`}
             className="inline-flex items-center gap-2 mt-8 text-secondary font-medium hover:gap-4 transition-all"
           >
             Read {host.name}&apos;s Full Bio

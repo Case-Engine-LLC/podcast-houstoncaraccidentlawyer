@@ -40,7 +40,7 @@ const OtherEpisodes = ({ currentEpisodeId, episodes: propEpisodes }: OtherEpisod
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center mb-12">
           <h2 className="font-heading text-3xl text-white">More Episodes</h2>
-          <Link href="/v3#episodes" className="text-sm text-amber-500 hover:text-amber-400 transition-colors font-medium">
+          <Link href="#episodes" className="text-sm text-amber-500 hover:text-amber-400 transition-colors font-medium">
             View All
           </Link>
         </div>
@@ -80,7 +80,7 @@ const OtherEpisodes = ({ currentEpisodeId, episodes: propEpisodes }: OtherEpisod
                 </div>
                 <h3 className="text-lg font-serif text-white mb-2 group-hover:text-amber-400 transition-colors">
                   {ep.id > 0 ? (
-                    <Link href={`/v3/episode/${ep.id}`}>{ep.title}</Link>
+                    <Link href={`/episode/${ep.id}`}>{ep.title}</Link>
                   ) : (
                     ep.title
                   )}

@@ -31,7 +31,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm text-gray-400">
             {episodes.slice(0, 4).map((ep) => (
               <li key={ep.id}>
-                <Link href={`/v2/episode/${ep.id}`} className="hover:text-white transition-colors">Episode {ep.number}</Link>
+                <Link href={`/episode/${ep.id}`} className="hover:text-white transition-colors">Episode {ep.number}</Link>
               </li>
             ))}
             <li><Link href="#episodes" className="hover:text-white transition-colors">View All</Link></li>
@@ -42,7 +42,7 @@ const Footer = () => {
         <div>
           <h3 className="font-heading text-lg font-bold mb-6 text-secondary">Navigation</h3>
           <ul className="space-y-3 text-sm text-gray-400">
-            <li><Link href="/v2" className="hover:text-white transition-colors">Home</Link></li>
+            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
             <li><Link href="#about" className="hover:text-white transition-colors">About Host</Link></li>
             <li><Link href="#reviews" className="hover:text-white transition-colors">Reviews</Link></li>
             <li><Link href="#faq" className="hover:text-white transition-colors">FAQ</Link></li>

@@ -39,7 +39,7 @@ const About = () => {
           {podcastTeam.map((host, index) => (
             <Link
               key={host.slug}
-              href={`/v3/author/${host.slug}`}
+              href={`/author/${host.slug}`}
               className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-amber-500/30 transition-all duration-500"
             >
               {/* Amber accent bar */}
