@@ -1,10 +1,9 @@
 name: Deploy to Vercel
 
+# Deploy hook is also fired by Vercel's git integration on push to main.
+# Keeping push triggers here would double-fire builds, so this workflow is
+# manual-only.
 on:
-  push:
-    branches:
-      - main
-      - master
   workflow_dispatch:
 
 jobs:
