@@ -85,28 +85,14 @@ const Hero = ({ latestEpisode }: HeroProps) => {
               href={siteConfig.platformLinks.spotify}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 md:gap-3 px-2 md:px-6 py-2 md:py-4 rounded-xl md:rounded-2xl transition-all hover:scale-105 flex-1 sm:flex-initial sm:min-w-[15rem]"
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(5.85px)'
-              }}
+              aria-label="Listen on Spotify"
+              className="inline-block transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 rounded-md"
             >
-              <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clipPath="url(#clip0_132_42)">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M30.2385 16.8439C24.1148 13.2073 14.0125 12.8725 8.16429 14.6471C7.22569 14.9302 6.23389 14.4019 5.94889 13.4614C5.66389 12.5228 6.194 11.531 7.1326 11.246C13.8453 9.2073 25.0021 9.60043 32.053 13.7861C32.8966 14.2877 33.174 15.3788 32.6724 16.2224C32.1746 17.066 31.0802 17.3455 30.2385 16.8439ZM30.039 22.2304C29.6096 22.9277 28.6976 23.1459 28.0003 22.7184C22.895 19.5796 15.1088 18.6713 9.0687 20.5048C8.284 20.7404 7.45751 20.2995 7.22001 19.5167C6.98441 18.7339 7.4252 17.9071 8.208 17.6696C15.1069 15.5758 23.6854 16.5906 29.5507 20.1949C30.248 20.6224 30.4665 21.535 30.039 22.2304ZM27.7134 27.4034C27.3714 27.962 26.6437 28.1388 26.0851 27.7968C21.6239 25.0703 16.0075 24.4549 9.3936 25.9654C8.7571 26.1117 8.1206 25.7123 7.9762 25.0739C7.8299 24.4374 8.227 23.8035 8.8673 23.6572C16.1044 22.0023 22.3117 22.7143 27.3201 25.7752C27.8787 26.1172 28.0554 26.8448 27.7134 27.4034ZM19 0C8.5063 0 0 8.5063 0 19C0 29.4937 8.5063 38 19 38C29.4937 38 38 29.4937 38 19C38 8.5082 29.4937 0 19 0Z" fill="white"/>
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_132_42">
-                      <rect width="38" height="38" fill="white"/>
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <div className="text-left">
-                <div className="text-[0.6rem] md:text-xs text-white/60">Available on</div>
-                <div className="text-sm md:text-lg font-bold text-white">Spotify</div>
-              </div>
+              <img
+                src="/badges/listen-on-spotify.svg"
+                alt="Listen on Spotify"
+                className="h-10 md:h-12 w-auto"
+              />
             </a>
           </div>
         </div>

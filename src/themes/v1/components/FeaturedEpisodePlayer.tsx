@@ -100,19 +100,36 @@ const FeaturedEpisodePlayer = ({
             <ChevronRight size={28} />
           </Link>
         </div>
-        <p className="episode-description text-sm text-gray-600 mb-4 leading-relaxed">{description}</p>
+        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{description}</p>
         <div className="flex items-center gap-3">
-          <button onClick={audioUrl ? togglePlay : undefined} className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
-            {isPlaying ? <Pause size={20} fill="white" className="text-white" /> : <Play size={20} fill="white" className="text-white ml-0.5" />}
-          </button>
-          <div className="flex-1 flex flex-col gap-1">
-            <div ref={progressRef} onClick={audioUrl ? handleSeek : undefined} className="h-1.5 bg-gray-200 rounded-full overflow-hidden cursor-pointer group">
-              <div className="h-full bg-black transition-all group-hover:bg-gray-800" style={{ width: `${progress}%` }} />
+          {audioUrl ? (
+            <button onClick={togglePlay} aria-label={isPlaying ? `Pause ${title}` : `Play ${title}`} className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
+              {isPlaying ? <Pause size={20} fill="white" className="text-white" /> : <Play size={20} fill="white" className="text-white ml-0.5" />}
+            </button>
+          ) : (
+            <Link href={episodeLink} aria-label={`Play ${title}`} className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
+              <Play size={20} fill="white" className="text-white ml-0.5" />
+            </Link>
+          )}
+          {audioUrl ? (
+            <div className="flex-1 flex flex-col gap-1">
+              <div ref={progressRef} onClick={handleSeek} className="h-1.5 bg-gray-200 rounded-full overflow-hidden cursor-pointer group">
+                <div className="h-full bg-black transition-all group-hover:bg-gray-800" style={{ width: `${progress}%` }} />
+              </div>
+              <span className="text-xs text-gray-400">
+                {formatTime(currentTime)} / {totalDuration > 0 ? formatTime(totalDuration) : duration}
+              </span>
             </div>
-            <span className="text-xs text-gray-400">
-              {formatTime(currentTime)} / {totalDuration > 0 ? formatTime(totalDuration) : duration}
-            </span>
-          </div>
+          ) : (
+            <Link href={episodeLink} className="flex-1 flex flex-col gap-1 cursor-pointer">
+              <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden group">
+                <div className="h-full w-0 bg-black transition-all group-hover:bg-gray-800" />
+              </div>
+              <span className="text-xs text-gray-400">
+                0:00 / {duration}
+              </span>
+            </Link>
+          )}
         </div>
       </div>
 
@@ -133,18 +150,36 @@ const FeaturedEpisodePlayer = ({
             <div className="text-sm text-gray-500 mb-4">Episode {episodeNumber} • {duration}</div>
           </div>
           <div className="flex items-center gap-4">
-            <button onClick={audioUrl ? togglePlay : undefined} className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
-              {isPlaying ? <Pause size={18} fill="white" className="text-white" /> : <Play size={18} fill="white" className="text-white ml-0.5" />}
-            </button>
-            <div ref={!audioUrl ? undefined : progressRef} onClick={audioUrl ? handleSeek : undefined} className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden cursor-pointer group">
-              <div className="h-full bg-black transition-all group-hover:bg-gray-800" style={{ width: `${progress}%` }} />
-            </div>
+            {audioUrl ? (
+              <button onClick={togglePlay} aria-label={isPlaying ? `Pause ${title}` : `Play ${title}`} className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
+                {isPlaying ? <Pause size={18} fill="white" className="text-white" /> : <Play size={18} fill="white" className="text-white ml-0.5" />}
+              </button>
+            ) : (
+              <Link href={episodeLink} aria-label={`Play ${title}`} className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-gray-800 transition-colors shrink-0">
+                <Play size={18} fill="white" className="text-white ml-0.5" />
+              </Link>
+            )}
+            {audioUrl ? (
+              <div ref={progressRef} onClick={handleSeek} className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden cursor-pointer group">
+                <div className="h-full bg-black transition-all group-hover:bg-gray-800" style={{ width: `${progress}%` }} />
+              </div>
+            ) : (
+              <Link href={episodeLink} className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden cursor-pointer group">
+                <div className="h-full w-0 bg-black transition-all group-hover:bg-gray-800" />
+              </Link>
+            )}
             <span className="text-xs text-gray-400 shrink-0 min-w-[3.5rem] text-right">
               {totalDuration > 0 ? formatTime(totalDuration - currentTime) : duration}
             </span>
-            <button onClick={audioUrl ? toggleMute : undefined} className="text-gray-600 hover:text-black transition-colors shrink-0">
-              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-            </button>
+            {audioUrl ? (
+              <button onClick={toggleMute} aria-label={isMuted ? 'Unmute' : 'Mute'} className="text-gray-600 hover:text-black transition-colors shrink-0">
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+              </button>
+            ) : (
+              <Link href={episodeLink} aria-label="Open episode page for full player" className="text-gray-600 hover:text-black transition-colors shrink-0">
+                <Volume2 size={20} />
+              </Link>
+            )}
           </div>
         </div>
       </div>
