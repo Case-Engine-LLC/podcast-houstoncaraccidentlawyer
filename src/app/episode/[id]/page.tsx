@@ -8,7 +8,7 @@ export const revalidate = 3600
 export async function generateStaticParams() {
   try {
     const episodes = await getAllEpisodes()
-    return episodes.map(ep => ({ id: ep.slug }))
+    return episodes.map(ep => ({ id: ep.slug ?? String(ep.id) }))
   } catch {
     return []
   }
