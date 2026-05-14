@@ -40,11 +40,13 @@ function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
   })
   const staticConcepts = (staticEpisode?.concepts as string[] | undefined) ?? []
   const staticChapters = ((staticEpisode?.chapters as string[] | undefined) ?? []).filter(Boolean)
+  const title = (staticEpisode?.title as string) || ep.title
 
   return {
     id: ep.id,
+    slug: (staticEpisode?.slug as string) || slugifyEpisode(title, String(ep.id)),
     number: ep.id,
-    title: (staticEpisode?.title as string) || ep.title,
+    title,
     subtitle: (staticEpisode?.subtitle as string) || ep.subtitle,
     description: (staticEpisode?.description as string) || ep.description,
     duration: ep.duration,
