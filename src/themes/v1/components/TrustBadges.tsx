@@ -11,7 +11,7 @@ const TrustBadges = () => {
   const badges = trustBadges
 
   return (
-    <section className="relative z-20 bg-white py-6 md:py-12 overflow-x-hidden ">
+    <section className="bg-white py-6 md:py-12 overflow-hidden ">
       <div className="flex animate-marquee-fast md:animate-marquee-slower">
         {/* First set of badges */}
         {badges.map((badge) => (
@@ -45,7 +45,7 @@ const TrustBadges = () => {
 
               {/* Tooltip */}
               {hoveredBadge === badge.id && (
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black text-white text-xs rounded-lg p-3 shadow-lg z-50 animate-in fade-in slide-in-from-bottom-2">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black text-white text-xs rounded-lg p-3 shadow-lg z-10 animate-in fade-in slide-in-from-bottom-2">
                   {badge.tooltip}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-black rotate-45" />
                 </div>
@@ -86,7 +86,7 @@ const TrustBadges = () => {
 
               {/* Tooltip */}
               {hoveredBadge === badge.id + 100 && (
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black text-white text-xs rounded-lg p-3 shadow-lg z-50 animate-in fade-in slide-in-from-bottom-2">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black text-white text-xs rounded-lg p-3 shadow-lg z-10 animate-in fade-in slide-in-from-bottom-2">
                   {badge.tooltip}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-black rotate-45" />
                 </div>
