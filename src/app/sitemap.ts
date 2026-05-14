@@ -20,8 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
-    ...episodes.map((ep: { id: number | string }) => ({
-      url: `${base}/episode/${ep.id}`,
+    .../* eslint-disable */ episodes.map((ep: { id: number | string; slug?: string; title?: string }) => ({
+      url: `${base}/episode/${ep.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,

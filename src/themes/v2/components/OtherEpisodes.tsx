@@ -82,7 +82,7 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
             style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
           >
             {episodes.map((ep, idx) => {
-              const href = ep.isComingSoon ? '#subscribe' : `/v2/episode/${ep.id}`
+              const href = ep.isComingSoon ? '#subscribe' : `/v2/episode/${ep.slug}`
               const cover = idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'
 
               return (

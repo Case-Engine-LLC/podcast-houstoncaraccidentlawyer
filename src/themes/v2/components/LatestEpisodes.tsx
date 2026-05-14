@@ -110,7 +110,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
               {filteredEpisodes.map((ep, idx) => (
                 <Link
                   key={ep.id}
-                  href={`/episode/${ep.id}`}
+                  href={`/episode/${ep.slug}`}
                   className="group flex md:grid md:grid-cols-12 gap-4 md:gap-4 items-start md:items-center px-4 py-6 hover:bg-white/60 transition-colors rounded-lg"
                 >
                   {/* Cover */}
@@ -221,7 +221,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
 
                   {/* Play Button */}
                   <Link
-                    href={`/episode/${ep.id}`}
+                    href={`/episode/${ep.slug}`}
                     className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity mb-4"
                   >
                     <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">

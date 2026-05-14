@@ -3,10 +3,17 @@ import { episodes as staticEpisodes } from '@/data/siteData'
 import { episodeTranscript as staticTranscript } from '@/data/transcript'
 
 const RSS_URL = process.env.PODCAST_RSS_URL
+
+export function slugifyEpisode(title: string, fallback: string = 'episode'): string {
+  if (!title) return fallback
+  const s = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+  return s.slice(0, 80) || fallback
+}
 export const REVALIDATE = parseInt(process.env.REVALIDATE_SECONDS || '3600', 10)
 
 export interface Episode {
   id: number
+  slug: string
   number: number
   title: string
   subtitle: string
@@ -58,6 +65,7 @@ function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
 function normalizeStaticEpisode(ep: Record<string, unknown>): Episode {
   return {
     id: (ep.id as number) ?? 1,
+    slug: (ep.slug as string) || slugifyEpisode((ep.title as string) || '', String((ep.id as number) ?? 1)),
     number: (ep.number as number) ?? (ep.id as number) ?? 1,
     title: (ep.title as string) ?? '',
     subtitle: (ep.subtitle as string) ?? '',
@@ -108,6 +116,20 @@ export async function getAllEpisodes(): Promise<Episode[]> {
 export async function getEpisodeById(id: number): Promise<Episode | null> {
   const episodes = await getAllEpisodes()
   return episodes.find(ep => ep.id === id) ?? null
+}
+
+export async function getEpisodeBySlug(slug: string): Promise<Episode | null> {
+  const episodes = await getAllEpisodes()
+  return episodes.find(ep => ep.slug === slug) ?? null
+}
+
+export async function getEpisodeByIdOrSlug(idOrSlug: string): Promise<Episode | null> {
+  const episodes = await getAllEpisodes()
+  const bySlug = episodes.find(ep => ep.slug === idOrSlug)
+  if (bySlug) return bySlug
+  const n = Number(idOrSlug)
+  if (Number.isFinite(n)) return episodes.find(ep => ep.id === n) ?? null
+  return null
 }
 
 export async function getEpisodeTranscript(episode: Episode): Promise<TranscriptSegment[]> {

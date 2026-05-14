@@ -6,6 +6,7 @@ import { PlayCircle } from 'lucide-react'
 
 interface EpisodeCardProps {
   id: string
+  slug?: string
   title: string
   description: string
   date: string
@@ -13,7 +14,7 @@ interface EpisodeCardProps {
   image?: string
 }
 
-const EpisodeCard = ({ id, title, description, date, episodeNumber, image }: EpisodeCardProps) => {
+const EpisodeCard = ({ id, slug, title, description, date, episodeNumber, image }: EpisodeCardProps) => {
   return (
     <div className="bg-transparent group cursor-pointer border-b border-white/10 pb-8 last:border-0">
       <div className="flex flex-col md:flex-row gap-8">
@@ -41,7 +42,7 @@ const EpisodeCard = ({ id, title, description, date, episodeNumber, image }: Epi
           </p>
           <div className="flex flex-wrap items-center gap-6">
             <Link 
-              href={`/episode/${id}`}
+              href={`/episode/${slug ?? id}`}
               className="flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full font-bold text-[14px] hover:bg-white/90"
             >
               <PlayCircle size={20} />

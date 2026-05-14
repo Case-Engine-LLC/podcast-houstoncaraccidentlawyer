@@ -29,7 +29,7 @@ const FeaturedEpisodePlayer = ({
   title = defaultEpisode.title,
   description = defaultEpisode.description.replace(/\*\*/g, ''),
   duration = defaultEpisode.duration,
-  episodeLink = `/episode/${defaultEpisode.number}`,
+  episodeLink = `/episode/${defaultEpisode.slug ?? defaultEpisode.number ?? defaultEpisode.id}`,
   imageUrl,
   audioUrl,
 }: FeaturedEpisodePlayerProps) => {

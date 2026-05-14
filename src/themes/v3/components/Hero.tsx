@@ -74,7 +74,7 @@ const Hero = () => {
 
               <div className="flex items-center gap-4">
                 <Link
-                  href={`/episode/${episode.number}`}
+                  href={`/episode/${episode.slug}`}
                   className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform"
                 >
                   <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">

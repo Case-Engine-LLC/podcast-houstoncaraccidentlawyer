@@ -80,7 +80,7 @@ const OtherEpisodes = ({ currentEpisodeId, episodes: propEpisodes }: OtherEpisod
                 </div>
                 <h3 className="text-lg font-serif text-white mb-2 group-hover:text-amber-400 transition-colors">
                   {ep.id > 0 ? (
-                    <Link href={`/episode/${ep.id}`}>{ep.title}</Link>
+                    <Link href={`/episode/${ep.slug}`}>{ep.title}</Link>
                   ) : (
                     ep.title
                   )}

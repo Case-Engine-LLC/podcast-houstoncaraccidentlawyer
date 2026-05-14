@@ -93,7 +93,7 @@ const Footer = ({ episodes }: FooterProps) => {
               {(episodes ?? []).map((ep) => (
                 <Link
                   key={ep.id}
-                  href={`/episode/${ep.id}`}
+                  href={`/episode/${ep.slug}`}
                   className="text-base text-white/80 hover:text-white transition-colors truncate"
                 >
                   Ep. {ep.number}: {ep.title}

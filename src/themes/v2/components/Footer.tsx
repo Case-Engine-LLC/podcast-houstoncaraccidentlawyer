@@ -31,7 +31,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm text-gray-400">
             {episodes.slice(0, 4).map((ep) => (
               <li key={ep.id}>
-                <Link href={`/episode/${ep.id}`} className="hover:text-white transition-colors">Episode {ep.number}</Link>
+                <Link href={`/episode/${ep.slug}`} className="hover:text-white transition-colors">Episode {ep.number}</Link>
               </li>
             ))}
             <li><Link href="#episodes" className="hover:text-white transition-colors">View All</Link></li>
