@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="md:col-span-1">
           <div className="mb-6">
-            <img src="/images/logo.svg" alt="Logo" className="h-14 md:h-16 w-auto object-contain" />
+            <img src="/images/logo.svg" alt="Logo" className="h-24 md:h-28 w-auto object-contain" />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">{footer.description}</p>
           <div className="text-sm font-bold text-white mb-2">Listen on:</div>
