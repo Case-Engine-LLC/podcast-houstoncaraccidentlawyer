@@ -15,36 +15,28 @@ const OtherEpisodes = ({ episodes: propEpisodes }: OtherEpisodesProps) => {
   const episodesData = propEpisodes ?? staticEpisodesData
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Map episodes from siteData - for now we just have episode 1
-  // Show "Coming Soon" for future episodes
-  const episodes = [
-    ...episodesData.map(ep => ({
-      slug: (ep as { slug?: string }).slug,
-      id: String(ep.id),
-      title: ep.title,
-      episodeNumber: `Episode ${ep.number}`,
-      category: ep.category,
-      duration: ep.duration,
-      image: null,
-    })),
-    // Coming soon placeholders
-    {
-      id: 'coming-2',
-      title: 'Coming Soon: New Attorney Interview',
-      episodeNumber: 'Episode 2',
-      category: 'Personal Injury',
-      duration: 'TBA',
-      image: null,
-    },
-    {
-      id: 'coming-3',
-      title: 'Coming Soon: New Attorney Interview',
-      episodeNumber: 'Episode 3',
-      category: 'Personal Injury',
-      duration: 'TBA',
-      image: null,
-    },
-  ]
+  const realEpisodes = episodesData.map(ep => ({
+    slug: (ep as { slug?: string }).slug,
+    id: String(ep.id),
+    title: ep.title,
+    episodeNumber: `Episode ${ep.number}`,
+    category: ep.category,
+    duration: ep.duration,
+    image: (ep as { logo?: string }).logo ?? null,
+  }))
+
+  const comingSoonSlots = Math.max(0, 3 - realEpisodes.length)
+  const comingSoon = Array.from({ length: comingSoonSlots }, (_, i) => ({
+    slug: undefined,
+    id: `coming-${realEpisodes.length + i + 1}`,
+    title: 'Coming Soon: New Attorney Interview',
+    episodeNumber: `Episode ${realEpisodes.length + i + 1}`,
+    category: 'Personal Injury',
+    duration: 'TBA',
+    image: null,
+  }))
+
+  const episodes = [...realEpisodes, ...comingSoon]
 
   const maxIndex = Math.max(0, episodes.length - 3)
 

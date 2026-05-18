@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
       { source: '/v1/:path*', destination: '/:path*', permanent: true },
       { source: '/v2/:path*', destination: '/:path*', permanent: true },
       { source: '/v3/:path*', destination: '/:path*', permanent: true },
+      { source: '/privacy', destination: 'https://benwins.com/privacy-policy/', permanent: true },
+      { source: '/privacy-policy', destination: 'https://benwins.com/privacy-policy/', permanent: true },
     ]
   },
 }

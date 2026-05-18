@@ -26,13 +26,16 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     ? episode.description.slice(0, 200) + '...'
     : episode.description
 
+  const canonicalPath = `/episode/${episode.slug ?? episode.id}`
+
   return {
     title: `${episode.title} | ${siteConfig.podcastName}`,
     description,
+    alternates: { canonical: canonicalPath },
     openGraph: {
       title: episode.title,
       description,
-      url: `${contact.website}/episode/${id}`,
+      url: `${contact.website}${canonicalPath}`,
       siteName: siteConfig.podcastName,
       type: 'article',
     },
