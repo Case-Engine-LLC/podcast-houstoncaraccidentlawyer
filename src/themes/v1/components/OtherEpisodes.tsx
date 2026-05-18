@@ -25,6 +25,9 @@ const OtherEpisodes = ({ episodes: propEpisodes }: OtherEpisodesProps) => {
     image: (ep as { logo?: string }).logo ?? null,
   }))
 
+  // Use the most recent real episode's cover as the Coming Soon thumbnail
+  // so unreleased slots don't render the 337-byte /episode-art.avif placeholder.
+  const fallbackCover = realEpisodes[0]?.image ?? null
   const comingSoonSlots = Math.max(0, 3 - realEpisodes.length)
   const comingSoon = Array.from({ length: comingSoonSlots }, (_, i) => ({
     slug: undefined,
@@ -33,7 +36,7 @@ const OtherEpisodes = ({ episodes: propEpisodes }: OtherEpisodesProps) => {
     episodeNumber: `Episode ${realEpisodes.length + i + 1}`,
     category: 'Personal Injury',
     duration: 'TBA',
-    image: null,
+    image: fallbackCover,
   }))
 
   const episodes = [...realEpisodes, ...comingSoon]

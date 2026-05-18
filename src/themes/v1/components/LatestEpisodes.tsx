@@ -44,7 +44,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
     topic: ep.topic || '',
     concepts: ep.concepts || [],
     chapters: ep.chapters || [],
-    logo: ep.logo,
+    logo: (ep as { logo?: string }).logo,
   }))
 
   // Topic options computed from actual episode data so filter values match.
