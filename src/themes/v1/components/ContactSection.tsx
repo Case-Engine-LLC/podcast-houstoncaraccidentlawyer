@@ -45,7 +45,6 @@ const ContactSection = () => {
               Contact the Firm
               <ArrowUpRight size={16} />
             </a>
-            <p className="text-[12px] text-black/40 mt-4">Opens {firmContactUrl.replace(/^https?:\/\//, '')} in a new tab.</p>
           </div>
         </div>
       </div>
