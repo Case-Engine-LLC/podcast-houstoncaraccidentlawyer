@@ -117,7 +117,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                   <div className="md:col-span-1 flex-shrink-0">
                     <div className="w-16 h-16 md:w-full md:h-auto md:aspect-square rounded-lg overflow-hidden bg-gray-200">
                       {ep.logo ? (
-                        <img src={idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
+                        <img src={idx === 0 ? '/episode-art.avif' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full bg-[#d4d4d4] flex items-center justify-center">
                           <span className="text-xs text-gray-500">Ep {ep.number}</span>
@@ -186,7 +186,7 @@ const LatestEpisodes = ({ episodes: propEpisodes }: LatestEpisodesProps) => {
                 {/* Cover Image */}
                 <div className="relative w-full md:w-[340px] flex-shrink-0 aspect-square md:aspect-auto">
                   {ep.logo ? (
-                    <img src={idx === 0 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
+                    <img src={idx === 0 ? '/episode-art.avif' : '/cover-placeholder-2.jpg'} alt={ep.title} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full bg-primary flex items-center justify-center">
                       <span className="text-3xl font-heading text-white/30">Ep {ep.number}</span>

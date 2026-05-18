@@ -80,7 +80,7 @@ const OtherEpisodes = ({ episodes: propEpisodes }: OtherEpisodesProps) => {
                   {episode.image ? (
                     <img src={episode.image} alt={episode.title} className="w-full h-full object-cover" />
                   ) : (
-                    <img src="/cover-placeholder.jpg" alt={episode.title} className="w-full h-full object-cover opacity-60" />
+                    <img src="/episode-art.avif" alt={episode.title} className="w-full h-full object-cover opacity-60" />
                   )}
                 </div>
 

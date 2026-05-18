@@ -12,7 +12,7 @@ interface EpisodeHeroProps {
 
 function EpisodeHero({ episode: propEpisode }: EpisodeHeroProps) {
   const ep = propEpisode ?? staticEpisode
-  const coverImage = ep.number === 1 ? '/cover-placeholder.jpg' : '/cover-placeholder-2.jpg'
+  const coverImage = ep.number === 1 ? '/episode-art.avif' : '/cover-placeholder-2.jpg'
 
   return (
     <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 bg-[#f4f2ed]">
