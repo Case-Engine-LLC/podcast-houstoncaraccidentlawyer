@@ -16,7 +16,7 @@ function EpisodeHero({ episode: propEpisode }: EpisodeHeroProps) {
   const coverImage = (ep as { logo?: string }).logo || fallbackArt
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 bg-[#f4f2ed]">
+    <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 bg-[#f4f2ed]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-primary/50 mb-10">
