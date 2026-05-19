@@ -13,7 +13,7 @@ interface EpisodeHeroProps {
 function EpisodeHero({ episode: propEpisode }: EpisodeHeroProps) {
   const ep = propEpisode ?? staticEpisode
   const fallbackArt = episodesData.find((e) => e.logo)?.logo
-  const coverImage = ep.logo || fallbackArt || '/episode-art.avif'
+  const coverImage = (ep as { logo?: string }).logo || fallbackArt
 
   return (
     <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 bg-[#f4f2ed]">
