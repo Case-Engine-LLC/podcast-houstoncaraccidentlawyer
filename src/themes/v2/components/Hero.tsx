@@ -8,7 +8,7 @@ const Hero = () => {
   const host = podcastTeam[0]
 
   return (
-    <header className="relative pt-32 pb-24 px-6 overflow-hidden bg-[#f4f2ed]">
+    <header className="relative pt-40 md:pt-48 pb-24 px-6 overflow-hidden bg-[#f4f2ed]">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Text Column */}
         <div className="space-y-8">
