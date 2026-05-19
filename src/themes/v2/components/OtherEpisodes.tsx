@@ -93,7 +93,7 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
                   className="group flex flex-col flex-shrink-0 w-full md:w-[calc(33.333%-1rem)]"
                 >
                   {/* Cover */}
-                  <div className="aspect-video bg-primary rounded-2xl mb-4 overflow-hidden relative flex items-center justify-center">
+                  <div className="aspect-square bg-primary rounded-2xl mb-4 overflow-hidden relative flex items-center justify-center">
                     {ep.isComingSoon ? (
                       <div className="text-center">
                         <div className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center mx-auto mb-3">
@@ -104,7 +104,7 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
                         <span className="text-sm text-white/30 font-medium">Coming Soon</span>
                       </div>
                     ) : (
-                      <img src={cover} alt={ep.title} className="absolute inset-0 w-full h-full object-cover" />
+                      <img src={cover} alt={ep.title} className="absolute inset-0 w-full h-full object-contain" />
                     )}
 
                     {/* Hover play overlay for non-coming-soon cards */}
