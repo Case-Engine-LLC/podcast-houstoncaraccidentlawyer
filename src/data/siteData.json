@@ -153,7 +153,56 @@
     "featuredQuote": "The two most important things a Houston accident victim can do in the first 48 hours are simple, see a doctor, and stop talking to the other driver's insurance company until you have counsel.",
     "additionalParagraphs": []
   },
-  "testimonials": [],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Jose A.",
+      "initials": "JA",
+      "role": "Verified Client",
+      "rating": 5,
+      "text": "Sarah was amazing! I never had to step foot in an office, calls were few, but very precise, informative and momentous in the process. The entire Dominguez team was outstanding, and made my injury claim so stress free. Words cannot describe how grateful I am for them."
+    },
+    {
+      "id": 2,
+      "name": "Bill G.",
+      "initials": "BG",
+      "role": "Verified Client",
+      "rating": 5,
+      "text": "I am very pleased with Ben Dominguez Law Firm for how they handled my case. I would recommend this Law Firm to anyone that is in need of a Law Firm. Everything was handled in a timely normal manner and I was pleased with the outcome."
+    },
+    {
+      "id": 3,
+      "name": "Brittany F.",
+      "initials": "BF",
+      "role": "Verified Client",
+      "rating": 5,
+      "text": "This was my first accident ever and with that it was a 5 car pile up. I was scared and had no idea what to do. I called Ben's office to get me some help when the insurance was trying to say they didn't know who was at fault and I had to pay out of pocket."
+    },
+    {
+      "id": 4,
+      "name": "Shawn",
+      "initials": "S",
+      "role": "Verified Client",
+      "rating": 5,
+      "text": "I was in a car accident a few years ago and I was represented by Ben Dominguez. He is very good, very hands-on through the whole process, let me know everything the whole time, and he was able to get me more than I expected. So if you guys ever in a car wreck and need help please reach out to Ben, he is the very best."
+    },
+    {
+      "id": 5,
+      "name": "Andie",
+      "initials": "A",
+      "role": "Verified Client",
+      "rating": 5,
+      "text": "I've been very happy with Ben Dominguez Law Firm. He has handled several cases for our family with excellent results, very communicative, and exceeded my expectations in dealing with these legal matters and insurance and injury claims. The communication throughout the process has been excellent."
+    },
+    {
+      "id": 6,
+      "name": "Mildred & James",
+      "initials": "MJ",
+      "role": "Verified Client",
+      "rating": 5,
+      "text": "We were very pleased as to how the whole entire process was from the beginning to the end. We didn't have to do anything, we had a point of contact which made it so easy to actually maneuver through it, because anytime that something happens, especially an accident, you get pulled in a lot of different directions."
+    }
+  ],
   "stats": {
     "rating": 0,
     "reviewCount": 0,
