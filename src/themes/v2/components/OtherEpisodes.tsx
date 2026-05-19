@@ -21,6 +21,7 @@ interface OtherEpisodesProps {
 
 function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
   const episodesData = propEpisodes ?? staticEpisodesData
+  const fallbackArt = episodesData.find((e) => e.logo && e.logo.trim() !== '')?.logo
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const episodes: EpisodeCard[] = [
@@ -83,7 +84,7 @@ function OtherEpisodes({ episodes: propEpisodes }: OtherEpisodesProps) {
           >
             {episodes.map((ep, idx) => {
               const href = ep.isComingSoon ? '#subscribe' : `/episode/${(ep as unknown as { slug?: string; id?: string | number }).slug ?? (ep as unknown as { id?: string | number }).id ?? 1}`
-              const cover = idx === 0 ? '/episode-art.avif' : '/cover-placeholder-2.jpg'
+              const cover = fallbackArt || '/cover-placeholder-2.jpg'
 
               return (
                 <Link

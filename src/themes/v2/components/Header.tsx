@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 bg-black backdrop-blur-md border-b transition-all duration-300 ${scrolled ? 'border-white/10 shadow-md' : 'border-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6 flex items-center justify-between gap-3">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <img src="/images/logo.svg" alt="Logo" className="h-20 md:h-24 w-auto object-contain" />
