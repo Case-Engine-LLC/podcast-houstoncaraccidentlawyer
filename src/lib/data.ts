@@ -1,6 +1,6 @@
 import { fetchPodcastFeed, fetchTranscript as fetchRssTranscript, type RSSEpisode, type TranscriptSegment } from './rss'
+import { generatedTranscripts } from '@/data/transcripts.generated'
 import { episodes as staticEpisodes, siteConfig } from '@/data/siteData'
-import { episodeTranscript as staticTranscript } from '@/data/transcript'
 
 // Prefer env var (Vercel project setting), fall back to siteData.rssFeedUrl
 // so the build still has a wired feed if the env var is not set.
@@ -138,7 +138,7 @@ export async function getEpisodeByIdOrSlug(idOrSlug: string): Promise<Episode | 
 
 export async function getEpisodeTranscript(episode: Episode): Promise<TranscriptSegment[]> {
   if (!RSS_URL) {
-    return staticTranscript
+    return generatedTranscripts[episode.id] ?? []
   }
 
   if (episode.transcriptUrl && episode.transcriptType) {
@@ -147,7 +147,7 @@ export async function getEpisodeTranscript(episode: Episode): Promise<Transcript
   }
 
   // Fall back to static transcript for episode 1
-  if (episode.id === 1) return staticTranscript
+  if (episode.id === 1) return generatedTranscripts[episode.id] ?? []
   return []
 }
 
