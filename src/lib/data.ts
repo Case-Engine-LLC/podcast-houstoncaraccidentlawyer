@@ -146,9 +146,8 @@ export async function getEpisodeTranscript(episode: Episode): Promise<Transcript
     if (segments.length > 0) return segments
   }
 
-  // Fall back to static transcript for episode 1
-  if (episode.id === 1) return generatedTranscripts[episode.id] ?? []
-  return []
+  // Serve the staged transcript for ANY episode that has one (was gated to ep1).
+  return generatedTranscripts[episode.id] ?? []
 }
 
 export async function getEpisodeTopics(episodes: Episode[]): Promise<string[]> {
