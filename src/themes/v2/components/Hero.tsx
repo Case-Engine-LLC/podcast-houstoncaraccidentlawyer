@@ -3,8 +3,14 @@
 import React from 'react'
 import Link from 'next/link'
 import { siteConfig, episode, content, podcastTeam } from '@/data/siteData'
+import type { Episode } from '@/lib/data'
 
-const Hero = () => {
+interface HeroProps {
+  latestEpisode?: Episode
+}
+
+const Hero = ({ latestEpisode }: HeroProps) => {
+  const ep = latestEpisode ?? episode
   const host = podcastTeam[0]
 
   return (
@@ -75,13 +81,13 @@ const Hero = () => {
           <div className="absolute -bottom-12 -left-6 lg:left-12 bg-white p-6 rounded-2xl shadow-xl max-w-sm w-[90%] border-l-4 border-secondary">
             <div className="flex justify-between items-start mb-4">
               <span className="text-xs font-bold text-secondary uppercase tracking-wider">Latest Episode</span>
-              <span className="text-xs text-gray-400">Episode {episode.number} • {episode.duration}</span>
+              <span className="text-xs text-gray-400">Episode {ep.number} • {ep.duration}</span>
             </div>
-            <h3 className="font-heading text-xl font-bold text-primary mb-2">{episode.title}</h3>
-            <p className="text-sm text-gray-500 mb-4 line-clamp-2">{episode.description}</p>
+            <h3 className="font-heading text-xl font-bold text-primary mb-2">{ep.title}</h3>
+            <p className="text-sm text-gray-500 mb-4 line-clamp-2">{ep.description}</p>
 
             <div className="flex items-center gap-4">
-              <Link href={`/episode/${(episode as { slug?: string; number?: number }).slug ?? episode.number}`} className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-lg">
+              <Link href={`/episode/${(ep as { slug?: string; number?: number }).slug ?? ep.number}`} className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-lg">
                 <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </Link>
               <div className="flex-1">
@@ -90,7 +96,7 @@ const Hero = () => {
                 </div>
                 <div className="flex justify-between mt-1 text-[10px] text-gray-400">
                   <span>12:45</span>
-                  <span>{episode.duration}</span>
+                  <span>{ep.duration}</span>
                 </div>
               </div>
             </div>

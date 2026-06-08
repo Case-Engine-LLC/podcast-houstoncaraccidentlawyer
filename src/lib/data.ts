@@ -35,34 +35,53 @@ export interface Episode {
   youtubeUrl?: string
 }
 
-function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
-  const staticEpisode = (staticEpisodes as Record<string, unknown>[]).find(item => {
-    const id = (item.id as number) ?? (item.number as number)
-    return id === ep.id
+function normalizeEpisodeKey(value: string | undefined): string {
+  return slugifyEpisode(value || '').toLowerCase()
+}
+
+function findStaticEpisodeOverride(ep: RSSEpisode, generatedSlug: string): Episode | null {
+  const staticEpisode = (staticEpisodes as Record<string, unknown>[]).find((candidate) => {
+    const candidateSlug = candidate.slug as string | undefined
+    const candidateTitle = candidate.title as string | undefined
+    const candidateGuid = (candidate.guid || candidate.rssGuid || candidate.sourceGuid) as string | undefined
+
+    return (
+      (!!candidateGuid && candidateGuid === ep.guid)
+      || (!!candidateSlug && candidateSlug === generatedSlug)
+      || normalizeEpisodeKey(candidateTitle) === normalizeEpisodeKey(ep.title)
+    )
   })
+
+  return staticEpisode ? normalizeStaticEpisode(staticEpisode) : null
+}
+
+function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
+  const generatedSlug = slugifyEpisode(ep.title, String(ep.id))
+  const staticEpisode = findStaticEpisodeOverride(ep, generatedSlug)
   const staticConcepts = (staticEpisode?.concepts as string[] | undefined) ?? []
   const staticChapters = ((staticEpisode?.chapters as string[] | undefined) ?? []).filter(Boolean)
-  const title = (staticEpisode?.title as string) || ep.title
+  const title = staticEpisode?.title || ep.title
 
   return {
     id: ep.id,
-    slug: (staticEpisode?.slug as string) || slugifyEpisode(title, String(ep.id)),
+    slug: staticEpisode?.slug || generatedSlug,
     number: ep.id,
     title,
-    subtitle: (staticEpisode?.subtitle as string) || ep.subtitle,
-    description: (staticEpisode?.description as string) || ep.description,
+    subtitle: staticEpisode?.subtitle || ep.subtitle,
+    description: staticEpisode?.description || ep.description,
     duration: ep.duration,
     date: ep.date,
-    category: (staticEpisode?.category as string) || ep.category,
+    category: staticEpisode?.category || ep.category,
     featured: ep.featured,
-    topic: (staticEpisode?.topic as string) || ep.topic,
+    topic: staticEpisode?.topic || ep.topic,
     concepts: staticConcepts.length > 0 ? staticConcepts : ep.concepts,
     chapters: staticChapters.length > 0 ? staticChapters : ep.chapters,
-    logo: (staticEpisode?.logo as string) || ep.logo,
+    logo: staticEpisode?.logo || ep.logo,
     audioUrl: ep.audioUrl || undefined,
     audioType: ep.audioType || undefined,
     transcriptUrl: ep.transcriptUrl,
     transcriptType: ep.transcriptType,
+    youtubeUrl: staticEpisode?.youtubeUrl,
   }
 }
 

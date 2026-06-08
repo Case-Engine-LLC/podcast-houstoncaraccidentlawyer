@@ -25,7 +25,7 @@ function V2EpisodePage({ episodeId, episode, allEpisodes, transcript }: V2Episod
         <OtherEpisodes episodes={allEpisodes} />
       </main>
 
-      <Footer />
+      <Footer episodes={allEpisodes} />
     </div>
   )
 }

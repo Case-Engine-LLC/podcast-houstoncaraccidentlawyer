@@ -1,11 +1,13 @@
 import type { MetadataRoute } from 'next'
-import { siteConfig, episodes, authorProfiles } from '@/data/siteData'
+import { siteConfig, authorProfiles } from '@/data/siteData'
+import { getAllEpisodes } from '@/lib/data'
 
 export const revalidate = 3600
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteConfig.podcastUrl
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const base = siteConfig.podcastUrl.replace(/\/$/, '')
   const now = new Date()
+  const episodes = await getAllEpisodes()
 
   return [
     {
@@ -20,8 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
-    .../* eslint-disable */ episodes.map((ep: { id: number | string; slug?: string; title?: string }) => ({
-      url: `${base}/episode/${ep.slug}`,
+    ...episodes.map((ep) => ({
+      url: `${base}/episode/${ep.slug ?? ep.id}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,

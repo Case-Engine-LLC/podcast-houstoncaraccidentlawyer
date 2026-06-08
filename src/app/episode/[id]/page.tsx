@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import V2EpisodePage from '@/themes/v2/pages/V2EpisodePage'
 import { getAllEpisodes, getEpisodeByIdOrSlug, getEpisodeTranscript } from '@/lib/data'
-import { siteConfig, contact } from '@/data/siteData'
+import { siteConfig } from '@/data/siteData'
 
 export const revalidate = 3600
 
@@ -17,6 +18,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
   const episode = await getEpisodeByIdOrSlug(id)
+  const siteHost = (siteConfig.podcastUrl || '').replace(/\/$/, '')
 
   if (!episode) {
     return { title: 'Episode Not Found' }
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     openGraph: {
       title: episode.title,
       description,
-      url: `${contact.website}${canonicalPath}`,
+      url: `${siteHost}${canonicalPath}`,
       siteName: siteConfig.podcastName,
       type: 'article',
     },
@@ -51,7 +53,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const { id } = await params
   const allEpisodes = await getAllEpisodes()
   const episode = await getEpisodeByIdOrSlug(id)
-  const transcript = episode ? await getEpisodeTranscript(episode) : []
+  if (!episode) notFound()
+
+  const transcript = await getEpisodeTranscript(episode)
 
   return (
     <V2EpisodePage

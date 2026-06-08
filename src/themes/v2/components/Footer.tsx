@@ -2,9 +2,16 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { footer, episodes, siteConfig, attorney } from '@/data/siteData'
+import { footer, episodes as staticEpisodes, siteConfig, attorney } from '@/data/siteData'
+import type { Episode } from '@/lib/data'
 
-const Footer = () => {
+interface FooterProps {
+  episodes?: Episode[]
+}
+
+const Footer = ({ episodes }: FooterProps) => {
+  const footerEpisodes = episodes ?? staticEpisodes
+
   return (
     <footer className="bg-primary text-white pt-16 md:pt-24 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-16">
@@ -29,9 +36,9 @@ const Footer = () => {
         <div>
           <h3 className="font-heading text-lg font-bold mb-6 text-secondary">Episodes</h3>
           <ul className="space-y-3 text-sm text-gray-400">
-            {episodes.slice(0, 4).map((ep) => (
+            {footerEpisodes.slice(0, 4).map((ep) => (
               <li key={ep.id}>
-                <Link href={`/episode/${ep.slug}`} className="hover:text-white transition-colors">Episode {ep.number}</Link>
+                <Link href={`/episode/${ep.slug ?? ep.id}`} className="hover:text-white transition-colors">Episode {ep.number}</Link>
               </li>
             ))}
             <li><Link href="#episodes" className="hover:text-white transition-colors">View All</Link></li>

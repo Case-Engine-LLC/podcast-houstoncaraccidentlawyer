@@ -35,7 +35,7 @@ const V2Home = ({ episodes }: V2HomeProps) => {
 
       <main>
         {/* Hero */}
-        <Hero />
+        <Hero latestEpisode={episodes?.[0]} />
 
         {/* Trust Badges + Stats (white section) — only render when there's content */}
         {showTrustSection && (
@@ -66,7 +66,7 @@ const V2Home = ({ episodes }: V2HomeProps) => {
         </section>
       </main>
 
-      <Footer />
+      <Footer episodes={episodes} />
     </div>
   )
 }
