@@ -71,7 +71,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
           {/* Main Image */}
           <div className="absolute inset-0 rounded-t-[200px] overflow-hidden border-8 border-white shadow-2xl">
             <img
-              src="/hero-placeholder.jpg"
+              src="/hero-bg.jpg"
               alt="Hero background"
               className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-700"
             />

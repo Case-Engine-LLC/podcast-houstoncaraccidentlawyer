@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Episode } from '@/lib/data'
@@ -14,6 +14,8 @@ function EpisodeHero({ episode: propEpisode }: EpisodeHeroProps) {
   const ep = propEpisode ?? staticEpisode
   const fallbackArt = episodesData.find((e) => e.logo)?.logo
   const coverImage = (ep as { logo?: string }).logo || fallbackArt
+  const [expanded, setExpanded] = useState(false)
+  const isLong = (ep.description?.length ?? 0) > 280
 
   return (
     <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 bg-[#f4f2ed]">
@@ -47,9 +49,26 @@ function EpisodeHero({ episode: propEpisode }: EpisodeHeroProps) {
             </h1>
 
             {/* Description */}
-            <p className="text-lg text-primary/60 leading-relaxed max-w-xl">
-              {ep.description}
-            </p>
+            <div className="max-w-xl">
+              <p
+                className={`text-lg text-primary/60 leading-relaxed ${
+                  isLong && !expanded ? 'line-clamp-4' : ''
+                }`}
+              >
+                {ep.description}
+              </p>
+              {isLong && (
+                <button
+                  onClick={() => setExpanded((v) => !v)}
+                  className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-secondary transition-colors"
+                >
+                  {expanded ? 'Read less' : 'Read more'}
+                  <span aria-hidden className={`transition-transform ${expanded ? 'rotate-180' : ''}`}>
+                    ▾
+                  </span>
+                </button>
+              )}
+            </div>
 
             {/* Date + Duration */}
             <div className="flex items-center gap-6 text-sm text-primary/50">

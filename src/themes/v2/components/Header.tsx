@@ -20,7 +20,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6 flex items-center justify-between gap-3">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <img src="/images/logo.svg" alt="Logo" className="h-20 md:h-24 w-auto object-contain" />
+          <img src="/images/logo.svg" alt="Logo" className="h-14 md:h-16 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
@@ -34,7 +34,9 @@ const Header = () => {
         {/* Subscribe + Mobile Toggle */}
         <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <Link
-            href="/#subscribe"
+            href="https://benwins.com/contact/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-secondary text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium hover:bg-secondary-hover transition-all transform hover:scale-105 shadow-lg shadow-secondary/20 whitespace-nowrap"
           >
             {navigation.ctaText}
