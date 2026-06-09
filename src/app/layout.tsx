@@ -17,14 +17,18 @@ const SITE_URL =
   contact.website ||
   'https://podcast-houstoncaraccidentlawyer.vercel.app'
 
+// Meta/SEO title — brand name with "Podcast" appended (kept separate from the
+// visible brand name so on-page headings are unaffected).
+const META_TITLE = `${siteConfig.podcastName} Podcast`
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: siteConfig.podcastName,
-    template: `%s | ${siteConfig.podcastName}`,
+    default: META_TITLE,
+    template: `%s | ${META_TITLE}`,
   },
   description: about.description,
-  applicationName: siteConfig.podcastName,
+  applicationName: META_TITLE,
   authors: [{ name: attorney.name, url: contact.website || SITE_URL }],
   keywords: [
     attorney.name,
@@ -56,8 +60,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: siteConfig.podcastName,
-    title: siteConfig.podcastName,
+    siteName: META_TITLE,
+    title: META_TITLE,
     description: about.description,
     url: SITE_URL,
     locale: 'en_US',
@@ -66,13 +70,13 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: `${siteConfig.podcastName} — hosted by ${attorney.name}, ${attorney.firm}`,
+        alt: `${META_TITLE} — hosted by ${attorney.name}, ${attorney.firm}`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.podcastName,
+    title: META_TITLE,
     description: about.description,
     images: ['/opengraph-image'],
   },
