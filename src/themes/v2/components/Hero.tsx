@@ -73,7 +73,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
             <img
               src="/hero-bg.jpg"
               alt="Hero background"
-              className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-top grayscale opacity-90 hover:scale-105 transition-transform duration-700"
             />
           </div>
 
