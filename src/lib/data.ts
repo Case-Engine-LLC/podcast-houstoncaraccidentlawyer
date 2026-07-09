@@ -1,5 +1,5 @@
 import { fetchPodcastFeed, fetchTranscript as fetchRssTranscript, type RSSEpisode, type TranscriptSegment } from './rss'
-import { generatedTranscripts } from '@/data/transcripts.generated'
+import { generatedTranscripts, TRANSCRIPTS_BY_GUID } from '@/data/transcripts.generated'
 import { episodes as staticEpisodes, siteConfig } from '@/data/siteData'
 
 // Prefer env var (Vercel project setting), fall back to siteData.rssFeedUrl
@@ -15,6 +15,7 @@ export const REVALIDATE = parseInt(process.env.REVALIDATE_SECONDS || '3600', 10)
 
 export interface Episode {
   id: number
+  guid?: string
   slug?: string
   number: number
   title: string
@@ -64,6 +65,7 @@ function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
 
   return {
     id: ep.id,
+    guid: ep.guid,
     slug: staticEpisode?.slug || generatedSlug,
     number: ep.id,
     title,
@@ -88,6 +90,7 @@ function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
 function normalizeStaticEpisode(ep: Record<string, unknown>): Episode {
   return {
     id: (ep.id as number) ?? 1,
+    guid: (ep.guid as string) || undefined,
     slug: (ep.slug as string) || slugifyEpisode((ep.title as string) || '', String((ep.id as number) ?? 1)),
     number: (ep.number as number) ?? (ep.id as number) ?? 1,
     title: (ep.title as string) ?? '',
@@ -163,6 +166,13 @@ export async function getEpisodeTranscript(episode: Episode): Promise<Transcript
   if (episode.transcriptUrl && episode.transcriptType) {
     const segments = await fetchRssTranscript(episode.transcriptUrl, episode.transcriptType)
     if (segments.length > 0) return segments
+  }
+
+  // Resolve by guid first — unique per feed item, and required for any future
+  // location-cut episodes that would otherwise collide on itunes:episode number
+  // (same pattern as podcast-toddmohink). Falls back to the numeric id map.
+  if (episode.guid && TRANSCRIPTS_BY_GUID[episode.guid]) {
+    return TRANSCRIPTS_BY_GUID[episode.guid]
   }
 
   // Serve the staged transcript for ANY episode that has one (was gated to ep1).
