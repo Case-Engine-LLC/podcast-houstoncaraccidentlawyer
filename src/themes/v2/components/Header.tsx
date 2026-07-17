@@ -28,7 +28,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-6 flex items-center justify-between gap-3">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <img src="/logo.png" alt="Logo" className="h-7 md:h-11 w-auto object-contain" />
+          <img src="/images/logo.svg" alt="Logo" className="h-7 md:h-11 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}

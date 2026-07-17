@@ -15,7 +15,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
 
   return (
     <header className="relative pt-40 md:pt-48 pb-24 px-6 overflow-hidden bg-[#f4f2ed]">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:items-start relative z-10">
         {/* Text Column */}
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-primary text-xs font-bold tracking-wider uppercase">
@@ -62,8 +62,9 @@ const Hero = ({ latestEpisode }: HeroProps) => {
           </div>
         </div>
 
-        {/* Image Column */}
-        <div className="relative h-[500px] lg:h-[600px] w-full">
+        {/* Image Column — top offset matches the badge row so the arch
+            starts level with the h1 */}
+        <div className="relative h-[500px] lg:h-[600px] w-full lg:mt-14">
           {/* Decorative shapes */}
           <div className="absolute top-0 right-0 w-3/4 h-full bg-primary rounded-t-[160px] opacity-10" />
           <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-2xl" />
