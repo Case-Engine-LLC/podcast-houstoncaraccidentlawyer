@@ -1,6 +1,6 @@
 {
   "siteConfig": {
-    "podcastName": "Houston Abogado de Accidentes w. Ben Dominguez",
+    "podcastName": "Ben Wins Texas Law Podcast",
     "tagline": "NEW EPISODE",
     "podcastUrl": "https://podcast-houstoncaraccidentlawyer.vercel.app",
     "rssFeedUrl": "https://rss2.flightcast.com/incuox20pdj3cqh9o11xxtyl.xml",
@@ -30,7 +30,7 @@
     "bio": [
       "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). A fourth-generation Texan, he established his Houston practice in 1994 after earning his J.D. from Vermont Law School in 1990 and a Master of Studies in Environmental Law (MSEL) from Vermont Law School in 1995. Ben Dominguez is bilingual and handles cases in English and Spanish for clients throughout the Greater Houston area and Harris County.",
       "Ben Dominguez's practice initially covered personal injury, securities litigation, criminal defense, and business litigation. In 2015 he narrowed the practice to personal injury and products liability, car accidents, truck accidents, motorcycle accidents, bicycle and pedestrian cases, rideshare (Uber) collisions, construction injuries, premises liability, and wrongful death. He is admitted to the U.S. Court of Appeals for the Fifth Circuit and the U.S. District Court for the Southern District of Texas.",
-      "Beyond case work, Ben Dominguez hosts Houston Abogado de Accidentes, a bilingual podcast focused on Texas personal injury law, insurance coverage, and what accident victims across Houston actually need to know before talking to an adjuster. He is a member of the Texas Trial Lawyers Association (TTLA), the American Association for Justice (AAJ), and the Pan-European Organisation of Personal Injury Lawyers (PEOPIL)."
+      "Beyond case work, Ben Dominguez hosts Ben Wins Texas Law Podcast, a bilingual podcast focused on Texas personal injury law, insurance coverage, and what accident victims across Houston actually need to know before talking to an adjuster. He is a member of the Texas Trial Lawyers Association (TTLA), the American Association for Justice (AAJ), and the Pan-European Organisation of Personal Injury Lawyers (PEOPIL)."
     ],
     "signature": "/images/signature.png",
     "photo": "/images/attorney.jpg"
@@ -86,17 +86,17 @@
   "faqGroups": [
     {
       "label": "About the Podcast",
-      "description": "Learn more about Houston Abogado de Accidentes and what you can expect from each episode.",
+      "description": "Learn more about Ben Wins Texas Law Podcast and what you can expect from each episode.",
       "questions": [
         {
-          "question": "What topics does Houston Abogado de Accidentes cover?",
+          "question": "What topics does Ben Wins Texas Law Podcast cover?",
           "level": "h2",
           "answer": "The podcast covers personal injury topics relevant to Houston and Harris County drivers, car, truck, motorcycle, bicycle, pedestrian, rideshare, and construction accidents, plus products liability, premises liability, and wrongful death. Ben Dominguez focuses on what Texas law actually allows and requires, including the two-year statute of limitations, Texas modified comparative fault, and how insurance adjusters evaluate claims in Texas."
         },
         {
           "question": "Who hosts the podcast?",
           "level": "h3",
-          "answer": "Ben Dominguez II hosts Houston Abogado de Accidentes. He has been a Texas-licensed attorney since 1993 (Bar No. 00786415) and runs a solo practice at 4899 Montrose Blvd., Suite 1306, Houston, TX 77006."
+          "answer": "Ben Dominguez II hosts Ben Wins Texas Law Podcast. He has been a Texas-licensed attorney since 1993 (Bar No. 00786415) and runs a solo practice at 4899 Montrose Blvd., Suite 1306, Houston, TX 77006."
         },
         {
           "question": "Is the podcast available in Spanish?",
@@ -143,11 +143,11 @@
     }
   ],
   "content": {
-    "heroTitle": "Houston Abogado de Accidentes w. Ben Dominguez",
+    "heroTitle": "Ben Wins Texas Law Podcast",
     "heroDescription": "Join solo-practice Houston attorney Ben Dominguez as he walks accident victims across Houston and Harris County through Texas personal injury law, the two-year statute of limitations, modified comparative fault, dealing with insurance adjusters, and the decisions a driver faces in the days after a serious collision. Bilingual conversations (English / Spanish) grounded in 30+ years of Texas practice.",
     "articleTitle": "Bilingual Houston Personal Injury Attorney Serving the Greater Houston Area Since 1994",
     "articleParagraphs": [
-      "Houston Abogado de Accidentes brings the judgment Ben Dominguez has built over 30 years of Texas personal injury and products liability practice directly to accident victims in Houston and Harris County. Ben Dominguez has been a Texas-licensed attorney since 1993 (Bar No. 00786415), runs a solo practice at 4899 Montrose Blvd., and handles cases in English and Spanish for clients throughout the Greater Houston area.",
+      "Ben Wins Texas Law Podcast brings the judgment Ben Dominguez has built over 30 years of Texas personal injury and products liability practice directly to accident victims in Houston and Harris County. Ben Dominguez has been a Texas-licensed attorney since 1993 (Bar No. 00786415), runs a solo practice at 4899 Montrose Blvd., and handles cases in English and Spanish for clients throughout the Greater Houston area.",
       "Each episode addresses what Houston drivers, riders, and pedestrians actually raise on intake calls: the two-year statute of limitations under Texas Civil Practice & Remedies Code Section 16.003, Texas modified comparative fault under Section 33.001, how to respond when an adjuster calls the day after the crash, and why evidence preservation on Houston freeways and surface streets often matters more than the initial medical record. Ben Dominguez's podcast covers the practical answers he gives clients in the office."
     ],
     "featuredQuote": "The two most important things a Houston accident victim can do in the first 48 hours are simple, see a doctor, and stop talking to the other driver's insurance company until you have counsel.",
@@ -236,7 +236,7 @@
   },
   "footer": {
     "logo": "Ben Dominguez Law",
-    "description": "Houston Abogado de Accidentes is a bilingual (English / Spanish) podcast hosted by Ben Dominguez, a solo-practice Houston personal injury and products liability attorney serving the Greater Houston area since 1994. Ben Dominguez is admitted to the State Bar of Texas (1993) and handles personal injury, products liability, and wrongful death matters throughout Harris County.",
+    "description": "Ben Wins Texas Law Podcast is a bilingual (English / Spanish) podcast hosted by Ben Dominguez, a solo-practice Houston personal injury and products liability attorney serving the Greater Houston area since 1994. Ben Dominguez is admitted to the State Bar of Texas (1993) and handles personal injury, products liability, and wrongful death matters throughout Harris County.",
     "copyright": "Ben Dominguez Law",
     "socialLinks": {
       "facebook": "https://www.facebook.com/BenDominguezLawFirm/",
@@ -265,7 +265,7 @@
   },
   "subscribeCTA": {
     "title": "Never Miss an Episode",
-    "description": "Subscribe to Houston Abogado de Accidentes for bilingual conversations about Texas personal injury law, the two-year statute of limitations, Texas modified comparative fault, dealing with adjusters, and what Ben Dominguez's 30+ years of Houston practice have taught him about the decisions accident victims face.",
+    "description": "Subscribe to Ben Wins Texas Law Podcast for bilingual conversations about Texas personal injury law, the two-year statute of limitations, Texas modified comparative fault, dealing with adjusters, and what Ben Dominguez's 30+ years of Houston practice have taught him about the decisions accident victims face.",
     "highlights": [
       "Texas-specific personal injury guidance, in English and Spanish",
       "Texas statute of limitations and comparative-fault rules explained",
@@ -314,7 +314,7 @@
       "role": "Host & Attorney",
       "photo": "/images/team-member.jpg",
       "slug": "ben-dominguez",
-      "bio": "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). Bilingual (English / Spanish), fourth-generation Texan, and member of TTLA, AAJ, and PEOPIL. Hosts every episode of Houston Abogado de Accidentes.",
+      "bio": "Ben Dominguez II is a solo-practice Houston personal injury and products liability attorney admitted to the State Bar of Texas in 1993 (Bar No. 00786415). Bilingual (English / Spanish), fourth-generation Texan, and member of TTLA, AAJ, and PEOPIL. Hosts every episode of Ben Wins Texas Law Podcast.",
       "episodes": "Host of all episodes"
     }
   ],
@@ -631,7 +631,7 @@
       },
       {
         "kind": "podcast_content",
-        "text": "Content shared on Houston Abogado de Accidentes is for general informational and educational purposes only, is not legal advice, and should not be relied upon as a substitute for consultation with a licensed Texas attorney about the specific facts of your matter."
+        "text": "Content shared on Ben Wins Texas Law Podcast is for general informational and educational purposes only, is not legal advice, and should not be relied upon as a substitute for consultation with a licensed Texas attorney about the specific facts of your matter."
       },
       {
         "kind": "responsible_attorney",

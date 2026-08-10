@@ -15,7 +15,7 @@ const episodeSchema = {
       "@type": "WebPage",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1#webpage",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/episode/1",
-      "name": "Your Rights After a Houston Car Accident — with Ben Dominguez | Episode 1 | Houston Abogado de Accidentes with Ben Dominguez",
+      "name": "Your Rights After a Houston Car Accident — with Ben Dominguez | Episode 1 | Ben Wins Texas Law Podcast",
       "description": "Ben Dominguez walks through your rights after a Houston car accident — insurance, medical care, evidence preservation, and when a case needs a lawyer.",
       "isPartOf": {
         "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website"

@@ -17,9 +17,8 @@ const SITE_URL =
   contact.website ||
   'https://podcast-houstoncaraccidentlawyer.vercel.app'
 
-// Meta/SEO title — brand name with "Podcast" appended (kept separate from the
-// visible brand name so on-page headings are unaffected).
-const META_TITLE = `${siteConfig.podcastName} Podcast`
+// Meta/SEO title — same as the canonical podcast name (already ends in "Podcast").
+const META_TITLE = siteConfig.podcastName
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
   keywords: [
     attorney.name,
     attorney.firm,
-    'Houston Abogado de Accidentes',
+    'Ben Wins Texas Law Podcast',
     'Houston accident attorney',
     'Houston car accident lawyer',
     'Texas personal injury podcast',

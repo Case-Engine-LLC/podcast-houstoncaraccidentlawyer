@@ -67,7 +67,7 @@ const homeSchema = {
       "@type": "WebSite",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
-      "name": "Houston Abogado de Accidentes with Ben Dominguez",
+      "name": "Ben Wins Texas Law Podcast",
       "description": "A bilingual podcast by Ben Dominguez II — Houston personal injury, products liability, and construction accident law for English- and Spanish-speaking Texans.",
       "publisher": {
         "@id": "https://benwins.com/#org"
@@ -86,7 +86,7 @@ const homeSchema = {
       "@type": "WebPage",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#webpage",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
-      "name": "Houston Abogado de Accidentes with Ben Dominguez | Ben Dominguez Car Accident Lawyer",
+      "name": "Ben Wins Texas Law Podcast | Ben Dominguez Car Accident Lawyer",
       "description": "Ben Dominguez covers Texas personal injury, products liability, and construction accident law for Houston and Harris County — available in English and Spanish.",
       "isPartOf": {
         "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website"
@@ -119,8 +119,8 @@ const homeSchema = {
     {
       "@type": "PodcastSeries",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#podcast",
-      "name": "Houston Abogado de Accidentes with Ben Dominguez",
-      "description": "Houston Abogado de Accidentes with Ben Dominguez covers Texas personal injury, products liability, and construction-accident law for Houston and Harris County residents — including bilingual representation for Spanish-speaking clients.",
+      "name": "Ben Wins Texas Law Podcast",
+      "description": "Ben Wins Texas Law Podcast covers Texas personal injury, products liability, and construction-accident law for Houston and Harris County residents — including bilingual representation for Spanish-speaking clients.",
       "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
       "image": "https://podcast-houstoncaraccidentlawyer.vercel.app/Hero.jpg",
       "author": {
@@ -159,7 +159,7 @@ const homeSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What topics does Houston Abogado de Accidentes cover?",
+          "name": "What topics does Ben Wins Texas Law Podcast cover?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The podcast covers personal injury topics relevant to Houston and Harris County drivers — car, truck, motorcycle, rideshare, bicycle, and pedestrian accidents; construction accidents; products liability; and premises liability. Ben Dominguez hosts bilingually (English and Spanish), and episodes include Texas-specific insurance rules, the two-year statute of limitations, and what to do in the first days after a crash."
@@ -170,7 +170,7 @@ const homeSchema = {
           "name": "Who hosts the podcast?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ben Dominguez II hosts Houston Abogado de Accidentes. He has been a Texas-licensed attorney since 1993 (State Bar No. 00786415), established his Houston solo practice in 1994, and narrowed the practice to personal injury and products liability in 2015. Ben is a fourth-generation Texan and bilingual in English and Spanish."
+            "text": "Ben Dominguez II hosts Ben Wins Texas Law Podcast. He has been a Texas-licensed attorney since 1993 (State Bar No. 00786415), established his Houston solo practice in 1994, and narrowed the practice to personal injury and products liability in 2015. Ben is a fourth-generation Texan and bilingual in English and Spanish."
           }
         },
         {
