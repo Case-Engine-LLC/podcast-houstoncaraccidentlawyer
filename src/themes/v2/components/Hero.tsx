@@ -20,7 +20,7 @@ const Hero = ({ latestEpisode }: HeroProps) => {
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-primary text-xs font-bold tracking-wider uppercase">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            {siteConfig.tagline || 'New Episodes Weekly'}
+            {siteConfig.tagline || 'New Episodes'}
           </div>
 
           <h1 className="font-heading text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.9] text-primary">
