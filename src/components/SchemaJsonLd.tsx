@@ -15,6 +15,32 @@ import { getAllEpisodes, type Episode } from '@/lib/data'
 
 type SchemaEpisode = Pick<Episode, 'id' | 'number' | 'slug' | 'title' | 'description' | 'date' | 'duration' | 'audioUrl' | 'audioType'>
 
+// schema.org `timeRequired` must be an ISO 8601 Duration. Feed/static values
+// arrive as "36 min", "51:09", "01:20:59", seconds, or the placeholder "TBD";
+// anything unparseable returns undefined so the key is dropped rather than
+// emitting an invalid value.
+function toIsoDuration(raw: unknown): string | undefined {
+  if (raw === undefined || raw === null) return undefined
+  const s = String(raw).trim()
+  if (!s || /^tbd$/i.test(s)) return undefined
+  if (/^\d+$/.test(s)) {
+    const total = Number(s)
+    return `PT${Math.floor(total / 60)}M${total % 60}S`
+  }
+  if (s.includes(':')) {
+    const parts = s.split(':').map(Number)
+    if (parts.length >= 2 && parts.every((n) => Number.isFinite(n))) {
+      const [h, m, sec] = parts.length === 3 ? parts : [0, parts[0], parts[1]]
+      return `PT${h ? `${h}H` : ''}${m}M${sec}S`
+    }
+  }
+  const mins = s.match(/^(\d+)\s*min/i)
+  if (mins) return `PT${mins[1]}M`
+  const hrs = s.match(/^(\d+)\s*h(?:ou)?rs?$/i)
+  if (hrs) return `PT${hrs[1]}H`
+  return undefined
+}
+
 const SchemaJsonLd = async () => {
   const podcastUrl = siteConfig.podcastUrl?.replace(/\/$/, '') || ''
   const firmUrl = (contact.website || '').replace(/\/$/, '')
@@ -51,7 +77,7 @@ const SchemaJsonLd = async () => {
       name: ep.title,
       description: ep.description,
       datePublished: ep.date,
-      timeRequired: ep.duration,
+      timeRequired: toIsoDuration(ep.duration),
       url: `${podcastUrl}/episode/${slugPart}`,
       partOfSeries: { '@id': `${podcastUrl}/#podcast` },
       associatedMedia: ep.audioUrl
