@@ -63,25 +63,7 @@ const homeSchema = {
         "https://benwins.com/"
       ]
     },
-    {
-      "@type": "WebSite",
-      "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#website",
-      "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
-      "name": "Ben Wins Texas Law Podcast",
-      "description": "A bilingual podcast by Ben Dominguez II — Houston personal injury, products liability, and construction accident law for English- and Spanish-speaking Texans.",
-      "publisher": {
-        "@id": "https://benwins.com/#org"
-      },
-      "inLanguage": "en-US",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://podcast-houstoncaraccidentlawyer.vercel.app/?s={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    },
+    
     {
       "@type": "WebPage",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#webpage",
@@ -116,43 +98,7 @@ const homeSchema = {
         ]
       }
     },
-    {
-      "@type": "PodcastSeries",
-      "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#podcast",
-      "name": "Ben Wins Texas Law Podcast",
-      "description": "Ben Wins Texas Law Podcast covers Texas personal injury, products liability, and construction-accident law for Houston and Harris County residents — including bilingual representation for Spanish-speaking clients.",
-      "url": "https://podcast-houstoncaraccidentlawyer.vercel.app/",
-      "image": "https://podcast-houstoncaraccidentlawyer.vercel.app/Hero.jpg",
-      "author": {
-        "@type": "Person",
-        "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#host",
-        "name": "Ben Dominguez",
-        "givenName": "Ben",
-        "familyName": "Dominguez",
-        "jobTitle": "Personal Injury & Products Liability Attorney, Podcast Host",
-        "image": "https://podcast-houstoncaraccidentlawyer.vercel.app/headshot-ben-dominguez.png",
-        "worksFor": {
-          "@id": "https://benwins.com/#org"
-        },
-        "sameAs": [
-          "https://benwins.com/"
-        ],
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Vermont Law School"
-        }
-      },
-      "webFeed": [],
-      "genre": [
-        "Legal",
-        "Personal Injury Law",
-        "Education"
-      ],
-      "inLanguage": "en-US",
-      "publisher": {
-        "@id": "https://benwins.com/#org"
-      }
-    },
+    
     {
       "@type": "FAQPage",
       "@id": "https://podcast-houstoncaraccidentlawyer.vercel.app/#faq",

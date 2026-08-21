@@ -33,14 +33,7 @@ export function generateAuthorSchema(author: typeof authorProfiles[string], slug
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'WebSite',
-        '@id': `${PODCAST_SITE_URL}/#website`,
-        'url': PODCAST_SITE_URL,
-        'name': siteConfig.podcastName,
-        'inLanguage': 'en',
-        'publisher': { '@id': `${PODCAST_SITE_URL}/#org` },
-      },
+      
       generateOrganizationEntity(),
       {
         '@type': ['WebPage', 'ProfilePage'],
