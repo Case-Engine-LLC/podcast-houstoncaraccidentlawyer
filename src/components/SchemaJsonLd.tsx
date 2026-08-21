@@ -72,7 +72,9 @@ const SchemaJsonLd = async () => {
     return {
       '@context': 'https://schema.org',
       '@type': 'PodcastEpisode',
-      '@id': `${podcastUrl}/#episode-${ep.number || idx + 1}`,
+      // Keyed on the unique slug, not ep.number — feeds repeat episode
+      // numbers, which produced two nodes sharing one @id.
+      '@id': `${podcastUrl}/#episode-${slugPart}`,
       episodeNumber: ep.number,
       name: ep.title,
       description: ep.description,
