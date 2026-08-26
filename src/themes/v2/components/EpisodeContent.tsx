@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Episode } from '@/lib/data'
 import { TranscriptSegment } from '@/lib/rss'
 import AudioPlayer from '@/components/AudioPlayer'
-import { content, attorney, episode as staticEpisode, chaptersDescription, episodes as episodesData } from '@/data/siteData'
+import { content, attorney, chaptersDescription, episodes as episodesData } from '@/data/siteData'
 
 const TABS = ['Overview', 'Transcript', 'Key Takeaways'] as const
 type Tab = (typeof TABS)[number]
@@ -24,29 +24,18 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
   return (
     <section className="py-16 md:py-24 bg-primary">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Audio Player or Video Player Placeholder */}
+        {/* Audio Player */}
         {propEpisode?.audioUrl ? (
           <div className="mb-12">
             <AudioPlayer audioUrl={propEpisode.audioUrl} title={propEpisode.title} duration={propEpisode.duration} />
           </div>
         ) : (
-          <div className="relative w-full aspect-video bg-primary rounded-2xl overflow-hidden mb-12 flex items-center justify-center group cursor-pointer">
+          <div className="relative w-full aspect-video bg-primary rounded-2xl overflow-hidden mb-12 flex items-center justify-center">
             {/* Decorative grid lines */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
             </div>
-
-            {/* Play button */}
-            <div className="relative z-10 w-20 h-20 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-secondary/30">
-              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-
-            {/* Duration label */}
-            <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full">
-              {propEpisode?.duration ?? staticEpisode.duration}
-            </div>
+            <span className="relative z-10 text-sm font-medium text-white/50">Episode audio coming soon</span>
           </div>
         )}
 
