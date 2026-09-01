@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@/components/Analytics'
 import { MarkerWidget } from '@/components/MarkerWidget'
 import SchemaJsonLd from '@/components/SchemaJsonLd'
 import { siteConfig, about, contact, attorney } from '@/data/siteData'
@@ -108,6 +109,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <MarkerWidget />
+        <Analytics gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KJKMLJG'} />
       </body>
     </html>
   )
