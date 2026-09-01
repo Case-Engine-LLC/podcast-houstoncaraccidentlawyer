@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@marker.io/browser": "^0.20.2",
+    "@microsoft/clarity": "^1.0.2",
+    "@next/third-parties": "^15.5.25",
     "@supabase/supabase-js": "^2.47.0",
     "fast-xml-parser": "^5.4.2",
-    "resend": "^4.1.2",
     "lucide-react": "^0.469.0",
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@marker.io/browser": "^0.20.2"
+    "resend": "^4.1.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
