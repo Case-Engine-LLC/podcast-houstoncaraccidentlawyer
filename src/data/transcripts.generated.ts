@@ -27,7 +27,7 @@
  */
 import type { TranscriptSegment } from '@/lib/rss'
 
-export const generatedTranscripts: Record<number, TranscriptSegment[]> = {
+export const generatedTranscripts: Record<string, TranscriptSegment[]> = {
   1: [
     { timestamp: "00:00", speaker: "Anna", text: "Hi everybody. Welcome to the You Interview. My name is Anna. I'm here with attorney Ben Dominguez. We're so happy to have you here. This is a show where we're gonna go into, um, the person behind the practice. Today's guest is a Houston institution. We are. Thrilled and excited to have you here, Mr. Ben. We, he has spent more than 30 years going to the bat every day for people who've been heard or going through a, a situation that really isn't in no fault of their own. So we're very excited to have you here." },
     { timestamp: "00:00", speaker: "Ben", text: "Now." },
