@@ -18,6 +18,9 @@ export interface Episode {
   guid?: string
   slug?: string
   number: number
+  season?: number | null
+  isExtension?: boolean
+  numbered?: boolean
   title: string
   subtitle: string
   description: string
@@ -68,6 +71,9 @@ function rssEpisodeToEpisode(ep: RSSEpisode): Episode {
     guid: ep.guid,
     slug: staticEpisode?.slug || generatedSlug,
     number: ep.id,
+    season: ep.season,
+    isExtension: ep.isExtension,
+    numbered: ep.numbered,
     title,
     subtitle: staticEpisode?.subtitle || ep.subtitle,
     description: staticEpisode?.description || ep.description,
@@ -93,6 +99,9 @@ function normalizeStaticEpisode(ep: Record<string, unknown>): Episode {
     guid: (ep.guid as string) || undefined,
     slug: (ep.slug as string) || slugifyEpisode((ep.title as string) || '', String((ep.id as number) ?? 1)),
     number: (ep.number as number) ?? (ep.id as number) ?? 1,
+    season: (ep.season as number | null) ?? null,
+    isExtension: (ep.isExtension as boolean) ?? false,
+    numbered: (ep.numbered as boolean) ?? true,
     title: (ep.title as string) ?? '',
     subtitle: (ep.subtitle as string) ?? '',
     description: (ep.description as string) ?? '',
@@ -114,9 +123,24 @@ function normalizeStaticEpisode(ep: Record<string, unknown>): Episode {
 
 let feedCache: { episodes: Episode[]; fetchedAt: number } | null = null
 
+// Remove duplicate feed items that share a slug, keeping the best-tagged one:
+// a numbered main beats a season-only city extension beats an untagged duplicate.
+// (Fixes the case where an accidental untagged copy hijacks an episode's page.)
+function dedupeBySlug(episodes: Episode[]): Episode[] {
+  const best = new Map<string, Episode>()
+  for (const ep of episodes) {
+    const key = ep.slug || String(ep.id)
+    const cur = best.get(key)
+    const epRank = ep.numbered ? 2 : ep.isExtension ? 1 : 0
+    const curRank = cur ? (cur.numbered ? 2 : cur.isExtension ? 1 : 0) : -1
+    if (!cur || epRank > curRank) best.set(key, ep)
+  }
+  return episodes.filter(ep => best.get(ep.slug || String(ep.id)) === ep)
+}
+
 export async function getAllEpisodes(): Promise<Episode[]> {
   if (!RSS_URL) {
-    return (staticEpisodes as Record<string, unknown>[]).map(normalizeStaticEpisode)
+    return dedupeBySlug((staticEpisodes as Record<string, unknown>[]).map(normalizeStaticEpisode))
   }
 
   // Simple in-memory cache for same request cycle
@@ -126,16 +150,16 @@ export async function getAllEpisodes(): Promise<Episode[]> {
 
   try {
     const feed = await fetchPodcastFeed(RSS_URL)
-    const episodes = feed.episodes.map(rssEpisodeToEpisode)
+    const episodes = dedupeBySlug(feed.episodes.map(rssEpisodeToEpisode))
     if (episodes.length === 0) {
       // Feed exists but has no episodes yet — fall back to static data
-      return (staticEpisodes as Record<string, unknown>[]).map(normalizeStaticEpisode)
+      return dedupeBySlug((staticEpisodes as Record<string, unknown>[]).map(normalizeStaticEpisode))
     }
     feedCache = { episodes, fetchedAt: Date.now() }
     return episodes
   } catch (e) {
     console.error('RSS fetch failed, falling back to static data:', e)
-    return (staticEpisodes as Record<string, unknown>[]).map(normalizeStaticEpisode)
+    return dedupeBySlug((staticEpisodes as Record<string, unknown>[]).map(normalizeStaticEpisode))
   }
 }
 
@@ -159,23 +183,21 @@ export async function getEpisodeByIdOrSlug(idOrSlug: string): Promise<Episode | 
 }
 
 export async function getEpisodeTranscript(episode: Episode): Promise<TranscriptSegment[]> {
-  if (!RSS_URL) {
-    return generatedTranscripts[episode.id] ?? []
-  }
-
-  if (episode.transcriptUrl && episode.transcriptType) {
-    const segments = await fetchRssTranscript(episode.transcriptUrl, episode.transcriptType)
-    if (segments.length > 0) return segments
-  }
-
-  // Resolve by guid first — unique per feed item, and required for any future
-  // location-cut episodes that would otherwise collide on itunes:episode number
-  // (same pattern as podcast-toddmohink). Falls back to the numeric id map.
   if (episode.guid && TRANSCRIPTS_BY_GUID[episode.guid]) {
     return TRANSCRIPTS_BY_GUID[episode.guid]
   }
 
-  // Serve the staged transcript for ANY episode that has one (was gated to ep1).
+  // Prefer a slug-keyed transcript: the slug is a stable identity that works for
+  // city extensions (which have no episode number to key on). Fall back to the
+  // legacy numeric-id key so existing main-episode transcripts keep working.
+  const bySlug = episode.slug ? generatedTranscripts[episode.slug] : undefined
+  if (bySlug && bySlug.length) return bySlug
+
+  if (RSS_URL && episode.transcriptUrl && episode.transcriptType) {
+    const segments = await fetchRssTranscript(episode.transcriptUrl, episode.transcriptType)
+    if (segments.length > 0) return segments
+  }
+
   return generatedTranscripts[episode.id] ?? []
 }
 

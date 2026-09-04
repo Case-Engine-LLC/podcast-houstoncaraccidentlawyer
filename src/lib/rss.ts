@@ -2,6 +2,9 @@ import { XMLParser } from 'fast-xml-parser'
 
 export interface RSSEpisode {
   id: number
+  season: number | null
+  isExtension: boolean
+  numbered: boolean
   guid: string
   title: string
   subtitle: string
@@ -137,12 +140,23 @@ export async function fetchPodcastFeed(rssUrl: string): Promise<PodcastFeed> {
     const transcriptUrl = transcript ? getAttr(transcript, 'url') : null
     const transcriptType = transcript ? getAttr(transcript, 'type') : null
 
-    // Episode number: prefer itunes:episode, fall back to index
+    // Episode classification (per FlightCast convention):
+    //   - MAIN episode  -> carries <itunes:episode> (the episode number)
+    //   - EXTENSION (city edition) -> carries <itunes:season> but NO episode number
+    //   - neither -> malformed/duplicate; de-duped out by slug in getAllEpisodes
     const itunesEpisode = item['itunes:episode']
-    const episodeNum = itunesEpisode ? Number(itunesEpisode) : items.length - index
+    const itunesSeason = item['itunes:season']
+    const numbered = itunesEpisode != null && String(itunesEpisode) !== ''
+    const hasSeason = itunesSeason != null && String(itunesSeason) !== ''
+    // Mains keep their real number; un-numbered items get a stable-ish fallback
+    // (only used for display ordering — transcripts key off the slug, not this).
+    const episodeNum = numbered ? Number(itunesEpisode) : items.length - index
 
     return {
       id: episodeNum,
+      season: hasSeason ? Number(itunesSeason) : null,
+      isExtension: !numbered && hasSeason,
+      numbered,
       guid: String(item.guid ?? item.link ?? `ep-${episodeNum}`),
       title: decodeEntities(String(item.title ?? '')),
       subtitle: decodeEntities(String(item['itunes:subtitle'] ?? '').slice(0, 120)),
