@@ -66,6 +66,7 @@ function EpisodeContent({ episode: propEpisode, transcript }: EpisodeContentProp
             )}
             {activeTab === 'Transcript' && (
               <TranscriptTab
+                transcript={transcript}
                 isExpanded={isTranscriptExpanded}
                 onToggleExpand={() => setIsTranscriptExpanded(!isTranscriptExpanded)}
               />
@@ -152,11 +153,34 @@ function OverviewTab() {
 }
 
 interface TranscriptTabProps {
+  transcript?: TranscriptSegment[]
   isExpanded: boolean
   onToggleExpand: () => void
 }
 
-function TranscriptTab({ isExpanded, onToggleExpand }: TranscriptTabProps) {
+// How many transcript segments show before the "Read More" expander.
+const TRANSCRIPT_PREVIEW_COUNT = 6
+
+function TranscriptTab({ transcript, isExpanded, onToggleExpand }: TranscriptTabProps) {
+  const segments = transcript ?? []
+
+  if (segments.length === 0) {
+    return (
+      <div>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
+          Episode Transcript
+        </h2>
+        <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
+          <p>Transcript not yet available for this episode.</p>
+        </div>
+        <FeaturedQuote showAttribution={false} />
+      </div>
+    )
+  }
+
+  const preview = segments.slice(0, TRANSCRIPT_PREVIEW_COUNT)
+  const rest = segments.slice(TRANSCRIPT_PREVIEW_COUNT)
+
   return (
     <div>
       <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
@@ -164,58 +188,57 @@ function TranscriptTab({ isExpanded, onToggleExpand }: TranscriptTabProps) {
       </h2>
 
       <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
-        <p>
-          <span className="text-secondary font-semibold">[00:00:00]</span>{' '}
-          Welcome to The You Interview. Today we&apos;re sitting down with {attorney.name} from {attorney.firm}.
-        </p>
-        <p>
-          <span className="text-secondary font-semibold">[00:02:15]</span>{' '}
-          {content.articleParagraphs[0]}
-        </p>
-      </div>
-
-      <h3 className="font-heading text-2xl font-bold text-white mb-6">
-        Key Discussion Points
-      </h3>
-
-      <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6 mb-8">
-        <p>
-          <span className="text-secondary font-semibold">[00:10:45]</span>{' '}
-          {content.articleParagraphs[1] || 'Discussion of practice areas and client approach.'}
-        </p>
+        {preview.map((segment, index) => (
+          <p key={index}>
+            {segment.timestamp && (
+              <span className="text-secondary font-semibold">[{segment.timestamp}]</span>
+            )}{' '}
+            {segment.speaker && <span className="font-semibold text-white">{segment.speaker}: </span>}
+            {segment.text}
+          </p>
+        ))}
       </div>
 
       {/* Featured Quote */}
       <FeaturedQuote showAttribution={false} />
 
       {/* Expandable section */}
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isExpanded ? 'max-h-[2000px] opacity-100 mt-8' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6">
-          <p>
-            <span className="text-secondary font-semibold">[00:20:00]</span>{' '}
-            Full transcript available upon request. Contact us for the complete episode transcript.
-          </p>
-        </div>
-      </div>
+      {rest.length > 0 && (
+        <>
+          <div
+            className={`overflow-hidden transition-all duration-500 ease-in-out ${
+              isExpanded ? 'max-h-[100000px] opacity-100 mt-8' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="text-base md:text-lg leading-relaxed text-white/70 space-y-6">
+              {rest.map((segment, index) => (
+                <p key={index}>
+                  {segment.timestamp && (
+                    <span className="text-secondary font-semibold">[{segment.timestamp}]</span>
+                  )}{' '}
+                  {segment.speaker && <span className="font-semibold text-white">{segment.speaker}: </span>}
+                  {segment.text}
+                </p>
+              ))}
+            </div>
+          </div>
 
-      <button
-        onClick={onToggleExpand}
-        className="mt-6 text-base font-bold text-secondary hover:text-secondary/80 transition-colors flex items-center gap-2"
-      >
-        {isExpanded ? 'Read Less' : 'Read More'}
-        <svg
-          className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+          <button
+            onClick={onToggleExpand}
+            className="mt-6 text-base font-bold text-secondary hover:text-secondary/80 transition-colors flex items-center gap-2"
+          >
+            {isExpanded ? 'Read Less' : 'Read More'}
+            <svg
+              className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </>
+      )}
     </div>
   )
 }
